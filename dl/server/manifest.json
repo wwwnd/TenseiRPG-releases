@@ -1,0 +1,25 @@
+{
+ "version": "0.5.26",
+ "date": "2026-11-28",
+ "time": "2026-11-28T08:52:22+00:00",
+ "code": "775e4ab",
+ "protocol": 29,
+ "builds": [
+  {
+   "sha256": "69538facaff7d741f36afef80dd2bfe1a5a66891ad30d86f6420cad12e73abc8",
+   "size": 28881998,
+   "parts": [
+    "f/69538facaff7d741f36afef8.0"
+   ],
+   "rid": "linux-arm64"
+  },
+  {
+   "sha256": "c8e89d63ce4c66dd24ebe8bdea34c03b7d2f2414d08b09a7cf02d0efd13bab11",
+   "size": 30114375,
+   "parts": [
+    "f/c8e89d63ce4c66dd24ebe8bd.0"
+   ],
+   "rid": "linux-x64"
+  }
+ ]
+}

@@ -1,0 +1,1270 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ポンコツ女神と転生者 ― 公式ページ</title>
+<meta name="description" content="終電帰りの会社員が、ポンコツな女神に異世界へ転生させられるオンライン MMORPG。ほかの転生者と同じ世界を旅しよう。AI がフィードバックから直して、更新は自動。">
+<meta property="og:title" content="ポンコツ女神と転生者">
+<meta property="og:description" content="終電帰りの会社員が、ポンコツな女神に異世界へ転生させられるオンライン MMORPG。ほかの転生者と同じ世界を旅しよう。AI がフィードバックから直して、更新は自動。">
+<meta property="og:image" content="img/og.jpg">
+<link rel="icon" href="img/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&amp;family=Zen+Antique&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#141118;color:#ebe3d4;font-family:"Zen Kaku Gothic New",system-ui,sans-serif;line-height:1.85;-webkit-font-smoothing:antialiased}
+a{color:#e9d9ae}a:hover{color:#fff4d6}
+.pm{overflow-x:hidden;--u:1vw;word-break:keep-all;overflow-wrap:anywhere;line-break:strict}
+/* 改行は言葉の切れ目だけ(build_site.py が <wbr> を入れる)。見出しは行の長さをそろえる */
+.pm h1,.pm h2,.pm h3,.pm h4,.pm summary,.pm .lead,.pm .nb-lead,.pm .mmo-lead,.pm .ai-lead,.pm figcaption{text-wrap:balance}
+.pm p,.pm li,.pm .x{text-wrap:pretty}
+/* 横幅は画面いっぱい(2026-11-21 ユーザー:1080px に収めるのは戻す)。ボタンは最初の画面に必ず入れる(.hero-cta の top) */
+.pm *{box-sizing:border-box}
+.pm img{display:block;max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.latin{font-family:"Cinzel",serif;letter-spacing:.32em;text-transform:uppercase;font-size:12px;color:#b8a57c}
+.h2{font-family:"Zen Antique",serif;font-weight:400;font-size:clamp(28px,4vw,40px);line-height:1.3;margin:6px 0 0;color:#f1e6c8;letter-spacing:.06em}
+.lead{color:#c9bfae;font-size:16px;margin:14px 0 0;max-width:640px}
+.orn{display:flex;align-items:center;justify-content:center;gap:10px;margin:18px auto 0;color:#cdb47d;width:min(320px,80%)}
+.orn i{flex:1;height:1px;background:linear-gradient(90deg,transparent,#a8915e)}
+.orn i:last-child{background:linear-gradient(270deg,transparent,#a8915e)}
+.orn b{width:7px;height:7px;transform:rotate(45deg);border:1px solid #d9c38f}
+.sec{padding:96px 0;position:relative}
+.sec-head{text-align:center;margin-bottom:48px}
+.sec-head .lead{margin-left:auto;margin-right:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 30px;border-radius:999px;text-decoration:none;font-weight:700;font-size:16px;letter-spacing:.08em;transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{color:#2a2016;background:linear-gradient(180deg,#f4e7c3,#d9bf86 55%,#c4a467);box-shadow:0 0 0 1px #fff3cf inset,0 0 0 2px #8f7445,0 10px 30px rgba(40,24,60,.35)}
+.btn-gold:hover{color:#1d150d;box-shadow:0 0 0 1px #fff3cf inset,0 0 0 2px #8f7445,0 14px 36px rgba(255,220,150,.35)}
+.btn-ghost{color:#fff8e8;background:rgba(30,22,44,.45);box-shadow:0 0 0 1px rgba(255,240,210,.55) inset;backdrop-filter:blur(4px)}
+.btn-ghost:hover{color:#fff;background:rgba(30,22,44,.6)}
+
+/* 1. はじめの画面(ユーザーのキービジュアル。ロゴは絵の右側にあるので、ボタンはロゴの下) */
+/* 雲の下の空きを詰めた(2026-11-21 ユーザー:パソコンでも雲の下がかなり大きい)。雲の絵の大きさは同じで、下の無地の所だけ短く */
+.hero{position:relative;background:#fae5e4;padding-bottom:calc(8 * var(--u))}
+.hero-kv{position:relative;width:100%;aspect-ratio:1672/941;max-height:calc(100vh - 64px);min-height:220px;overflow:hidden;background:#bcd6f2}
+.hero-kv img{width:100%;height:100%;object-fit:cover;object-position:30% 40%}
+.hero-kv:after{content:"";position:absolute;left:0;right:0;bottom:0;height:calc(4 * var(--u));background:linear-gradient(180deg,rgba(250,229,228,0),rgba(250,229,228,.85));pointer-events:none}
+.hero-clouds{position:absolute;left:0;right:0;bottom:-1px;height:calc(14.3 * var(--u));background:url("img/clouds_front.png") center top/100% calc(23.6 * var(--u)) no-repeat;pointer-events:none;z-index:1}
+.hero-clouds:after{content:"";position:absolute;left:0;right:0;bottom:0;height:55%;background:linear-gradient(180deg,rgba(250,229,228,0),rgba(250,229,228,.75) 55%,#fae5e4)}
+/* 昼の空 → 雲 → 夕暮れ → 夜(下の段へ)。黒いグラデーションの代わり(2026-11-20 ユーザー) */
+.dusk{position:relative;height:clamp(130px,calc(14 * var(--u)),210px);margin-top:-1px;background:linear-gradient(180deg,#fae5e4 0%,#f1e0ec 14%,#d9c9ea 30%,#a998d6 48%,#6a5ca6 64%,#382f62 80%,#1c1730 92%,#141118 100%);overflow:hidden}
+.dusk:before{content:"";position:absolute;inset:0;background-image:radial-gradient(1.2px 1.2px at 12% 62%,#fff,transparent),radial-gradient(1px 1px at 27% 78%,#fff,transparent),radial-gradient(1.4px 1.4px at 41% 58%,#fff8e0,transparent),radial-gradient(1px 1px at 55% 84%,#fff,transparent),radial-gradient(1.2px 1.2px at 68% 66%,#fff,transparent),radial-gradient(1px 1px at 79% 88%,#fff,transparent),radial-gradient(1.5px 1.5px at 90% 60%,#fff8e0,transparent),radial-gradient(1px 1px at 6% 90%,#fff,transparent),radial-gradient(1px 1px at 34% 92%,#fff,transparent),radial-gradient(1px 1px at 62% 74%,#fff,transparent);opacity:.85;animation:twinkle 5s ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:.45}to{opacity:.95}}
+.dusk .orn{position:absolute;left:0;right:0;bottom:22%;margin:0 auto}
+.hero-cta{position:absolute;left:0;right:0;top:min(calc(64px + min(56.28vw, 100vh - 64px) + 14.9vw - 104px), calc(100vh - 128px));margin:0 auto;width:min(620px,90%);display:flex;flex-direction:column;align-items:center;gap:12px;z-index:2}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.hero-meta{font-size:13px;color:#5b4a6a;background:rgba(255,248,248,.78);padding:3px 14px;border-radius:999px;box-shadow:0 2px 10px rgba(90,60,110,.15);letter-spacing:.06em;text-align:center}
+.hero-meta span{opacity:.7;margin:0 8px}
+.hero-meta i{font-style:normal;white-space:nowrap;display:inline-block}
+.hero .btn-ghost{color:#4b3d66;background:rgba(255,255,255,.7);box-shadow:0 0 0 1px rgba(120,100,160,.45) inset,0 8px 24px rgba(120,90,140,.18)}
+.hero .btn-ghost:hover{color:#2e2445;background:rgba(255,255,255,.9)}
+@media (max-width:820px){
+  .hero{padding-bottom:0}
+  .hero-clouds{position:absolute;bottom:auto;top:calc(64px + 56.3vw - 6.3vw);height:calc(23.6 * var(--u))}
+  .hero-kv{max-height:none}
+  .hero-cta{position:relative;top:auto;z-index:2;width:auto;padding:0 20px;margin-top:11vw}
+  .hero-meta{text-shadow:none;color:#6b5878}
+  .hero .btn-ghost{color:#4b3d66;background:rgba(255,255,255,.6);box-shadow:0 0 0 1px rgba(120,100,160,.45) inset}
+  .hero .btn-ghost:hover{color:#2e2445;background:rgba(255,255,255,.85)}
+}
+
+/* 2. 物語 */
+.story{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:56px;align-items:center}
+.story-shot{position:relative;border-radius:6px;overflow:hidden;box-shadow:0 0 0 1px #6b5a3c,0 0 0 5px #1d1922,0 0 0 6px #4c4030,0 30px 60px rgba(0,0,0,.5)}
+.story-shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 18px 12px;font-size:12px;color:#d8cdb8;background:linear-gradient(180deg,transparent,rgba(10,8,14,.85));letter-spacing:.1em}
+.story-time{font-family:"Cinzel",serif;font-size:56px;line-height:1;color:#e9d39d;letter-spacing:.06em;margin:18px 0 6px;text-shadow:0 0 30px rgba(233,211,157,.25)}
+.story p{color:#d4cab8;margin:14px 0 0}
+.story .quote{margin:22px 0 0;padding:16px 20px;border:1px solid rgba(205,180,125,.35);border-radius:4px;background:rgba(40,33,48,.5);font-size:15px;color:#efe3c5}
+.quote small{display:block;color:#a99c86;font-size:12px;margin-top:6px}
+
+/* 3. 特長 */
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:22px}
+.feat{background:linear-gradient(180deg,#221d29,#1a1620);border:1px solid #4a3f2f;border-radius:6px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 0 rgba(255,236,190,.06) inset}
+.feat img{width:100%;aspect-ratio:16/10;object-fit:cover;border-bottom:1px solid #4a3f2f}
+.feat-body{padding:18px 20px 22px}
+.feat-no{font-family:"Cinzel",serif;font-size:11px;letter-spacing:.3em;color:#a8915e}
+.feat h3{font-family:"Zen Antique",serif;font-weight:400;font-size:22px;margin:4px 0 8px;color:#f1e6c8}
+.feat p{margin:0;font-size:14px;color:#c4baa9;line-height:1.8}
+
+/* 4. 世界(写真) */
+.world{background:radial-gradient(1200px 500px at 50% 0,rgba(90,70,140,.18),transparent),#16131b}
+.gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+.gallery figure{margin:0;position:relative;border-radius:5px;overflow:hidden;border:1px solid #3e3529}
+.gallery img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9;transition:transform .4s ease}
+.gallery figure:hover img{transform:scale(1.03)}
+.gallery figcaption{position:absolute;left:12px;bottom:10px;font-size:12px;letter-spacing:.12em;color:#f3ead6;padding:3px 10px;background:rgba(16,12,20,.72);border:1px solid rgba(205,180,125,.4);border-radius:3px}
+.g-a{grid-column:span 7}.g-b{grid-column:span 5}.g-c{grid-column:span 4}.g-d{grid-column:span 4}.g-e{grid-column:span 4}
+@media (max-width:720px){.g-a,.g-b,.g-c,.g-d,.g-e{grid-column:span 12}}
+
+/* 5. 自動アップデート */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px;counter-reset:st}
+.step{position:relative;padding:28px 22px 24px;border:1px solid #4a3f2f;border-radius:6px;background:rgba(34,29,41,.7);text-align:center}
+.step-n{width:44px;height:44px;margin:0 auto 12px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Cinzel",serif;font-size:18px;color:#2a2016;background:linear-gradient(180deg,#f1e2b8,#c9aa6c);box-shadow:0 0 0 3px #1c1822,0 0 0 4px #8f7445}
+.step h3{font-size:17px;margin:0 0 6px;color:#f1e6c8}
+.step p{font-size:14px;color:#c4baa9;margin:0}
+.note{margin:26px auto 0;max-width:760px;text-align:center;font-size:13px;color:#a99c86}
+
+/* 6. ダウンロード */
+.dl{background:linear-gradient(180deg,#141118,#1d1828 60%,#141118)}
+.dl-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:0;border:1px solid #6b5a3c;border-radius:8px;overflow:hidden;background:#1b1721;box-shadow:0 0 0 6px #17131c,0 0 0 7px #3d3326,0 40px 80px rgba(0,0,0,.45)}
+.dl-main{padding:40px 40px 36px;display:flex;flex-direction:column;gap:18px;justify-content:center}
+.dl-main h3{font-family:"Zen Antique",serif;font-weight:400;font-size:30px;margin:0;color:#f4e9cc}
+.dl-specs{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0;font-size:14px}
+.dl-specs dt{color:#a99c86}.dl-specs dd{margin:0;color:#e3d9c6}
+.dl-help{padding:36px 36px 32px;background:linear-gradient(180deg,#26202e,#201b27);border-left:1px solid #4a3f2f;position:relative}
+.dl-help h4{margin:0 0 4px;font-size:16px;color:#f1e6c8}
+.dl-help ol{margin:12px 0 0;padding-left:22px;font-size:14px;color:#d1c7b5}
+.dl-help li{margin:6px 0}
+.dl-help kbd{font-family:inherit;font-size:13px;padding:1px 8px;border:1px solid #7a6847;border-radius:3px;background:#2e2737;color:#f4e9cc}
+.megami{display:flex;gap:14px;align-items:flex-end;margin-top:18px}
+.megami img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:50% 20%;box-shadow:0 0 0 2px #1c1822,0 0 0 3px #b39760;flex:none;background:#efe7f5}
+.bubble{position:relative;padding:12px 16px;border-radius:10px;background:#f3ecdf;color:#3a2e26;font-size:13px;line-height:1.7}
+.bubble:before{content:"";position:absolute;left:-7px;bottom:16px;border:7px solid transparent;border-right-color:#f3ecdf;border-left:0}
+
+/* 7. フィードバック */
+.fb{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px;align-items:center}
+.fb-list{margin:18px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.fb-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:#d4cab8}
+.fb-list li:before{content:"";flex:none;width:7px;height:7px;margin-top:11px;transform:rotate(45deg);background:#cdb47d}
+.fb-shot{border-radius:6px;overflow:hidden;box-shadow:0 0 0 1px #6b5a3c,0 30px 60px rgba(0,0,0,.45)}
+
+/* 8. よくある質問 */
+.faq{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq details{border:1px solid #4a3f2f;border-radius:6px;background:#1c1822;padding:0 20px}
+.faq summary{cursor:pointer;list-style:none;padding:16px 0;font-weight:700;color:#f1e6c8;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";color:#cdb47d;font-weight:400;font-size:20px;line-height:1}
+.faq details[open] summary:after{content:"−"}
+.faq details p{margin:0 0 18px;font-size:14px;color:#c4baa9}
+
+.foot{padding:56px 0 40px;text-align:center;border-top:1px solid #2e2733;color:#8d8272;font-size:12px}
+
+/* MMORPG(前半で大きく) */
+.mmo{position:relative;padding:60px 0 100px;background:#120f16 url("img/shot_town.jpg") center/cover no-repeat;isolation:isolate;text-align:center}
+.mmo:before{content:"";position:absolute;inset:0;background:radial-gradient(900px 420px at 50% 45%,rgba(18,15,22,.55),rgba(18,15,22,.92) 70%),linear-gradient(180deg,#141118,rgba(20,17,24,.4) 30%,rgba(20,17,24,.4) 70%,#141118);z-index:-1}
+.mmo-tag{display:inline-block;font-family:"Cinzel",serif;font-weight:600;letter-spacing:.42em;font-size:13px;color:#2a2016;background:linear-gradient(180deg,#f1e2b8,#c9aa6c);padding:6px 14px 6px 20px;border-radius:2px}
+.mmo-h{font-family:"Zen Antique",serif;font-weight:400;font-size:clamp(34px,6vw,64px);line-height:1.25;margin:22px 0 0;color:#fbf2da;letter-spacing:.06em;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.mmo-lead{margin:18px auto 0;max-width:620px;color:#ddd3c1;font-size:16px}
+.pillars{margin:54px auto 0;max-width:960px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:1px;background:rgba(205,180,125,.25);border:1px solid rgba(205,180,125,.35);border-radius:6px;overflow:hidden}
+.pillar{background:rgba(22,18,28,.88);padding:26px 18px 24px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.pillar svg{width:34px;height:34px;color:#e2c98f}
+.pillar b{font-size:17px;color:#f4e9cc;letter-spacing:.08em}
+.pillar span{font-size:13px;color:#b9ae9b;line-height:1.7}
+
+/* すべて AI で作られた(フィードバックがすぐ届く) */
+.ai{position:relative;padding:120px 0;background:radial-gradient(1000px 520px at 75% 30%,rgba(60,190,220,.14),transparent 60%),radial-gradient(800px 500px at 10% 90%,rgba(120,90,220,.12),transparent 60%),#0b1016;overflow:hidden;isolation:isolate}
+.ai:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(110,220,240,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(110,220,240,.06) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(closest-side,#000,transparent);-webkit-mask-image:radial-gradient(closest-side,#000,transparent);z-index:-1}
+.ai-tag{font-family:"Cinzel",serif;letter-spacing:.4em;font-size:12px;color:#7fe3f2}
+.ai-badge-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px}
+.ai-name{display:inline-flex;align-items:center;gap:10px;padding:7px 16px 7px 14px;border-radius:3px;font-weight:700;font-size:15px;letter-spacing:.12em;color:#0b1016;background:linear-gradient(90deg,#8ff0ff,#b9a6ff);box-shadow:0 0 24px rgba(127,227,242,.35)}
+.ai-name:before{content:"";width:8px;height:8px;border-radius:50%;background:#0b1016;box-shadow:0 0 0 3px rgba(11,16,22,.25);animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{50%{opacity:.25}}
+.ai-h{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:clamp(30px,4.2vw,52px);line-height:1.25;margin:20px 0 0;color:#f2fbff;letter-spacing:.02em}
+.ai-h em{white-space:nowrap;font-style:normal;background:linear-gradient(90deg,#8ff0ff,#b9a6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ai-lead{margin:20px 0 0;max-width:600px;color:#b8c9d4;font-size:16px}
+.ai-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:56px;align-items:center;margin-top:8px}
+.flow{list-style:none;margin:40px 0 0;padding:0;position:relative;display:flex;flex-direction:column;gap:18px}
+.flow:before{content:"";position:absolute;left:21px;top:22px;bottom:22px;width:2px;background:linear-gradient(180deg,rgba(127,227,242,.15),rgba(127,227,242,.6),rgba(185,166,255,.6))}
+.flow:after{content:"";position:absolute;left:18px;top:22px;width:8px;height:8px;border-radius:50%;background:#bff6ff;box-shadow:0 0 12px 4px rgba(127,227,242,.8);animation:pulse 3.6s linear infinite}
+@keyframes pulse{0%{top:22px;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:calc(100% - 30px);opacity:0}}
+.flow li{position:relative;display:flex;gap:18px;align-items:flex-start}
+.flow-n{flex:none;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Cinzel",serif;font-weight:600;color:#0b1016;background:linear-gradient(180deg,#bff6ff,#6fd3e6);box-shadow:0 0 0 4px #0b1016,0 0 18px rgba(127,227,242,.45);z-index:1}
+.flow li:last-child .flow-n{background:linear-gradient(180deg,#e6dcff,#a996ff);box-shadow:0 0 0 4px #0b1016,0 0 18px rgba(185,166,255,.5)}
+.flow b{display:block;font-size:17px;color:#eefaff}
+.flow span{font-size:14px;color:#9fb4c1}
+.ai-shot{position:relative;border-radius:8px;overflow:hidden;box-shadow:0 0 0 1px rgba(127,227,242,.45),0 0 60px rgba(60,190,220,.18),0 40px 80px rgba(0,0,0,.55)}
+.ai-badge{position:absolute;right:14px;top:14px;font-family:"Cinzel",serif;font-size:11px;letter-spacing:.3em;color:#0b1016;background:#8ff0ff;padding:5px 10px;border-radius:2px}
+.ai-note{margin:22px 0 0;font-size:13px;color:#7f95a3}
+.ai-stat{display:flex;gap:28px;flex-wrap:wrap;margin-top:30px}
+.ai-stat div{border-left:2px solid rgba(127,227,242,.6);padding-left:14px}
+.ai-stat b{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-size:26px;color:#f2fbff;line-height:1.3}
+.ai-stat span{font-size:12px;color:#8fa6b4;letter-spacing:.08em}
+
+.prem{display:inline-block;margin-top:10px;font-size:11px;letter-spacing:.12em;color:#b8a57c;border:1px solid rgba(184,165,124,.45);border-radius:3px;padding:1px 8px}
+.foot-logo{width:min(320px,70vw);margin:0 auto}
+.foot-sub{margin:20px 0 22px;font-family:"Cinzel",serif;font-size:10px;letter-spacing:.3em;color:#a8915e}
+
+/* ヘッダー(2026-11-21 ユーザー:上に何もなくてさびしい。PC は横並びのリンク、スマホはハンバーガー) */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;height:64px;background:linear-gradient(180deg,rgba(14,11,20,.92),rgba(14,11,20,.78));backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid rgba(205,180,125,.35);box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.nav-in{max-width:1240px;height:100%;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:24px}
+.nav-logo{display:flex;align-items:center;flex:none}
+.nav-logo img{height:40px;width:auto}
+.nav-links{display:flex;gap:4px;margin-left:auto;align-items:center}
+.nav-links a{position:relative;padding:8px 10px;color:#e6dccb;text-decoration:none;font-size:14px;letter-spacing:.08em;display:flex;flex-direction:column;align-items:center;line-height:1.2}
+.nav-links a small{font-family:"Cinzel",serif;font-size:9px;letter-spacing:.24em;color:#a8915e;margin-top:3px}
+.nav-links a:after{content:"";position:absolute;left:50%;right:50%;bottom:2px;height:1px;background:#d9c38f;transition:left .2s,right .2s}
+.nav-links a:hover{color:#fff4d6}
+.nav-links a:hover:after{left:14px;right:14px}
+.nav-dl{flex:none;min-height:40px;padding:0 20px;font-size:14px}
+.nav-menu{display:none;margin-left:auto}
+.nav-menu summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(205,180,125,.5);border-radius:4px}
+.nav-menu summary::-webkit-details-marker{display:none}
+.nav-menu summary span{position:relative;width:20px;height:2px;background:#e9d9ae}
+.nav-menu summary span:before,.nav-menu summary span:after{content:"";position:absolute;left:0;width:20px;height:2px;background:#e9d9ae}
+.nav-menu summary span:before{top:-6px}.nav-menu summary span:after{top:6px}
+.nav-menu[open] summary span{background:transparent}
+.nav-menu[open] summary span:before{top:0;transform:rotate(45deg)}
+.nav-menu[open] summary span:after{top:0;transform:rotate(-45deg)}
+.nav-drop{position:absolute;left:0;right:0;top:64px;background:#120f17;box-shadow:0 20px 40px rgba(0,0,0,.5);border-bottom:1px solid rgba(205,180,125,.35);padding:8px 20px 20px;display:flex;flex-direction:column}
+.nav-drop a{padding:14px 4px;color:#ebe3d4;text-decoration:none;font-size:16px;border-bottom:1px solid rgba(205,180,125,.15);display:flex;justify-content:space-between;align-items:center}
+.nav-drop a small{font-family:"Cinzel",serif;font-size:10px;letter-spacing:.24em;color:#a8915e}
+.nav-drop .btn{margin-top:16px;border-bottom:0;justify-content:center}
+.nav-drop a.btn-gold{color:#2a2016}
+.pm section,.pm header.hero{scroll-margin-top:64px}
+/* ヘッダーのリンクで、その場所までなめらかに動く(2026-11-21 ユーザー)。動きを減らす設定の人には動かさない */
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.hero{padding-top:64px}
+@media (max-width:1180px){.nav-links{display:none}.nav-menu{display:block}.nav-in{gap:12px}.nav-dl{display:none}}
+
+/* ===== 動き(2026-11-21 ユーザー:雰囲気に合う範囲で控えめに)。JS が動いたときだけ html に .js がつく ===== */
+/* ① ふわっと出る */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+/* ② 今いる場所のリンクに金の下線 */
+.nav-links a.on{color:#fff4d6}
+.nav-links a.on:after{left:14px;right:14px}
+/* ③ トップ絵の奥行き(JS が --py を入れる) */
+.hero-kv img{transform:translate3d(0,calc(var(--py,0) * 1px),0);will-change:transform}
+
+/* ④ 光の粒と羽(トップ絵の上・雲の下) */
+.hero-fx{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.hero-fx i{position:absolute;bottom:-20px;border-radius:50%;background:radial-gradient(circle,#fff 0,#ffe7a8 22%,rgba(255,196,96,.55) 45%,rgba(255,190,90,0) 72%);box-shadow:0 0 10px 2px rgba(255,205,120,.35);mix-blend-mode:screen;animation:mote linear infinite;opacity:0}
+.hero-fx b{position:absolute;top:-40px;width:18px;height:30px;opacity:0;animation:feather linear infinite;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 30'%3E%3Cpath d='M9 1C15 6 16 16 10 26L9 29 8 26C2 16 3 6 9 1Z' fill='%23fff' fill-opacity='.92'/%3E%3Cpath d='M9 4V29' stroke='%23e8dcc8' stroke-width='.8'/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 2px 3px rgba(120,90,140,.25))}
+@keyframes mote{0%{transform:translate(0,0);opacity:0}15%{opacity:.9}85%{opacity:.7}100%{transform:translate(var(--dx,20px),-62vh);opacity:0}}
+@keyframes feather{0%{transform:translate(0,0) rotate(-20deg);opacity:0}10%{opacity:.95}50%{transform:translate(var(--dx,40px),45vh) rotate(25deg)}90%{opacity:.85}100%{transform:translate(calc(var(--dx,40px) * -.4),95vh) rotate(-15deg);opacity:0}}
+
+/* ===== 右のお知らせ(広い画面は右の余白に固定。せまい画面は本文の中の区画) ===== */
+.news{max-width:820px;margin:0 auto;padding:56px 24px 8px}
+.news-box{border:1px solid rgba(205,180,125,.35);border-radius:6px;background:linear-gradient(180deg,rgba(30,24,36,.94),rgba(20,16,26,.94));box-shadow:0 12px 32px rgba(0,0,0,.35);overflow:hidden}
+.news-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px;padding:12px 16px 10px;border-bottom:1px solid rgba(205,180,125,.22)}
+.news-head b{font-family:"Zen Antique",serif;font-weight:400;font-size:17px;color:#f1e6c8;letter-spacing:.08em}
+.news-head small{font-family:"Cinzel",serif;font-size:9px;letter-spacing:.26em;color:#a8915e}
+.news-ver{display:none;padding:12px 16px;border-bottom:1px solid rgba(205,180,125,.16);background:rgba(205,180,125,.06)}
+.news-ver.ok{display:block}
+.news-ver .v{display:flex;align-items:center;gap:8px;font-size:13px;color:#e9d9ae;font-weight:700;letter-spacing:.04em}
+.news-ver .v:before{content:"";width:7px;height:7px;border-radius:50%;background:#8fe3a8;box-shadow:0 0 8px 2px rgba(143,227,168,.55)}
+.news-ver .d{font-size:11px;color:#a99c86;margin-left:auto;font-weight:400}
+.news-ver ul{margin:6px 0 0;padding:0 0 0 1.1em;font-size:12px;color:#cfc4b2;line-height:1.7}
+.news-list{list-style:none;margin:0;padding:4px 0}
+.news-list li{border-bottom:1px solid rgba(205,180,125,.1)}
+.news-list li:last-child{border-bottom:0}
+.news-list details summary{list-style:none;cursor:pointer;padding:10px 16px;display:grid;grid-template-columns:auto 1fr;gap:2px 10px;align-items:baseline}
+.news-list details summary::-webkit-details-marker{display:none}
+.news-list time{font-family:"Cinzel",serif;font-size:11px;color:#b8a57c;letter-spacing:.08em}
+.news-list .t{font-size:13px;color:#e6dccb;line-height:1.55}
+.news-list summary:hover .t{color:#fff4d6}
+.news-list .x{padding:0 16px 12px 16px;font-size:12px;color:#b9ae9c;line-height:1.75;white-space:pre-line}
+.news-foot{padding:10px 16px 12px;font-size:11px;color:#8d8272;border-top:1px solid rgba(205,180,125,.16);line-height:1.6}
+@media (min-width:1680px){
+  .news{position:fixed;z-index:40;right:max(20px,calc((100vw - 1120px) / 2 - 300px));top:88px;width:260px;margin:0;padding:0;opacity:0;transform:translateX(16px);pointer-events:none;transition:opacity .5s,transform .5s}
+  .news.show{opacity:1;transform:none;pointer-events:auto}
+  .news-box{max-height:calc(100vh - 112px);display:flex;flex-direction:column}
+  .news-list{overflow:auto;scrollbar-width:thin;scrollbar-color:#5a4c38 transparent}
+}
+@media (prefers-reduced-motion:reduce){
+  .js .rv{opacity:1;transform:none;transition:none}
+  .hero-fx{display:none}
+  .hero-kv img,.hero-clouds{transform:none}
+}
+
+/* ===== できたての世界(2026-11-21:新しいことを強みに) ===== */
+.newborn{position:relative;padding:110px 0 100px;background:radial-gradient(900px 420px at 50% 0,rgba(240,200,120,.10),transparent 70%),linear-gradient(180deg,#16121b,#141118);overflow:hidden}
+.newborn:before{content:"";position:absolute;inset:0;background:url("img/shot_map.jpg") center/cover no-repeat;opacity:.06;filter:sepia(.6) blur(1px);pointer-events:none}
+@media (max-width:720px){.newborn:before{display:none}}
+.newborn .wrap{position:relative}
+.nb-h{font-family:"Zen Antique",serif;font-weight:400;font-size:clamp(28px,4.2vw,46px);line-height:1.45;margin:8px 0 0;color:#f4e9cc;letter-spacing:.06em;text-align:center}
+.nb-h em{font-style:normal;color:#f0cf85}
+.nb-lead{max-width:720px;margin:22px auto 0;text-align:center;color:#d4c9b6;font-size:16px}
+.nb-grid{margin:52px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px}
+.nb-card{position:relative;padding:26px 22px 24px;border:1px solid #4a3f2f;border-radius:6px;background:linear-gradient(180deg,rgba(38,31,44,.9),rgba(26,21,32,.9))}
+.nb-card .no{font-family:"Cinzel",serif;font-size:11px;letter-spacing:.3em;color:#a8915e}
+.nb-card h3{font-family:"Zen Antique",serif;font-weight:400;font-size:21px;margin:6px 0 8px;color:#f1e6c8;line-height:1.45}
+.nb-card p{margin:0;font-size:14px;color:#c4baa9;line-height:1.85}
+.nb-card:after{content:"";position:absolute;right:14px;top:14px;width:9px;height:9px;border:1px solid #b39760;transform:rotate(45deg)}
+.nb-vs{margin:46px auto 0;max-width:900px;display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;border:1px solid rgba(205,180,125,.3);border-radius:6px;overflow:hidden}
+.nb-vs > div{padding:20px 24px}
+.nb-vs .big{background:rgba(255,255,255,.02);color:#9d927f}
+.nb-vs .us{background:rgba(240,200,120,.07);color:#efe3c6}
+.nb-vs h4{margin:0 0 8px;font-size:13px;letter-spacing:.14em;font-weight:700}
+.nb-vs .big h4{color:#8d8272}.nb-vs .us h4{color:#e9cf8f}
+.nb-vs ul{margin:0;padding:0 0 0 1.1em;font-size:14px;line-height:1.9}
+.nb-vs .mid{display:flex;align-items:center;justify-content:center;padding:0 6px;color:#b39760;font-family:"Cinzel",serif;font-size:13px;letter-spacing:.2em;border-left:1px solid rgba(205,180,125,.2);border-right:1px solid rgba(205,180,125,.2)}
+@media (max-width:720px){.nb-vs{grid-template-columns:1fr}.nb-vs .mid{padding:6px;border:0;border-top:1px solid rgba(205,180,125,.2);border-bottom:1px solid rgba(205,180,125,.2)}}
+.nb-stats{margin:44px auto 0;display:flex;justify-content:center;flex-wrap:wrap;gap:12px 44px}
+.nb-stats div{text-align:center;min-width:150px}
+.nb-stats b{display:block;font-family:"Cinzel",serif;font-size:38px;font-weight:600;color:#f3dfa8;line-height:1.2;letter-spacing:.04em}
+.nb-stats b small{font-family:"Zen Kaku Gothic New",sans-serif;font-size:15px;margin-left:4px;color:#d9c38f}
+.nb-stats span{font-size:12px;color:#a99c86;letter-spacing:.1em}
+.nb-note{margin:18px auto 0;text-align:center;font-size:12px;color:#8d8272}
+
+/* ===== キャラクター ===== */
+.chara{padding:96px 0 40px;position:relative;background:linear-gradient(180deg,transparent,rgba(120,100,170,.07) 40%,transparent)}
+.ch-main{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:36px;align-items:center}
+@media (max-width:820px){.ch-main{grid-template-columns:1fr}}
+.ch-art{position:relative;aspect-ratio:900/592}
+.ch-art:before{content:"";position:absolute;inset:6% 10%;border-radius:50%;background:radial-gradient(closest-side,rgba(255,236,190,.22),transparent);filter:blur(10px)}
+.ch-art img{position:relative;width:100%;height:100%;object-fit:contain;animation:floaty 6s ease-in-out infinite}
+@keyframes floaty{50%{transform:translateY(-8px)}}
+.ch-name{font-family:"Zen Antique",serif;font-size:clamp(26px,3.4vw,36px);color:#f4e9cc;margin:4px 0 0;letter-spacing:.08em;font-weight:400}
+.ch-role{font-size:13px;color:#b8a57c;letter-spacing:.12em}
+.ch-desc{color:#cfc4b2;font-size:15px;margin:14px 0 0}
+.ch-talk{margin-top:22px;display:flex;gap:16px;align-items:flex-start}
+.ch-face{flex:none;width:92px;height:92px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 2px #1c1822,0 0 0 3px #b39760;background:#efe7f5}
+.ch-face img{width:100%;height:100%;object-fit:cover;transition:opacity .25s}
+.ch-bubble{position:relative;flex:1;padding:14px 18px;border:1px solid rgba(205,180,125,.45);border-radius:6px;background:rgba(28,23,34,.9);font-size:15px;color:#efe5d1;min-height:72px;white-space:pre-line}
+.ch-bubble:before{content:"";position:absolute;left:-7px;top:26px;width:12px;height:12px;background:rgba(28,23,34,1);border-left:1px solid rgba(205,180,125,.45);border-bottom:1px solid rgba(205,180,125,.45);transform:rotate(45deg)}
+.ch-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;padding-left:108px}
+.ch-btns button{font:inherit;font-size:13px;cursor:pointer;padding:6px 14px;border-radius:999px;color:#e6dccb;background:transparent;border:1px solid rgba(205,180,125,.45);transition:background .2s,color .2s}
+.ch-btns button:hover{background:rgba(205,180,125,.12)}
+.ch-btns button.on{background:linear-gradient(180deg,#f4e7c3,#d9bf86);color:#2a2016;border-color:#d9bf86}
+@media (max-width:520px){.ch-btns{padding-left:0}}
+.ch-sub{margin-top:64px}
+.ch-sub h3{font-family:"Zen Antique",serif;font-weight:400;font-size:22px;color:#f1e6c8;text-align:center;margin:0 0 6px;letter-spacing:.08em}
+.ch-sub > p{text-align:center;color:#a99c86;font-size:13px;margin:0 0 22px}
+.jobs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.job{padding:16px 16px 14px;border:1px solid #4a3f2f;border-radius:6px;background:rgba(34,29,41,.7)}
+.job b{display:flex;align-items:center;gap:8px;font-size:15px;color:#f1e6c8}
+.job b:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c,#c8b890);box-shadow:0 0 8px var(--c,#c8b890)}
+.job span{display:block;margin-top:6px;font-size:12.5px;color:#b9ae9c;line-height:1.7}
+.people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:820px){.jobs,.people{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.jobs,.people{grid-template-columns:1fr}}
+.person{display:flex;gap:14px;padding:16px;border:1px solid #3e3529;border-radius:6px;background:rgba(26,21,32,.75)}
+.person i{flex:none;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-family:"Zen Antique",serif;font-size:20px;color:#1c1620;background:var(--c,#c8b890);box-shadow:0 0 0 2px #1c1822,0 0 0 3px #8f7445}
+.person b{display:block;font-size:14px;color:#f1e6c8}
+.person span{display:block;margin-top:4px;font-size:12.5px;color:#b9ae9c;line-height:1.7}
+
+/* ===== 開発のしくみ ===== */
+.dev{padding:100px 0;background:linear-gradient(180deg,#141118,#17131c 50%,#141118)}
+.dev-concept{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px}
+.dev-box{padding:24px 24px 22px;border:1px solid #4a3f2f;border-radius:6px;background:rgba(34,29,41,.6)}
+.dev-box .no{font-family:"Cinzel",serif;font-size:11px;letter-spacing:.3em;color:#a8915e}
+.dev-box h3{font-family:"Zen Antique",serif;font-weight:400;font-size:21px;color:#f1e6c8;margin:6px 0 10px}
+.dev-box p{margin:0;font-size:14px;color:#c4baa9;line-height:1.85}
+.swatch{display:flex;gap:8px;margin-top:14px}
+.swatch span{flex:1;height:34px;border-radius:4px;box-shadow:0 0 0 1px rgba(255,255,255,.08) inset;position:relative}
+.swatch span:after{content:attr(data-n);position:absolute;left:0;right:0;top:38px;text-align:center;font-size:10.5px;color:#9d927f;white-space:nowrap}
+.dev-box.sw{padding-bottom:40px}
+.rules{margin:40px 0 0;list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:1px;background:rgba(205,180,125,.22);border:1px solid rgba(205,180,125,.22);border-radius:6px;overflow:hidden}
+.rules li{background:#1a1620;padding:22px 20px}
+.rules svg{width:26px;height:26px;color:#e2c98f}
+.rules b{display:block;margin-top:8px;font-size:15px;color:#f1e6c8}
+.rules span{display:block;margin-top:6px;font-size:13px;color:#b9ae9c;line-height:1.75}
+.tech{margin-top:30px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.tech span{font-size:12px;letter-spacing:.06em;color:#d9cdb5;padding:5px 14px;border-radius:999px;border:1px solid rgba(205,180,125,.35);background:rgba(205,180,125,.05)}
+
+/* ===== 更新履歴 ===== */
+.hist{max-width:860px;margin:0 auto}
+.hist-month{font-family:"Cinzel",serif;font-size:13px;letter-spacing:.24em;color:#b8a57c;margin:26px 0 8px;padding-bottom:6px;border-bottom:1px solid rgba(205,180,125,.25)}
+.hist-month:first-child{margin-top:0}
+.hist ul{list-style:none;margin:0;padding:0}
+.hist li{border-bottom:1px solid rgba(205,180,125,.08)}
+.hist summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:64px 1fr 18px;gap:12px;padding:11px 4px;align-items:baseline}
+.hist summary::-webkit-details-marker{display:none}
+.hist summary:after{content:"+";color:#a8915e;font-size:16px;text-align:center}
+.hist details[open] summary:after{content:"−"}
+.hist time{font-family:"Cinzel",serif;font-size:12px;color:#b8a57c}
+.hist .t{font-size:14.5px;color:#e6dccb}
+.hist summary:hover .t{color:#fff4d6}
+.hist .x{padding:0 4px 14px 80px;font-size:13px;color:#b9ae9c;line-height:1.85;white-space:pre-line}
+@media (max-width:560px){.hist .x{padding-left:4px}}
+.hist .more{display:none}
+.hist.all .more{display:block}
+.hist-btn{display:flex;justify-content:center;margin-top:26px}
+.hist-btn button{font:inherit;cursor:pointer;color:#e9d9ae;background:transparent;border:1px solid rgba(205,180,125,.5);border-radius:999px;padding:10px 28px;font-size:14px;letter-spacing:.08em}
+.hist-btn button:hover{background:rgba(205,180,125,.1)}
+
+/* ===== 写真を大きく見る ===== */
+.zoomable{cursor:zoom-in}
+.lb{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;background:rgba(10,8,14,.92);opacity:0;pointer-events:none;transition:opacity .25s}
+.lb.open{opacity:1;pointer-events:auto}
+.lb figure{margin:0;max-width:min(1280px,92vw);text-align:center}
+.lb img{max-width:100%;max-height:80vh;border:1px solid rgba(205,180,125,.45);border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,.6);transform:scale(.97);transition:transform .25s}
+.lb.open img{transform:none}
+.lb figcaption{margin-top:12px;font-size:13px;color:#d9cdb5;letter-spacing:.06em}
+.lb button{position:absolute;font:inherit;cursor:pointer;color:#f1e6c8;background:rgba(30,24,36,.8);border:1px solid rgba(205,180,125,.5);border-radius:50%;width:48px;height:48px;font-size:20px;line-height:1}
+.lb .lb-x{top:18px;right:18px}
+.lb .lb-p{left:18px;top:50%;margin-top:-24px}
+.lb .lb-n{right:18px;top:50%;margin-top:-24px}
+.lb button:hover{background:rgba(205,180,125,.2)}
+@media (prefers-reduced-motion:reduce){.ch-art img{animation:none}}
+
+/* ===== 世界のうつりかわり(更新履歴の上。昔の版を組み立て直して撮った写真) ===== */
+.evo{max-width:1000px;margin:0 auto 64px}
+.evo-screen{position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;border:1px solid #6a5838;box-shadow:0 0 0 4px #1a1620,0 0 0 5px #4a3f2f,0 24px 60px rgba(0,0,0,.5);background:#0c0a10}
+.evo-screen figure{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1.1s ease}
+.evo-screen figure.on{opacity:1}
+.evo-screen img{width:100%;height:100%;object-fit:cover;transform:scale(1.04);transition:transform 6s linear}
+.evo-screen figure.on img{transform:scale(1)}
+.evo-cap{position:absolute;left:16px;bottom:14px;right:16px;display:flex;align-items:flex-end;gap:14px;pointer-events:none}
+.evo-cap b{font-family:"Cinzel",serif;font-size:clamp(26px,4vw,44px);font-weight:600;color:#fff4d6;line-height:1;text-shadow:0 2px 12px rgba(0,0,0,.8)}
+.evo-cap span{font-size:13.5px;color:#f1e6c8;background:rgba(16,12,20,.78);border:1px solid rgba(205,180,125,.4);border-radius:4px;padding:5px 12px;line-height:1.6}
+.evo-tag{position:absolute;right:12px;top:12px;font-family:"Cinzel",serif;font-size:11px;letter-spacing:.24em;color:#2a2016;background:linear-gradient(180deg,#f4e7c3,#d9bf86);padding:3px 10px;border-radius:3px}
+.evo-line{position:relative;display:flex;justify-content:space-between;margin:22px 6px 0}
+.evo-line:before{content:"";position:absolute;left:8px;right:8px;top:8px;height:2px;background:rgba(205,180,125,.25)}
+.evo-bar{position:absolute;left:8px;top:8px;height:2px;width:0;background:linear-gradient(90deg,#b39760,#f0cf85);box-shadow:0 0 8px rgba(240,207,133,.6);transition:width .5s}
+.evo-line button{position:relative;font:inherit;cursor:pointer;background:none;border:0;padding:0;display:flex;flex-direction:column;align-items:center;gap:6px;color:#a99c86;font-size:12px;min-width:44px}
+.evo-line button i{width:18px;height:18px;border-radius:50%;background:#1a1620;border:2px solid #6a5838;transition:background .3s,border-color .3s,box-shadow .3s}
+.evo-line button.done i{border-color:#b39760;background:#3a2f26}
+.evo-line button.on i{border-color:#f0cf85;background:#f0cf85;box-shadow:0 0 10px rgba(240,207,133,.7)}
+.evo-line button.on{color:#fff4d6}
+.evo-ctrl{display:flex;justify-content:center;gap:10px;margin-top:16px}
+.evo-ctrl button{font:inherit;cursor:pointer;font-size:13px;color:#e9d9ae;background:transparent;border:1px solid rgba(205,180,125,.45);border-radius:999px;padding:7px 18px;min-height:40px}
+.evo-ctrl button:hover{background:rgba(205,180,125,.1)}
+.cmp-h{text-align:center;margin:56px 0 6px;font-family:"Zen Antique",serif;font-weight:400;font-size:22px;color:#f1e6c8;letter-spacing:.06em}
+.cmp-p{text-align:center;margin:0 0 18px;font-size:13px;color:#a99c86}
+.cmp{position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;border:1px solid #6a5838;user-select:none;touch-action:pan-y;cursor:ew-resize;--x:50%}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.cmp .old{clip-path:inset(0 calc(100% - var(--x)) 0 0)}
+.cmp .knob{position:absolute;top:0;bottom:0;left:var(--x);width:2px;margin-left:-1px;background:#f0cf85;box-shadow:0 0 10px rgba(240,207,133,.8)}
+.cmp .knob:after{content:"‹ ›";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#1a1620;border:2px solid #f0cf85;color:#f0cf85;display:flex;align-items:center;justify-content:center;font-size:16px;letter-spacing:2px}
+.cmp .lab{position:absolute;top:12px;font-size:12px;letter-spacing:.1em;color:#f3ead6;padding:3px 10px;background:rgba(16,12,20,.78);border:1px solid rgba(205,180,125,.4);border-radius:3px}
+.cmp .l1{left:12px}.cmp .l2{right:12px}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.evo-note{margin:12px 0 0;text-align:center;font-size:12px;color:#8d8272}
+.evo-txt{display:none;margin:14px 4px 0;text-align:center;font-size:14px;color:#e6dccb;min-height:3.4em}
+@media (max-width:600px){.evo-cap span{display:none}.evo-cap b{font-size:24px}.evo-txt{display:block}.evo-line button{font-size:11px;min-width:40px}}
+</style>
+</head>
+<body>
+<div class="pm" id="top">
+<nav class="nav" aria-label="ページの中の移動">
+  <div class="nav-in">
+    <a class="nav-logo" href="#top"><img src="img/logo_title.png" alt="ポンコツ女神と転生者 トップへ" /></a>
+    <div class="nav-links"><a href="#mmo">ゲーム紹介<small>ABOUT</small></a><a href="#newborn">はじまり<small>NEWBORN</small></a><a href="#ai">AI<wbr>自動アップデート<small>SYSTEM</small></a><a href="#story">ストーリー<small>STORY</small></a><a href="#chara">キャラクター<small>CHARACTER</small></a><a href="#world">ワールド<small>WORLD</small></a><a href="#dev">開発<small>BEHIND</small></a><a href="#faq">Q&amp;A<small>FAQ</small></a></div>
+    <a class="btn btn-gold nav-dl" href="#download">ダウンロード</a>
+    <details class="nav-menu"><summary aria-label="メニューを開く"><span></span></summary>
+      <div class="nav-drop"><a href="#mmo">ゲーム紹介<small>ABOUT</small></a><a href="#newborn">できたての<wbr>世界<small>NEWBORN</small></a><a href="#ai">AI<wbr>自動アップデート<small>SYSTEM</small></a><a href="#story">ストーリー<small>STORY</small></a><a href="#chara">キャラクター<small>CHARACTER</small></a><a href="#features">特長<small>FEATURES</small></a><a href="#world">ワールド<small>WORLD</small></a><a href="#dev">開発のしくみ<small>BEHIND</small></a><a href="#history">更新履歴<small>HISTORY</small></a><a href="#faq">よくある<wbr>質問<small>Q&amp;A</small></a><a class="btn btn-gold" href="#download">ダウンロード<wbr>(Windows)</a></div>
+    </details>
+  </div>
+</nav>
+<script>
+document.querySelectorAll(".nav-drop a").forEach(function(a){a.addEventListener("click",function(){var d=a.closest("details");if(d)d.open=false;});});
+</script>
+
+
+<header class="hero">
+  <div class="hero-kv">
+    <img src="img/key_visual.jpg" alt="空に浮かぶ島と山の城を背に、手をさしのべて笑う金色の髪の女神。右に「ポンコツ女神と転生者」のロゴ" />
+    <div class="hero-fx" aria-hidden="true"></div>
+  </div>
+  <div class="hero-clouds" aria-hidden="true"></div>
+  <div class="hero-cta">
+    <div class="hero-btns">
+      <a class="btn btn-gold" href="#download">ダウンロード<wbr>(Windows)</a>
+      <a class="btn btn-ghost" href="#mmo">どんな<wbr>ゲーム?</a>
+    </div>
+    <div class="hero-meta"><i>オンライン MMORPG</i><span>◆</span><i>Windows 10 / 11</i><span>◆</span><i>AI<wbr>自動アップデートシステム</i></div>
+  </div>
+</header>
+<div class="dusk" aria-hidden="true"><div class="orn"><i></i><b></b><i></i></div></div>
+
+<section class="mmo" id="mmo">
+  <div class="wrap">
+    <div class="mmo-tag">ONLINE MMORPG</div>
+    <h2 class="mmo-h">ひとつの<wbr>世界を、<br />みんなで<wbr>旅する。</h2>
+    <p class="mmo-lead">町を<wbr>歩けば、<wbr>ほかの<wbr>転生者たちとすれちがう。<wbr>パーティを<wbr>組んで<wbr>魔物に<wbr>挑み、<wbr>ギルドで<wbr>仲間と<wbr>領地を<wbr>育てる。<wbr>ポンコツ女神の<wbr>異世界は、<wbr>いつも<wbr>オンラインでつながっています。</p>
+    <div class="pillars">
+      <div class="pillar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><circle cx="17" cy="9" r="2.4"></circle><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"></path><path d="M15 14.2c.6-.2 1.3-.3 2-.3 2.2 0 3.9 1.5 4.4 4.1"></path></svg><b>パーティ</b><span>仲間と<wbr>組んで、<wbr>強敵や<wbr>ダンジョンへ</span></div>
+      <div class="pillar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4"></path><path d="M5 4h11l-2 3.5 2 3.5H5"></path><path d="M3 21h8"></path></svg><b>ギルド</b><span>旗のもとに<wbr>集まり、<wbr>領地を<wbr>育てる</span></div>
+      <div class="pillar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v10H9l-5 4z"></path><path d="M8 9h8M8 12h5"></path></svg><b>フレンド・<wbr>チャット</b><span>出会った<wbr>人と、<wbr>いつでも<wbr>話せる</span></div>
+      <div class="pillar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"></path></svg><b>ずっと<wbr>続く<wbr>世界</b><span>章を<wbr>重ねて、<wbr>世界は<wbr>東へ<wbr>北へ<wbr>広がる</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="newborn" id="newborn">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:0">
+      <div class="latin">A Newborn World</div>
+      <h2 class="nb-h">できたての<wbr>世界だから、<br /><em>あなたが<wbr>「はじまり」</em>になる。</h2>
+      <div class="orn" aria-hidden="true"><i></i><b></b><i></i></div>
+      <p class="nb-lead">大きな MMORPG には、<wbr>何百万人もの<wbr>先輩がいます。<wbr>この<wbr>世界は、<wbr>まだ<wbr>生まれたばかり。<wbr>地図の<wbr>端は<wbr>白く、<wbr>名前のない<wbr>洞窟があって、<wbr>町の<wbr>歴史はこれから<wbr>書かれます。<wbr>小さいことは、<wbr>弱さではなく、<wbr>いまだけの<wbr>特権です。</p>
+    </div>
+    <div class="nb-grid">
+      <div class="nb-card"><div class="no">01 ― FIRST STEPS</div><h3>最初の<wbr>一歩を、<wbr>あなたが</h3><p>まだ<wbr>誰も<wbr>見ていない<wbr>景色、<wbr>誰も<wbr>倒していない<wbr>強敵。<wbr>いま<wbr>始める<wbr>人は、<wbr>みんな<wbr>「はじまりの<wbr>転生者」<wbr>です。</p></div>
+      <div class="nb-card"><div class="no">02 ― YOUR VOICE</div><h3>声が、<wbr>そのまま<wbr>届く</h3><p>作り<wbr>手とのあいだに、<wbr>何人もの<wbr>窓口はありません。<wbr>ゲームの<wbr>中から<wbr>送った<wbr>一言が、<wbr>その<wbr>日のうちに<wbr>直しになることもあります。</p></div>
+      <div class="nb-card"><div class="no">03 ― LIGHT START</div><h3>軽くて、<wbr>すぐ<wbr>始められる</h3><p>はじめの<wbr>ダウンロードは<wbr>約 75 MB。<wbr>何十 GB も<wbr>待たずに、<wbr>今夜そのまま<wbr>冒険へ。</p></div>
+      <div class="nb-card"><div class="no">04 ― GROW TOGETHER</div><h3>世界と<wbr>一緒に<wbr>育つ</h3><p>章が<wbr>増え、<wbr>町がにぎわい、<wbr>世界は<wbr>東へ<wbr>北へ<wbr>広がっていく。<wbr>昨日との<wbr>違いは<wbr>「更新のお<wbr>知らせ」<wbr>で<wbr>毎日見られます。</p></div>
+    </div>
+    <div class="nb-vs">
+      <div class="big"><h4>大きな MMORPG では</h4><ul><li>先輩が<wbr>多く、<wbr>追いつくまでが<wbr>長い</li><li>要望が<wbr>届くまで、<wbr>数か<wbr>月かかることも</li><li>はじめの<wbr>ダウンロードが<wbr>数十 GB</li></ul></div>
+      <div class="mid">VS</div>
+      <div class="us"><h4>この<wbr>世界では</h4><ul><li>みんな<wbr>同じ<wbr>スタートライン</li><li>直しは<wbr>最短で<wbr>数時間</li><li>約 75 MB で、<wbr>すぐ<wbr>遊べる</li></ul></div>
+    </div>
+    <div class="nb-stats">
+      <div><b data-to="26">0<small>日</small></b><span>この<wbr>世界が<wbr>生まれてから</span></div><div><b data-to="121">0<small>回</small></b><span>これまでの<wbr>更新</span></div>
+      <div><b data-ver>―</b><span>いまの<wbr>版</span></div>
+    </div>
+    <p class="nb-note">数字は、<wbr>配るたびに<wbr>自動で<wbr>新しくなります。</p>
+  </div>
+</section>
+
+<section class="ai" id="ai">
+  <div class="wrap ai-grid">
+    <div>
+      <div class="ai-badge-wrap"><span class="ai-name">AI<wbr>自動アップデートシステム</span><span class="ai-tag">AI AUTO UPDATE SYSTEM</span></div>
+      <h2 class="ai-h">あなたの<wbr>声が、<br /><em>次の<wbr>ログインの<wbr>世界</em>になる。</h2>
+      <p class="ai-lead">この<wbr>ゲームは、<wbr>プログラムも、<wbr>絵も、<wbr>物語も、<wbr>すべて AI で<wbr>作られています。<wbr>遊びながら<wbr>気づいたことを<wbr>送ると、<wbr>AI が<wbr>読みとり、<wbr>直して、<wbr>確かめて、<wbr>そのまま<wbr>世界に<wbr>届けます。</p>
+      <ol class="flow">
+        <li><div class="flow-n">1</div><div><b>フィードバックを<wbr>送る</b><span>ゲームの<wbr>中で F8 を<wbr>押して<wbr>「不具合」<wbr>「ゲーム体験」<wbr>「提案」<wbr>「感想」<wbr>から<wbr>選ぶだけ。<wbr>画面の<wbr>写真もいっしょに。</span></div></li>
+        <li><div class="flow-n">2</div><div><b>AI が<wbr>読みとって<wbr>直す</b><span>バグや<wbr>遊びにくさは、<wbr>届いたその<wbr>時間のうちに<wbr>直しはじめます。</span></div></li>
+        <li><div class="flow-n">3</div><div><b>何重にも<wbr>確かめる</b><span>自動の<wbr>テストと<wbr>起動の<wbr>確認に<wbr>通ったものだけが<wbr>先へ<wbr>進みます。</span></div></li>
+        <li><div class="flow-n">4</div><div><b>次の<wbr>ログインで、<wbr>世界が<wbr>変わる</b><span>アップデートは<wbr>自動。<wbr>ダウンロードし<wbr>直す<wbr>必要はありません。</span></div></li>
+      </ol>
+      <div class="ai-stat">
+        <div><b>最短 数時間</b><span>直しが<wbr>届くまで</span></div>
+        <div><b>24 時間</b><span>毎時、<wbr>AI が<wbr>受けつける</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="ai-shot"><span class="ai-badge">IN-GAME</span><img src="img/shot_feedback.jpg" alt="ゲームの中のフィードバックの窓。種類・ひとこと・重要度・画面の写真を選んで送る" /></div>
+      <p class="ai-note">物語や<wbr>スキルの<wbr>希望などの<wbr>「提案」<wbr>は、<wbr>作者がじっくり<wbr>読んで、<wbr>これからの<wbr>開発に<wbr>生かします。</p>
+    </div>
+  </div>
+</section>
+
+<aside class="news" id="news" aria-label="更新のお知らせ">
+  <div class="news-box">
+    <div class="news-head"><b>更新のお<wbr>知らせ</b><small>NEWS</small></div>
+    <div class="news-ver" id="news-ver"></div>
+    <ul class="news-list"><li><details><summary><time datetime="2026-11-18">11/18</time><span class="t">魔物がすべて<wbr>立体<wbr>(3D)<wbr>になりました</span></summary><div class="x">・<wbr>盗賊・<wbr>忍者・<wbr>侍・<wbr>堕天使などの<wbr>人の<wbr>形の<wbr>魔物は、<wbr>服と<wbr>武器を<wbr>身につけた<wbr>立体の<wbr>姿になりました
+・<wbr>コウモリ・<wbr>キノコ・<wbr>タヌキ・<wbr>鬼・<wbr>雪男なども<wbr>立体になりました<wbr>(専用の<wbr>姿は、<wbr>これから<wbr>作っていきます)
+・<wbr>スライムは、<wbr>底が<wbr>平らでぷるんとした<wbr>姿になりました</div></details></li><li><details><summary><time datetime="2026-11-18">11/18</time><span class="t">ダンジョンの<wbr>見た<wbr>目を<wbr>作り<wbr>直しました</span></summary><div class="x">・<wbr>ダンジョンの<wbr>壁が、<wbr>角ばった<wbr>箱の<wbr>並びから、<wbr>なめらかな<wbr>岩肌・<wbr>石積みの<wbr>壁になりました<wbr>(洞窟・<wbr>地下聖堂・<wbr>地下迷宮・<wbr>氷河・<wbr>塔・<wbr>砦・<wbr>寺)
+・<wbr>入口へ<wbr>戻る<wbr>出口が、<wbr>壁に<wbr>埋まった<wbr>大きな<wbr>門になりました<wbr>(ダンジョンごとにちがう<wbr>姿)
+・<wbr>ダンジョンの<wbr>入口に、<wbr>魔物が<wbr>来ない<wbr>広場と<wbr>通路ができました
+・<wbr>王都の<wbr>地下迷宮の<wbr>入口に、<wbr>闇の<wbr>谷にかかる<wbr>橋と<wbr>近道の<wbr>台<wbr>(地下 6<wbr>・<wbr>11<wbr>・<wbr>16 層)<wbr>が<wbr>並ぶ<wbr>広間ができました</div></details></li><li><details><summary><time datetime="2026-11-18">11/18</time><span class="t">才能開花<wbr>(転職)<wbr>の<wbr>画面と<wbr>操作バーを<wbr>新しくしました</span></summary><div class="x">・<wbr>転職の<wbr>画面が<wbr>新しくなりました。<wbr>立体の<wbr>主人公が、<wbr>その<wbr>職業の<wbr>装備を<wbr>身につけて<wbr>魔法陣の<wbr>上に<wbr>立ちます
+・<wbr>下の<wbr>操作バーの HP<wbr>・<wbr>MP の<wbr>玉が、<wbr>ガラスの<wbr>中に<wbr>光が<wbr>渦巻く<wbr>玉になりました
+・<wbr>魔法を<wbr>使うと、<wbr>足もとと<wbr>杖の<wbr>先に<wbr>魔法陣が<wbr>出るようになりました
+・<wbr>会話の<wbr>顔が、<wbr>その<wbr>人の<wbr>立体の<wbr>顔になりました
+・<wbr>最後の<wbr>確認の<wbr>画面に<wbr>「見た<wbr>目を<wbr>変える」<wbr>ボタンがつきました
+・<wbr>文字が<wbr>読みやすい<wbr>太さになりました</div></details></li><li><details><summary><time datetime="2026-11-17">11/17</time><span class="t">町と<wbr>景色の<wbr>見た<wbr>目を<wbr>大きく<wbr>変えました</span></summary><div class="x">・<wbr>木の<wbr>種類と<wbr>色が<wbr>増え、<wbr>地域ごとに<wbr>雰囲気がちがうようになりました<wbr>(紅葉・<wbr>枯れ<wbr>木・<wbr>毒の<wbr>森など)
+・<wbr>村の<wbr>家・<wbr>屋根・<wbr>石畳の<wbr>色合いを、<wbr>落ち<wbr>着いた<wbr>暖かい<wbr>色にしました
+・<wbr>明かり<wbr>(街灯・<wbr>たき<wbr>火など)<wbr>に<wbr>本物の<wbr>光がつき、<wbr>画面全体の<wbr>色づくりを<wbr>見直しました
+・<wbr>女神像と<wbr>ポラリスに、<wbr>ほのかな<wbr>光がつきました
+・<wbr>ダンジョンが<wbr>縦横 2 倍に<wbr>広くなりました</div></details></li><li><details><summary><time datetime="2026-11-17">11/17</time><span class="t">画面の<wbr>表示を<wbr>新しくしました</span></summary><div class="x">・<wbr>左上の<wbr>名札・<wbr>ミニマップの<wbr>枠・<wbr>強化と<wbr>弱体の<wbr>アイコン・<wbr>狙っている<wbr>敵の<wbr>札が<wbr>新しくなりました
+・<wbr>レベルアップの<wbr>演出が、<wbr>頭の<wbr>上に<wbr>小さく<wbr>出るようになりました
+・<wbr>ポーションや<wbr>メニューの<wbr>アイコンを<wbr>描き<wbr>直しました
+・<wbr>テスト版のあいだは、<wbr>女神ショップの<wbr>品がすべて<wbr>無料です</div></details></li><li><details><summary><time datetime="2026-11-14">11/14</time><span class="t">オープニングと<wbr>見た<wbr>目づくりを<wbr>新しくしました</span></summary><div class="x">・<wbr>オープニングの<wbr>流れが<wbr>変わりました<wbr>(見た<wbr>目 → 前世の<wbr>性格 → 加護 → 最後に<wbr>名前 → <wbr>「これで<wbr>転生しますか?」<wbr>の<wbr>確認。<wbr>やり<wbr>直しもできます)
+・<wbr>見た<wbr>目づくりが<wbr>画面いっぱいになりました。<wbr>見本は<wbr>ドラッグで<wbr>回転、<wbr>ホイールで<wbr>拡大。<wbr>「立つ<wbr>・<wbr>走る<wbr>・<wbr>ダッシュ・<wbr>攻撃」<wbr>で<wbr>動きも<wbr>見られます
+・<wbr>顔を<wbr>作りこめます<wbr>(目の<wbr>型・<wbr>眉の<wbr>型・<wbr>口の<wbr>形 + <wbr>「顔をくわしく<wbr>調整」<wbr>のつまみ)。<wbr>髪の<wbr>色・<wbr>瞳の<wbr>色は 20 色に
+・<wbr>主人公が、<wbr>素朴な<wbr>布の<wbr>服を<wbr>着るようになりました
+・<wbr>キャラクター選択の<wbr>絵も、<wbr>新しい<wbr>体<wbr>(正面向き)<wbr>になりました</div></details></li><li><details><summary><time datetime="2026-11-14">11/14</time><span class="t">ロングの<wbr>髪・<wbr>髪のゆれ<wbr>・<wbr>体つきの<wbr>調整</span></summary><div class="x">・<wbr>髪型に<wbr>ロング<wbr>(ぱっつんの<wbr>前髪・<wbr>すそはゆるい U 字)<wbr>が<wbr>入りました。<wbr>走ったり<wbr>向きを<wbr>変えたりすると、<wbr>長い<wbr>髪がおくれてゆれます
+・<wbr>えらべる<wbr>髪型は、<wbr>しばらく<wbr>ショートと<wbr>ロングの 2 つです。<wbr>ほかの<wbr>髪型で<wbr>作った<wbr>キャラは、<wbr>ショートで<wbr>表示されます
+・<wbr>主人公の<wbr>体を<wbr>少し<wbr>小さくして、<wbr>頭身を<wbr>下げました
+・<wbr>女性の<wbr>キャラは、<wbr>体つき<wbr>(胸と<wbr>ウエスト)<wbr>が<wbr>男性と<wbr>少し<wbr>変わります</div></details></li><li><details><summary><time datetime="2026-11-14">11/14</time><span class="t">主人公に<wbr>髪がつきました<wbr>(ショート)</span></summary><div class="x">・<wbr>新しい<wbr>体<wbr>(素体)<wbr>に、<wbr>立体の<wbr>髪がつきました。<wbr>今は<wbr>ショートだけで、<wbr>ほかの<wbr>髪型をえらんだ<wbr>キャラも、<wbr>しばらくは<wbr>ショートで<wbr>表示されます
+・<wbr>はじめの<wbr>見た<wbr>目をえらぶ<wbr>画面の<wbr>見本が、<wbr>新しい<wbr>体になりました
+・<wbr>見た<wbr>目に<wbr>「髪の<wbr>色むら」<wbr>と<wbr>「毛先の<wbr>明るさ」<wbr>が<wbr>増えました。<wbr>色むらを<wbr>大きくすると、<wbr>メッシュ<wbr>(染め<wbr>分け)<wbr>のような<wbr>髪にできます
+・<wbr>まだ<wbr>服がありません<wbr>(これから<wbr>作ります)</div></details></li></ul>
+    <div class="news-foot">直した<wbr>所は<wbr>ゲームの<wbr>タイトル画面の<wbr>「お<wbr>知らせ」<wbr>でも<wbr>見られます。</div>
+  </div>
+</aside>
+
+<section class="sec" id="story">
+  <div class="wrap story">
+    <figure class="story-shot" style="margin: 0">
+      <img src="img/shot_opening.jpg" alt="雨の夜の繁華街を、傘をさして歩く会社員" />
+      <figcaption>PROLOGUE ― 終電間際の<wbr>帰り<wbr>道</figcaption>
+    </figure>
+    <div>
+      <div class="latin">Story</div>
+      <h2 class="h2">雨の<wbr>夜、<wbr>終電帰り。</h2>
+      <div class="story-time">23:47</div>
+      <p style="margin: 0; color: #e9d39d; letter-spacing: .12em">― その<wbr>時刻に、<wbr>あなたは<wbr>死んだ。</p>
+      <p>終電帰りの<wbr>会社員だったあなたは、<wbr>気がつくと<wbr>雲の<wbr>上にいた。<wbr>目の<wbr>前には、<wbr>明るくて、<wbr>ちょっと<wbr>ドジな<wbr>女神さま。</p>
+      <p>授けてくれるはずの<wbr>加護は<wbr>「……<wbr>あっ」<wbr>と<wbr>失敗。<wbr>それでも<wbr>女神は、<wbr>声だけであなたを<wbr>応援してくれる。<wbr>でも、<wbr>この<wbr>世界には、<wbr>前にも<wbr>何人もの<wbr>転生者が<wbr>送られていた。<wbr>そして、<wbr>誰も<wbr>戻ってこなかった。</p>
+      <div class="quote">「だ、<wbr>大丈夫です! 今度こそ、<wbr>ちゃんとやり<wbr>直せますから!」<small>― ポンコツ女神</small></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="chara" id="chara">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="latin">Characters</div>
+      <h2 class="h2">ちょっと<wbr>ドジな<wbr>女神と、<wbr>この<wbr>世界の<wbr>人たち</h2>
+      <div class="orn" aria-hidden="true"><i></i><b></b><i></i></div>
+    </div>
+    <div class="ch-main">
+      <div class="ch-art"><img src="img/goddess.png" alt="白いドレスと翼の金髪の女神が、片目をつぶって舌を出している" /></div>
+      <div>
+        <div class="ch-role">あなたを<wbr>転生させた<wbr>担当の<wbr>女神</div>
+        <h3 class="ch-name">ポンコツ女神</h3>
+        <p class="ch-desc">明るくて、<wbr>前向きで、<wbr>とにかく<wbr>ドジ。<wbr>加護を<wbr>授けるのに<wbr>失敗し、<wbr>それでも<wbr>声だけでずっと<wbr>応援してくれる。<wbr>昔はもっとしっかりしていた……<wbr>という<wbr>噂も。</p>
+        <div class="ch-talk">
+          <div class="ch-face"><img id="ch-face" src="img/goddess_normal.png" alt="女神の顔" /></div>
+          <div class="ch-bubble" id="ch-bubble" aria-live="polite">あっ、<wbr>起きました? よかった<wbr>ー! お<wbr>疲れさまです、<wbr>転生者さん!</div>
+        </div>
+        <div class="ch-btns" role="group" aria-label="女神の表情">
+          <button type="button" class="on" data-face="img/goddess_normal.png" data-say="あっ、起きました? よかったー! お疲れさまです、転生者さん!">ふつう</button>
+          <button type="button" data-face="img/goddess_confused.png" data-say="見た目は……前世のままでいいですよね! はい、決まりっ。">こまり<wbr>顔</button>
+          <button type="button" data-face="img/goddess_crying.png" data-say="だ、大丈夫です! 今度こそ、ちゃんとやり直せますから!">なきそう</button>
+        </div>
+      </div>
+    </div>
+    <div class="ch-sub">
+      <h3>あなたの<wbr>才能</h3>
+      <p>最初は<wbr>見習い<wbr>転生者。<wbr>旅の<wbr>途中の<wbr>「才能開花」<wbr>で、<wbr>戦い<wbr>方ががらりと<wbr>変わります。</p>
+      <div class="jobs"><div class="job" style="--c:#c8b890"><b>見習い<wbr>転生者</b><span>転生したばかりの<wbr>見習い。<wbr>女神の<wbr>加護で、<wbr>たいていの<wbr>武器を<wbr>使える。</span></div><div class="job" style="--c:#4a7bd1"><b>見習い<wbr>傭兵</b><span>剣や<wbr>斧で<wbr>戦う<wbr>前衛。<wbr>盾や<wbr>両手武器で<wbr>攻撃を<wbr>受け<wbr>止める。</span></div><div class="job" style="--c:#9a52c9"><b>見習い<wbr>魔法使い</b><span>杖と<wbr>本をたずさえる<wbr>魔法の<wbr>使い<wbr>手。<wbr>集中して<wbr>MP<wbr>を<wbr>戻す。</span></div><div class="job" style="--c:#4f9a52"><b>見習い<wbr>弓使い</b><span>弓で<wbr>戦う。<wbr>素早く<wbr>転がって<wbr>攻撃をかわす。</span></div><div class="job" style="--c:#d8c070"><b>見習い<wbr>僧侶</b><span>杖や<wbr>鎚で<wbr>戦う<wbr>女神の<wbr>僧侶。<wbr>祈って<wbr>MP<wbr>を<wbr>戻す。</span></div><div class="job" style="--c:#b0703a"><b>放浪人</b><span>女神の<wbr>加護を<wbr>引きついだ<wbr>転生者。<wbr>両手の<wbr>爪・<wbr>拳でも<wbr>戦える。</span></div></div>
+    </div>
+    <div class="ch-sub">
+      <h3>城下町ルーメの<wbr>人たち</h3>
+      <p>話しかけると、<wbr>ちょっとした<wbr>噂や、<wbr>この<wbr>世界の<wbr>秘密を<wbr>教えてくれるかも。</p>
+      <div class="people"><div class="person" style="--c:#e8e8f0"><i>セ</i><div><b>修道女セシリア</b><span>「女神さまのご<wbr>加護がありますように。……<wbr>あの<wbr>方、<wbr>今日も<wbr>昼寝をしているかしら。」</span></div></div><div class="person" style="--c:#6a6a7a"><i>ゲ</i><div><b>訓練所の<wbr>教官ゲオルグ</b><span>「構えが<wbr>甘い! ……<wbr>ああ、<wbr>すまん、<wbr>つい<wbr>癖でな。」</span></div></div><div class="person" style="--c:#4a7a9a"><i>リ</i><div><b>吟遊詩人リュカ</b><span>「♪ 女神は<wbr>眠り 勇者は<wbr>迷う〜 ……<wbr>どうです、<wbr>新曲です。」</span></div></div><div class="person" style="--c:#9a8aa0"><i>婆</i><div><b>昔話のおばあさん</b><span>「峡谷の<wbr>竜はね、<wbr>怒っているんじゃない、<wbr>泣いているんだって。<wbr>昔、<wbr>竜と<wbr>心を<wbr>通わせた<wbr>騎士がいたそうだよ。」</span></div></div><div class="person" style="--c:#6a8aa0"><i>オ</i><div><b>釣り<wbr>人オットー</b><span>「この<wbr>池の<wbr>ヌシは、<wbr>まだ<wbr>誰も<wbr>釣り<wbr>上げたことがないんだ。」</span></div></div><div class="person" style="--c:#8a5a3a"><i>ガ</i><div><b>鍛冶師の<wbr>親方ガンツ</b><span>「ほう、<wbr>いい<wbr>腕をしてそうだな。<wbr>鉄は<wbr>熱いうちに<wbr>打て、<wbr>だ。」</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="latin">Features</div>
+      <h2 class="h2">笑って、<wbr>泣けて、<wbr>やりこめる</h2>
+      <div class="orn" aria-hidden="true"><i></i><b></b><i></i></div>
+    </div>
+    <div class="feats">
+      <article class="feat">
+        <img src="img/shot_awakening.jpg" alt="才能開花の画面。魔法陣の上で剣をかまえる主人公" />
+        <div class="feat-body"><div class="feat-no">01 ― AWAKENING</div><h3>才能開花</h3><p>傭兵、<wbr>魔法使い、<wbr>弓使い、<wbr>僧侶……。<wbr>旅の<wbr>途中で、<wbr>あなたの<wbr>才能が<wbr>花ひらく。<wbr>見た<wbr>目も<wbr>戦い<wbr>方も、<wbr>がらりと<wbr>変わる。</p></div>
+      </article>
+      <article class="feat">
+        <img src="img/shot_town.jpg" alt="石畳の町を歩く主人公と仲間" />
+        <div class="feat-body"><div class="feat-no">02 ― TOWN</div><h3>にぎわう<wbr>町</h3><p>依頼を<wbr>受け、<wbr>装備をととのえ、<wbr>仲間を<wbr>探す。<wbr>石畳の<wbr>城下町から、<wbr>あなたの<wbr>冒険がはじまる。</p></div>
+      </article>
+      <article class="feat">
+        <img src="img/shot_ride.jpg" alt="緑のワイバーンの背に乗って宙に浮く主人公" />
+        <div class="feat-body"><div class="feat-no">03 ― COMPANION</div><h3>お<wbr>供と<wbr>空へ</h3><p>旅についてくる<wbr>小さなお<wbr>供。<wbr>町では<wbr>背中に<wbr>乗れて、<wbr>ワイバーンなら<wbr>大きなつばさでふわりと<wbr>宙を<wbr>飛ぶ。</p><span class="prem">ワイバーンは<wbr>加護パス<wbr>(応援プラン)<wbr>の<wbr>特典</span></div>
+      </article>
+      <article class="feat">
+        <img src="img/shot_map.jpg" alt="城下町ルーメの立体の地図" />
+        <div class="feat-body"><div class="feat-no">04 ― STORY</div><h3>全 6 章・<wbr>三つの<wbr>結末</h3><p>女神の<wbr>ポンコツさに<wbr>笑いながら、<wbr>戻らなかった<wbr>転生者たちの<wbr>足あとをたどる。<wbr>物語の<wbr>終わりは、<wbr>ひとつではない。</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec world" id="world">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="latin">World</div>
+      <h2 class="h2">章ごとに、<wbr>世界が<wbr>広がる</h2>
+      <p class="lead">はじまりの<wbr>城下町から、<wbr>桜の<wbr>舞う<wbr>和の<wbr>町、<wbr>雪と<wbr>鉄の<wbr>城塞都市へ。</p>
+      <div class="orn" aria-hidden="true"><i></i><b></b><i></i></div>
+    </div>
+    <div class="gallery">
+      <figure class="g-a"><img src="img/shot_hanado.jpg" alt="桜と紅葉に囲まれた花戸の町の水辺" /><figcaption>花戸の<wbr>町</figcaption></figure>
+      <figure class="g-b"><img src="img/shot_valheim.jpg" alt="雪におおわれた城塞都市の城壁" /><figcaption>霜鉄の<wbr>城塞都市ヴァルハイム</figcaption></figure>
+      <figure class="g-c"><img src="img/shot_forest.jpg" alt="大きな木の祠がある森の小道" /><figcaption>囁きの<wbr>森</figcaption></figure>
+      <figure class="g-d"><img src="img/shot_cave.jpg" alt="紫のコウモリがひそむ暗い洞窟" /><figcaption>古い<wbr>洞窟</figcaption></figure>
+      <figure class="g-e"><img src="img/shot_field.jpg" alt="森に囲まれたルーメ草原" /><figcaption>ルーメ草原</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="dev" id="dev">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="latin">Behind the World</div>
+      <h2 class="h2">小さな<wbr>チームと AI で、<wbr>毎日つくる</h2>
+      <p class="lead">どんな<wbr>考えで<wbr>作っているのか、<wbr>どうやって<wbr>安全に<wbr>毎日の<wbr>更新を<wbr>届けているのかを、<wbr>少しだけお<wbr>見せします。</p>
+      <div class="orn" aria-hidden="true"><i></i><b></b><i></i></div>
+    </div>
+    <div class="dev-concept">
+      <div class="dev-box"><div class="no">CONCEPT</div><h3>笑って、<wbr>泣けて、<wbr>やりこめる</h3><p>ドジな<wbr>女神に<wbr>笑い、<wbr>戻らなかった<wbr>転生者たちの<wbr>物語に<wbr>胸をつかまれ、<wbr>装備づくりや<wbr>家づくりで、<wbr>気がつけば<wbr>夜ふかし。<wbr>重すぎず、<wbr>軽すぎない<wbr>「大人の<wbr>異世界」<wbr>をめざしています。</p></div>
+      <div class="dev-box sw"><div class="no">ART DIRECTION</div><h3>大人の<wbr>レトロ</h3><p>画面の<wbr>色は、<wbr>くすんだ<wbr>墨茶の<wbr>下地に、<wbr>つや<wbr>消しの<wbr>真鍮の<wbr>細い<wbr>縁。<wbr>差し<wbr>色は<wbr>小さく、<wbr>淡く。<wbr>長く<wbr>遊んでも<wbr>目が<wbr>疲れない<wbr>落ち<wbr>着きを<wbr>大事にしています。</p>
+        <div class="swatch" aria-hidden="true"><span style="background:#1c1620" data-n="墨茶"></span><span style="background:#3a2f26" data-n="焦げ茶"></span><span style="background:#b39760" data-n="真鍮"></span><span style="background:#e9d9ae" data-n="象牙"></span><span style="background:#7fb7c9" data-n="差し色"></span></div></div>
+      <div class="dev-box"><div class="no">HOW IT'S MADE</div><h3>すべて AI で<wbr>作っている</h3><p>プログラムも、<wbr>絵も、<wbr>物語も AI が<wbr>作り、<wbr>作者が<wbr>方向を<wbr>決めます。<wbr>だから<wbr>少ない<wbr>人数でも、<wbr>毎日のように<wbr>世界を<wbr>広げられます。</p></div>
+    </div>
+    <ul class="rules">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><b>自動で<wbr>直すのは、<wbr>バグと<wbr>遊びにくさだけ</b><span>物語や<wbr>スキルの<wbr>希望などの<wbr>「提案」<wbr>は、<wbr>作者が<wbr>読んで<wbr>決めます。<wbr>世界の<wbr>流れを AI が<wbr>勝手に<wbr>変えることはありません。</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><b>大事な<wbr>所は、<wbr>機械が<wbr>見張る</b><span>通信や<wbr>更新など<wbr>大切な<wbr>所にさわる<wbr>直しは、<wbr>自動では<wbr>配りません。<wbr>テストと<wbr>起動の<wbr>確認に<wbr>通ったものだけが<wbr>先へ<wbr>進みます。</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg><b>更新は 3 時間おき<wbr>・<wbr>5 分前にお<wbr>知らせ</b><span>サーバーの<wbr>更新は、<wbr>5 分前から<wbr>画面でお<wbr>知らせします。<wbr>終わったら、<wbr>自動でつなぎ<wbr>直します。</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg><b>変わった<wbr>分だけ<wbr>・<wbr>もしもの<wbr>時は<wbr>元に<wbr>戻す</b><span>ダウンロードは<wbr>変わった<wbr>ファイルだけ。<wbr>もし<wbr>起動できなくなっても、<wbr>自動で<wbr>一つ<wbr>前の<wbr>版に<wbr>戻ります。</span></li>
+    </ul>
+    <div class="tech" aria-label="使っている技術"><span>Godot Engine 4<wbr>・<wbr>C#</span><span>2D の<wbr>町と 3D の<wbr>キャラクター</span><span>専用サーバーで<wbr>常時オンライン</span><span>ゲームの<wbr>中から<wbr>フィードバック<wbr>(F8)</span></div>
+  </div>
+</section>
+
+<section class="sec" id="history">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="latin">Update History</div>
+      <h2 class="h2">これまでの<wbr>更新</h2>
+      <p class="lead">生まれたばかりの<wbr>世界が、<wbr>どう<wbr>育ってきたか。<wbr>はじまりの<wbr>町の、<wbr>冒険を<wbr>始める<wbr>場所を<wbr>日付ごとに<wbr>並べました。</p>
+      <div class="orn" aria-hidden="true"><i></i><b></b><i></i></div>
+    </div>
+    <div class="evo" id="evo">
+      <div class="evo-screen" aria-live="polite"><span class="evo-tag">START POINT</span><figure class="on" data-d="11/06"><img src="img/evo_1106.jpg" alt="11/06 の城下町ルーメ。はじまりの町ルーメを作り直したころ。主人公も魔物も、まだ平らな絵" loading="lazy" /><div class="evo-cap"><b>11/06</b><span>はじまりの<wbr>町ルーメを<wbr>作り<wbr>直したころ。<wbr>主人公も<wbr>魔物も、<wbr>まだ<wbr>平らな<wbr>絵</span></div></figure><figure data-d="11/14"><img src="img/evo_1114.jpg" alt="11/14 の城下町ルーメ。主人公に新しい体と髪。オープニングと見た目づくりも新しく" loading="lazy" /><div class="evo-cap"><b>11/14</b><span>主人公に<wbr>新しい<wbr>体と<wbr>髪。<wbr>オープニングと<wbr>見た<wbr>目づくりも<wbr>新しく</span></div></figure><figure data-d="11/17"><img src="img/evo_1117.jpg" alt="11/17 の城下町ルーメ。町と景色の見た目を大きく変え、画面の表示も新しく" loading="lazy" /><div class="evo-cap"><b>11/17</b><span>町と<wbr>景色の<wbr>見た<wbr>目を<wbr>大きく<wbr>変え、<wbr>画面の<wbr>表示も<wbr>新しく</span></div></figure><figure data-d="11/19"><img src="img/evo_1119.jpg" alt="11/19 の城下町ルーメ。魔物がすべて立体に。才能開花の画面と操作バーも新しく" loading="lazy" /><div class="evo-cap"><b>11/19</b><span>魔物がすべて<wbr>立体に。<wbr>才能開花の<wbr>画面と<wbr>操作バーも<wbr>新しく</span></div></figure><figure data-d="11/21"><img src="img/evo_1121.jpg" alt="11/21 の城下町ルーメ。アイコン 226 枚を描き直し、世界は今日も育っている" loading="lazy" /><div class="evo-cap"><b>11/21</b><span>アイコン 226 枚を<wbr>描き<wbr>直し、<wbr>世界は<wbr>今日も<wbr>育っている</span></div></figure><figure data-d="11/24"><img src="dl/evo/evo_20261124.jpg" alt="11/24 の城下町ルーメ。スキルの手で使う枠を Q・E・R・F の 4 つに" loading="lazy" /><div class="evo-cap"><b>11/24</b><span>スキルの<wbr>手で<wbr>使う<wbr>枠を Q<wbr>・<wbr>E<wbr>・<wbr>R<wbr>・<wbr>F の 4 つに</span></div></figure><figure data-d="11/26"><img src="dl/evo/evo_20261126.jpg" alt="11/26 の城下町ルーメ。建物の中の丸い地図の床を、石や板の色に" loading="lazy" /><div class="evo-cap"><b>11/26</b><span>建物の<wbr>中の<wbr>丸い<wbr>地図の<wbr>床を、<wbr>石や<wbr>板の<wbr>色に</span></div></figure><figure data-d="11/28"><img src="dl/evo/evo_20261128.jpg" alt="11/28 の城下町ルーメ。そして、いま。開発中の「3D テスト場」を追加(どの町のポラリスからでも無料で行けます)" loading="lazy" /><div class="evo-cap"><b>11/28</b><span>そして、<wbr>いま。<wbr>開発中の<wbr>「3D テスト場」<wbr>を<wbr>追加<wbr>(どの<wbr>町の<wbr>ポラリスからでも<wbr>無料で<wbr>行けます)</span></div></figure></div>
+      <p class="evo-txt" id="evo-txt" aria-hidden="true"></p><div class="evo-line"><span class="evo-bar"></span><button type="button" class="on" aria-label="11/06 の画面"><i></i>11/06</button><button type="button" aria-label="11/14 の画面"><i></i>11/14</button><button type="button" aria-label="11/17 の画面"><i></i>11/17</button><button type="button" aria-label="11/19 の画面"><i></i>11/19</button><button type="button" aria-label="11/21 の画面"><i></i>11/21</button><button type="button" aria-label="11/24 の画面"><i></i>11/24</button><button type="button" aria-label="11/26 の画面"><i></i>11/26</button><button type="button" aria-label="11/28 の画面"><i></i>11/28</button></div>
+      <div class="evo-ctrl"><button type="button" id="evo-play" aria-pressed="true">一時停止</button></div>
+      <h3 class="cmp-h">最初と、<wbr>いまを くらべる</h3>
+      <p class="cmp-p">つまみを<wbr>左右に<wbr>動かしてみてください。<wbr>どちらも、<wbr>はじまりの<wbr>町ルーメで<wbr>冒険を<wbr>始める<wbr>場所です。</p>
+      <div class="cmp" id="cmp"><img src="dl/evo/evo_20261128.jpg" alt="いまの城下町ルーメ" loading="lazy" /><img class="old" src="img/evo_1106.jpg" alt="11/06 の城下町ルーメ" loading="lazy" /><span class="knob"></span><span class="lab l1">11/06</span><span class="lab l2">いま</span><input type="range" min="0" max="100" value="50" aria-label="最初といまの境目" /></div>
+      <p class="evo-note">写真は、<wbr>その<wbr>日の<wbr>版をもう<wbr>一度組み<wbr>立て<wbr>直して<wbr>撮ったものです。</p>
+    </div>
+    <div class="hist"><div class="hist-month">2026.11</div><ul><li><details><summary><time datetime="2026-11-28">11/28</time><span class="t">Ver 0.5.26 開発中の<wbr>「3D テスト場」<wbr>を<wbr>追加<wbr>(どの<wbr>町の<wbr>ポラリスからでも<wbr>無料で<wbr>行けます) ほか</span></summary><div class="x">・<wbr>開発中の<wbr>「3D テスト場」<wbr>を<wbr>追加<wbr>(どの<wbr>町の<wbr>ポラリスからでも<wbr>無料で<wbr>行けます)<br>・<wbr>テスト場に、<wbr>骨で<wbr>動く<wbr>新しい 3D の<wbr>狼が<wbr>出ます<wbr>(歩く<wbr>・<wbr>振りかぶる<wbr>・<wbr>かみつく<wbr>・<wbr>倒れる。<wbr>倒してもごほうびはありません)</div></details></li><li><details><summary><time datetime="2026-11-26">11/26</time><span class="t">Ver 0.5.25 建物の<wbr>中の<wbr>丸い<wbr>地図の<wbr>床を、<wbr>石や<wbr>板の<wbr>色に ほか</span></summary><div class="x">・<wbr>建物の<wbr>中の<wbr>丸い<wbr>地図の<wbr>床を、<wbr>石や<wbr>板の<wbr>色に<br>・<wbr>画面の<wbr>右下の<wbr>行き<wbr>先の<wbr>札が、<wbr>MP の<wbr>玉の<wbr>飾りにかくれないように</div></details></li><li><details><summary><time datetime="2026-11-25">11/25</time><span class="t">Ver 0.5.24 女神ショップの<wbr>値段を、<wbr>祈りの<wbr>結晶の<wbr>絵で<wbr>出すように<wbr>(ゴールドとまぎれないように) ほか</span></summary><div class="x">・<wbr>女神ショップの<wbr>値段を、<wbr>祈りの<wbr>結晶の<wbr>絵で<wbr>出すように<wbr>(ゴールドとまぎれないように)<br>・<wbr>操作説明の<wbr>文を<wbr>見なおし</div></details></li><li><details><summary><time datetime="2026-11-25">11/25</time><span class="t">Ver 0.5.23 地下迷宮の<wbr>宝物庫に<wbr>入ってすぐ<wbr>外へもどされる<wbr>不具合を<wbr>直しました</span></summary><div class="x">・<wbr>地下迷宮の<wbr>宝物庫に<wbr>入ってすぐ<wbr>外へもどされる<wbr>不具合を<wbr>直しました</div></details></li><li><details><summary><time datetime="2026-11-25">11/25</time><span class="t">Ver 0.5.22 深い<wbr>層や<wbr>無限の<wbr>塔で、<wbr>魔物の<wbr>名前の<wbr>札の<wbr>レベルと<wbr>色が<wbr>正しく<wbr>出るように</span></summary><div class="x">・<wbr>深い<wbr>層や<wbr>無限の<wbr>塔で、<wbr>魔物の<wbr>名前の<wbr>札の<wbr>レベルと<wbr>色が<wbr>正しく<wbr>出るように</div></details></li><li><details><summary><time datetime="2026-11-25">11/25</time><span class="t">Ver 0.5.21 地下迷宮の 8<wbr>・<wbr>14<wbr>・<wbr>20 層で、<wbr>階段のすぐそばに<wbr>魔物が<wbr>集まらないように</span></summary><div class="x">・<wbr>地下迷宮の 8<wbr>・<wbr>14<wbr>・<wbr>20 層で、<wbr>階段のすぐそばに<wbr>魔物が<wbr>集まらないように</div></details></li><li><details><summary><time datetime="2026-11-25">11/25</time><span class="t">Ver 0.5.20 長い<wbr>髪が<wbr>横に<wbr>板のようにのびて<wbr>見えるのを<wbr>直しました ほか</span></summary><div class="x">・<wbr>長い<wbr>髪が<wbr>横に<wbr>板のようにのびて<wbr>見えるのを<wbr>直しました<br>・<wbr>地下迷宮の<wbr>泉や<wbr>行商人のまわりに<wbr>魔物が<wbr>集まりすぎないようにしました<br>・<wbr>画面の<wbr>端の<wbr>行き<wbr>先の<wbr>札が HP の<wbr>玉にかくれないようにしました</div></details></li><li><details><summary><time datetime="2026-11-25">11/25</time><span class="t">Ver 0.5.19 売った<wbr>品を<wbr>同じ<wbr>値段で<wbr>買い<wbr>戻せるように<wbr>(最後の 12 品)</span></summary><div class="x">・<wbr>売った<wbr>品を<wbr>同じ<wbr>値段で<wbr>買い<wbr>戻せるように<wbr>(最後の 12 品)</div></details></li><li><details><summary><time datetime="2026-11-24">11/24</time><span class="t">Ver 0.5.18 タイトルの<wbr>ロゴを<wbr>新しくしました<wbr>(七宝の<wbr>バッジの<wbr>ロゴ・<wbr>英字の<wbr>副題つき) ほか</span></summary><div class="x">・<wbr>タイトルの<wbr>ロゴを<wbr>新しくしました<wbr>(七宝の<wbr>バッジの<wbr>ロゴ・<wbr>英字の<wbr>副題つき)<br>・<wbr>ゲームの<wbr>窓の<wbr>アイコンを<wbr>新しくしました</div></details></li><li><details><summary><time datetime="2026-11-24">11/24</time><span class="t">Ver 0.5.17 ダンジョンの<wbr>小さな<wbr>壁のかたまりが、<wbr>中の<wbr>空いた<wbr>箱のように<wbr>見えるのを<wbr>直した</span></summary><div class="x">・<wbr>ダンジョンの<wbr>小さな<wbr>壁のかたまりが、<wbr>中の<wbr>空いた<wbr>箱のように<wbr>見えるのを<wbr>直した</div></details></li><li><details><summary><time datetime="2026-11-24">11/24</time><span class="t">Ver 0.5.16 ダンジョンの<wbr>小さな<wbr>壁のかたまりが、<wbr>中の<wbr>空いた<wbr>箱のように<wbr>見えるのを<wbr>直した</span></summary><div class="x">・<wbr>ダンジョンの<wbr>小さな<wbr>壁のかたまりが、<wbr>中の<wbr>空いた<wbr>箱のように<wbr>見えるのを<wbr>直した</div></details></li><li><details><summary><time datetime="2026-11-24">11/24</time><span class="t">Ver 0.5.15 行き<wbr>先の<wbr>案内を<wbr>作り<wbr>直し<wbr>(J の<wbr>「追跡」・<wbr>画面の<wbr>端に<wbr>印) ほか</span></summary><div class="x">・<wbr>行き<wbr>先の<wbr>案内を<wbr>作り<wbr>直し<wbr>(J の<wbr>「追跡」・<wbr>画面の<wbr>端に<wbr>印)<br>・<wbr>主人公の<wbr>後頭部の<wbr>形をなだらかに<br>・<wbr>囁きの<wbr>森の<wbr>灰色のたてがみが<wbr>木にかくれるのを<wbr>直した<br>・<wbr>洞窟の<wbr>壁の<wbr>先に<wbr>出る<wbr>黒い<wbr>板を<wbr>直した</div></details></li><li class="more"><details><summary><time datetime="2026-11-24">11/24</time><span class="t">Ver 0.5.13 スキルの<wbr>手で<wbr>使う<wbr>枠を Q<wbr>・<wbr>E<wbr>・<wbr>R<wbr>・<wbr>F の 4 つに ほか</span></summary><div class="x">・<wbr>スキルの<wbr>手で<wbr>使う<wbr>枠を Q<wbr>・<wbr>E<wbr>・<wbr>R<wbr>・<wbr>F の 4 つに<br>・<wbr>パッシブは 3 つまでつけて<wbr>切りかえ<wbr>・<wbr>スキルの<wbr>セットを<wbr>保存できるように<br>・<wbr>フレンドの<wbr>「ひとこと」<wbr>を<wbr>「ささやき」<wbr>に<wbr>・<wbr>細かい<wbr>説明を<wbr>見やすく</div></details></li><li class="more"><details><summary><time datetime="2026-11-23">11/23</time><span class="t">Ver 0.5.14 メインクエストが<wbr>「割れた<wbr>卵」<wbr>で<wbr>止まる<wbr>不具合を<wbr>直しました ほか</span></summary><div class="x">・<wbr>メインクエストが<wbr>「割れた<wbr>卵」<wbr>で<wbr>止まる<wbr>不具合を<wbr>直しました<br>・<wbr>ワイバーンに<wbr>フィールドでも<wbr>乗れるように<br>・<wbr>ESC は<wbr>手前の<wbr>窓だけ<wbr>閉じる<wbr>・<wbr>捨てる<wbr>個数を<wbr>選べるように</div></details></li><li class="more"><details><summary><time datetime="2026-11-23">11/23</time><span class="t">Ver 0.5.12 主人公の<wbr>見た<wbr>目<wbr>(頭と<wbr>首のかたち)<wbr>を<wbr>整えました</span></summary><div class="x">・<wbr>主人公の<wbr>見た<wbr>目<wbr>(頭と<wbr>首のかたち)<wbr>を<wbr>整えました</div></details></li><li class="more"><details><summary><time datetime="2026-11-23">11/23</time><span class="t">Ver 0.5.11 竜骨の<wbr>峡谷で、<wbr>倒れたあとにもどる<wbr>所を<wbr>見やすい<wbr>場所にしました</span></summary><div class="x">・<wbr>竜骨の<wbr>峡谷で、<wbr>倒れたあとにもどる<wbr>所を<wbr>見やすい<wbr>場所にしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-23">11/23</time><span class="t">Ver 0.5.10 花戸の<wbr>港の<wbr>長い<wbr>名前が<wbr>切れないようにしました ほか</span></summary><div class="x">・<wbr>花戸の<wbr>港の<wbr>長い<wbr>名前が<wbr>切れないようにしました<br>・<wbr>会話の<wbr>窓と<wbr>持ち<wbr>物の<wbr>重なりを<wbr>直しました</div></details></li><li class="more"><details><summary><time datetime="2026-11-23">11/23</time><span class="t">Ver 0.5.9 依頼の<wbr>一覧と<wbr>地図の<wbr>名前を<wbr>見やすくしました ほか</span></summary><div class="x">・<wbr>依頼の<wbr>一覧と<wbr>地図の<wbr>名前を<wbr>見やすくしました<br>・<wbr>花戸のお<wbr>城の<wbr>中を<wbr>庭にしました<br>・<wbr>窓どうしが<wbr>重ならないようにしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-23">11/23</time><span class="t">Ver 0.5.8 キャラクターを<wbr>見下ろす<wbr>角度を<wbr>少し<wbr>深くしました ほか</span></summary><div class="x">・<wbr>キャラクターを<wbr>見下ろす<wbr>角度を<wbr>少し<wbr>深くしました<br>・<wbr>村に<wbr>着いたときの<wbr>場面を<wbr>遊びやすくしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-22">11/22</time><span class="t">Ver 0.5.7 フレンド<wbr>(親交度・<wbr>称号)<wbr>が<wbr>入りました ほか</span></summary><div class="x">・<wbr>フレンド<wbr>(親交度・<wbr>称号)<wbr>が<wbr>入りました<br>・<wbr>キー設定を<wbr>作り<wbr>直しました<br>・<wbr>装備できないときに、<wbr>その<wbr>理由が<wbr>出るようにしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-21">11/21</time><span class="t">Ver 0.5.6 前に<wbr>遊んでいた<wbr>キャラクターを<wbr>持ってこられるようになりました</span></summary><div class="x">・<wbr>前に<wbr>遊んでいた<wbr>キャラクターを<wbr>持ってこられるようになりました</div></details></li><li class="more"><details><summary><time datetime="2026-11-21">11/21</time><span class="t">Ver 0.5.5 公式サーバーができて、<wbr>オンラインで<wbr>遊べるようになりました</span></summary><div class="x">・<wbr>公式サーバーができて、<wbr>オンラインで<wbr>遊べるようになりました</div></details></li><li class="more"><details><summary><time datetime="2026-11-18">11/18</time><span class="t">魔物がすべて<wbr>立体<wbr>(3D)<wbr>になりました</span></summary><div class="x">・<wbr>盗賊・<wbr>忍者・<wbr>侍・<wbr>堕天使などの<wbr>人の<wbr>形の<wbr>魔物は、<wbr>服と<wbr>武器を<wbr>身につけた<wbr>立体の<wbr>姿になりました
+・<wbr>コウモリ・<wbr>キノコ・<wbr>タヌキ・<wbr>鬼・<wbr>雪男なども<wbr>立体になりました<wbr>(専用の<wbr>姿は、<wbr>これから<wbr>作っていきます)
+・<wbr>スライムは、<wbr>底が<wbr>平らでぷるんとした<wbr>姿になりました</div></details></li><li class="more"><details><summary><time datetime="2026-11-18">11/18</time><span class="t">ダンジョンの<wbr>見た<wbr>目を<wbr>作り<wbr>直しました</span></summary><div class="x">・<wbr>ダンジョンの<wbr>壁が、<wbr>角ばった<wbr>箱の<wbr>並びから、<wbr>なめらかな<wbr>岩肌・<wbr>石積みの<wbr>壁になりました<wbr>(洞窟・<wbr>地下聖堂・<wbr>地下迷宮・<wbr>氷河・<wbr>塔・<wbr>砦・<wbr>寺)
+・<wbr>入口へ<wbr>戻る<wbr>出口が、<wbr>壁に<wbr>埋まった<wbr>大きな<wbr>門になりました<wbr>(ダンジョンごとにちがう<wbr>姿)
+・<wbr>ダンジョンの<wbr>入口に、<wbr>魔物が<wbr>来ない<wbr>広場と<wbr>通路ができました
+・<wbr>王都の<wbr>地下迷宮の<wbr>入口に、<wbr>闇の<wbr>谷にかかる<wbr>橋と<wbr>近道の<wbr>台<wbr>(地下 6<wbr>・<wbr>11<wbr>・<wbr>16 層)<wbr>が<wbr>並ぶ<wbr>広間ができました</div></details></li><li class="more"><details><summary><time datetime="2026-11-18">11/18</time><span class="t">才能開花<wbr>(転職)<wbr>の<wbr>画面と<wbr>操作バーを<wbr>新しくしました</span></summary><div class="x">・<wbr>転職の<wbr>画面が<wbr>新しくなりました。<wbr>立体の<wbr>主人公が、<wbr>その<wbr>職業の<wbr>装備を<wbr>身につけて<wbr>魔法陣の<wbr>上に<wbr>立ちます
+・<wbr>下の<wbr>操作バーの HP<wbr>・<wbr>MP の<wbr>玉が、<wbr>ガラスの<wbr>中に<wbr>光が<wbr>渦巻く<wbr>玉になりました
+・<wbr>魔法を<wbr>使うと、<wbr>足もとと<wbr>杖の<wbr>先に<wbr>魔法陣が<wbr>出るようになりました
+・<wbr>会話の<wbr>顔が、<wbr>その<wbr>人の<wbr>立体の<wbr>顔になりました
+・<wbr>最後の<wbr>確認の<wbr>画面に<wbr>「見た<wbr>目を<wbr>変える」<wbr>ボタンがつきました
+・<wbr>文字が<wbr>読みやすい<wbr>太さになりました</div></details></li><li class="more"><details><summary><time datetime="2026-11-17">11/17</time><span class="t">町と<wbr>景色の<wbr>見た<wbr>目を<wbr>大きく<wbr>変えました</span></summary><div class="x">・<wbr>木の<wbr>種類と<wbr>色が<wbr>増え、<wbr>地域ごとに<wbr>雰囲気がちがうようになりました<wbr>(紅葉・<wbr>枯れ<wbr>木・<wbr>毒の<wbr>森など)
+・<wbr>村の<wbr>家・<wbr>屋根・<wbr>石畳の<wbr>色合いを、<wbr>落ち<wbr>着いた<wbr>暖かい<wbr>色にしました
+・<wbr>明かり<wbr>(街灯・<wbr>たき<wbr>火など)<wbr>に<wbr>本物の<wbr>光がつき、<wbr>画面全体の<wbr>色づくりを<wbr>見直しました
+・<wbr>女神像と<wbr>ポラリスに、<wbr>ほのかな<wbr>光がつきました
+・<wbr>ダンジョンが<wbr>縦横 2 倍に<wbr>広くなりました</div></details></li><li class="more"><details><summary><time datetime="2026-11-17">11/17</time><span class="t">画面の<wbr>表示を<wbr>新しくしました</span></summary><div class="x">・<wbr>左上の<wbr>名札・<wbr>ミニマップの<wbr>枠・<wbr>強化と<wbr>弱体の<wbr>アイコン・<wbr>狙っている<wbr>敵の<wbr>札が<wbr>新しくなりました
+・<wbr>レベルアップの<wbr>演出が、<wbr>頭の<wbr>上に<wbr>小さく<wbr>出るようになりました
+・<wbr>ポーションや<wbr>メニューの<wbr>アイコンを<wbr>描き<wbr>直しました
+・<wbr>テスト版のあいだは、<wbr>女神ショップの<wbr>品がすべて<wbr>無料です</div></details></li><li class="more"><details><summary><time datetime="2026-11-14">11/14</time><span class="t">オープニングと<wbr>見た<wbr>目づくりを<wbr>新しくしました</span></summary><div class="x">・<wbr>オープニングの<wbr>流れが<wbr>変わりました<wbr>(見た<wbr>目 → 前世の<wbr>性格 → 加護 → 最後に<wbr>名前 → <wbr>「これで<wbr>転生しますか?」<wbr>の<wbr>確認。<wbr>やり<wbr>直しもできます)
+・<wbr>見た<wbr>目づくりが<wbr>画面いっぱいになりました。<wbr>見本は<wbr>ドラッグで<wbr>回転、<wbr>ホイールで<wbr>拡大。<wbr>「立つ<wbr>・<wbr>走る<wbr>・<wbr>ダッシュ・<wbr>攻撃」<wbr>で<wbr>動きも<wbr>見られます
+・<wbr>顔を<wbr>作りこめます<wbr>(目の<wbr>型・<wbr>眉の<wbr>型・<wbr>口の<wbr>形 + <wbr>「顔をくわしく<wbr>調整」<wbr>のつまみ)。<wbr>髪の<wbr>色・<wbr>瞳の<wbr>色は 20 色に
+・<wbr>主人公が、<wbr>素朴な<wbr>布の<wbr>服を<wbr>着るようになりました
+・<wbr>キャラクター選択の<wbr>絵も、<wbr>新しい<wbr>体<wbr>(正面向き)<wbr>になりました</div></details></li><li class="more"><details><summary><time datetime="2026-11-14">11/14</time><span class="t">ロングの<wbr>髪・<wbr>髪のゆれ<wbr>・<wbr>体つきの<wbr>調整</span></summary><div class="x">・<wbr>髪型に<wbr>ロング<wbr>(ぱっつんの<wbr>前髪・<wbr>すそはゆるい U 字)<wbr>が<wbr>入りました。<wbr>走ったり<wbr>向きを<wbr>変えたりすると、<wbr>長い<wbr>髪がおくれてゆれます
+・<wbr>えらべる<wbr>髪型は、<wbr>しばらく<wbr>ショートと<wbr>ロングの 2 つです。<wbr>ほかの<wbr>髪型で<wbr>作った<wbr>キャラは、<wbr>ショートで<wbr>表示されます
+・<wbr>主人公の<wbr>体を<wbr>少し<wbr>小さくして、<wbr>頭身を<wbr>下げました
+・<wbr>女性の<wbr>キャラは、<wbr>体つき<wbr>(胸と<wbr>ウエスト)<wbr>が<wbr>男性と<wbr>少し<wbr>変わります</div></details></li><li class="more"><details><summary><time datetime="2026-11-14">11/14</time><span class="t">主人公に<wbr>髪がつきました<wbr>(ショート)</span></summary><div class="x">・<wbr>新しい<wbr>体<wbr>(素体)<wbr>に、<wbr>立体の<wbr>髪がつきました。<wbr>今は<wbr>ショートだけで、<wbr>ほかの<wbr>髪型をえらんだ<wbr>キャラも、<wbr>しばらくは<wbr>ショートで<wbr>表示されます
+・<wbr>はじめの<wbr>見た<wbr>目をえらぶ<wbr>画面の<wbr>見本が、<wbr>新しい<wbr>体になりました
+・<wbr>見た<wbr>目に<wbr>「髪の<wbr>色むら」<wbr>と<wbr>「毛先の<wbr>明るさ」<wbr>が<wbr>増えました。<wbr>色むらを<wbr>大きくすると、<wbr>メッシュ<wbr>(染め<wbr>分け)<wbr>のような<wbr>髪にできます
+・<wbr>まだ<wbr>服がありません<wbr>(これから<wbr>作ります)</div></details></li><li class="more"><details><summary><time datetime="2026-11-14">11/14</time><span class="t">主人公の<wbr>新しい<wbr>体<wbr>(素体)<wbr>の<wbr>試し</span></summary><div class="x">・<wbr>主人公を、<wbr>新しく<wbr>作っている<wbr>体<wbr>(素体)<wbr>で<wbr>描くようにしました。<wbr>待機・<wbr>走り<wbr>・<wbr>攻撃など、<wbr>今までの<wbr>動きでそのまま<wbr>動きます
+・<wbr>まだ<wbr>服と<wbr>髪がありません<wbr>(これから<wbr>作ります)
+・<wbr>F8 を<wbr>押すと、<wbr>新しい<wbr>体 → 前の 3D → 前の<wbr>絵 の<wbr>順に<wbr>切りかわります</div></details></li><li class="more"><details><summary><time datetime="2026-11-11">11/11</time><span class="t">転職・<wbr>MP<wbr>・<wbr>ダッシュ・<wbr>通常攻撃の<wbr>見直し</span></summary><div class="x">・<wbr>物語を<wbr>進めると、<wbr>女神から<wbr>職業を<wbr>授かります
+・<wbr>MP<wbr>は<wbr>町と<wbr>休み<wbr>場でしか<wbr>自然に<wbr>戻らなくなりました
+・<wbr>Shift を<wbr>押しているあいだ<wbr>ダッシュします<wbr>(スタミナを<wbr>使う)
+・<wbr>通常攻撃のあいだに<wbr>間ができました。<wbr>攻撃速度が<wbr>上がると<wbr>全体が<wbr>速くなります</div></details></li><li class="more"><details><summary><time datetime="2026-11-10">11/10</time><span class="t">職業を<wbr>作り<wbr>直しています<wbr>(見習い<wbr>転生者からの<wbr>スタート)</span></summary><div class="x">・<wbr>職業を<wbr>作り<wbr>直しています。<wbr>いまは<wbr>全員が<wbr>見習い<wbr>転生者で、<wbr>女神の<wbr>加護でたいていの<wbr>武器を<wbr>使えます
+・<wbr>前の<wbr>職業・<wbr>2<wbr>次職・<wbr>3<wbr>次職と、<wbr>その<wbr>スキルはなくなりました。<wbr>前の<wbr>キャラは<wbr>レベルはそのままで<wbr>見習い<wbr>転生者になり、<wbr>スキルと<wbr>ステータスの<wbr>ポイントは<wbr>全部戻ります
+・<wbr>生産職がなくなったので、<wbr>製作・<wbr>強化はしばらく<wbr>休止します
+・<wbr>禁書と<wbr>聖印・<wbr>女神の<wbr>涙・<wbr>黒い<wbr>ロザリオは<wbr>「本」<wbr>(サブ)<wbr>になりました。<wbr>名前に<wbr>「大盾」<wbr>がつく<wbr>盾は<wbr>大盾<wbr>(ガードが<wbr>強いかわりに<wbr>少し<wbr>足が<wbr>遅い)<wbr>です
+・<wbr>オーブ・<wbr>暗殺者の<wbr>鞘・<wbr>獣人の<wbr>飾りと<wbr>トーテム・<wbr>スリング・<wbr>大バサミはしばらくお<wbr>休み<wbr>(装備できず、<wbr>落ちません。<wbr>持っていた<wbr>物は<wbr>消えます)
+・<wbr>回避・<wbr>ガードの<wbr>ボタン<wbr>(Space)<wbr>は<wbr>職業で<wbr>働きが<wbr>変わります:<wbr>弓使いは<wbr>回避<wbr>(終わってから<wbr>2<wbr>秒は<wbr>次の<wbr>回避ができない)、<wbr>傭兵は<wbr>ガード、<wbr>魔法使い<wbr>・<wbr>僧侶は<wbr>押しているあいだ<wbr>集中して<wbr>MP<wbr>が<wbr>戻ります
+・<wbr>回避・<wbr>ガード・<wbr>集中・<wbr>本・<wbr>盾の<wbr>動きの<wbr>絵は、<wbr>絵の<wbr>作りなおしが<wbr>終わると<wbr>表示されます</div></details></li><li class="more"><details><summary><time datetime="2026-11-10">11/10</time><span class="t">主人公が<wbr>武器ごとに<wbr>動くようになりました</span></summary><div class="x">・<wbr>待機<wbr>(呼吸)・<wbr>走り<wbr>・<wbr>通常攻撃の<wbr>動きを、<wbr>武器の<wbr>種類ごとに<wbr>新しく<wbr>描きました<wbr>(剣・<wbr>短剣・<wbr>大剣と<wbr>大斧・<wbr>大槌・<wbr>片手斧と<wbr>メイス・<wbr>杖・<wbr>杖と<wbr>本・<wbr>本・<wbr>僧侶の<wbr>杖・<wbr>弓)
+・<wbr>通常攻撃は、<wbr>振りかぶってから<wbr>当たるまでの<wbr>時間が<wbr>武器ごとに<wbr>変わります。<wbr>大剣や<wbr>弓は<wbr>1<wbr>回が<wbr>重く、<wbr>短剣は<wbr>速く<wbr>当たります<wbr>(時間あたりの<wbr>ダメージは<wbr>前と<wbr>同じになるように、<wbr>1<wbr>回の<wbr>威力を<wbr>調整しています)
+・<wbr>攻撃の<wbr>途中で<wbr>回避・<wbr>ガード・<wbr>スキルを<wbr>使うと、<wbr>その<wbr>攻撃はやめます
+・<wbr>オールバックの<wbr>髪型はなくなりました<wbr>(その<wbr>キャラは<wbr>ショートになります)
+・<wbr>協力プレイは、<wbr>みんな<wbr>同じ<wbr>新しい<wbr>バージョンにしてください</div></details></li><li class="more"><details><summary><time datetime="2026-11-08">11/8</time><span class="t">髪型<wbr>「くせっ<wbr>毛」<wbr>「ウェーブ」<wbr>をいったん<wbr>外しました</span></summary><div class="x">・<wbr>キャラクター作成で<wbr>選べる<wbr>髪型から<wbr>「くせっ<wbr>毛」<wbr>と<wbr>「ウェーブ」<wbr>をいったん<wbr>外しました<wbr>(髪型は<wbr>7<wbr>種類)。<wbr>見直しが<wbr>終わったら<wbr>戻す<wbr>予定です
+・<wbr>すでにこの<wbr>髪型の<wbr>キャラはそのままの<wbr>見た<wbr>目です</div></details></li><li class="more"><details><summary><time datetime="2026-11-08">11/8</time><span class="t">ポニーテールの<wbr>見直しと、<wbr>耳のふち</span></summary><div class="x">・<wbr>ポニーテール:<wbr>前髪の<wbr>毛先をなめらかにそろえました。<wbr>横から<wbr>見ると<wbr>耳が<wbr>見えるように<wbr>髪を<wbr>耳にかけ、<wbr>顔の<wbr>横の<wbr>後れ<wbr>毛は<wbr>少し<wbr>太く。<wbr>耳の<wbr>後ろのえりあしは、<wbr>斜めのすっきりした<wbr>カーブになりました
+・<wbr>主人公の<wbr>耳にふちの<wbr>線を<wbr>足しました<wbr>(髪から<wbr>耳がのぞく<wbr>髪型で、<wbr>耳とわかるように)</div></details></li><li class="more"><details><summary><time datetime="2026-11-08">11/8</time><span class="t">髪型<wbr>「ボブ」<wbr>を<wbr>外し、<wbr>ポニーテールに<wbr>前髪の<wbr>毛束</span></summary><div class="x">・<wbr>キャラクター作成で<wbr>選べる<wbr>髪型から<wbr>「ボブ」<wbr>を<wbr>外しました<wbr>(髪型は<wbr>9<wbr>種類になりました)。<wbr>すでに<wbr>ボブの<wbr>キャラはそのままの<wbr>見た<wbr>目です
+・<wbr>ポニーテールに、<wbr>ロングと<wbr>同じ<wbr>前髪の<wbr>細い<wbr>毛束を<wbr>2<wbr>本足しました</div></details></li><li class="more"><details><summary><time datetime="2026-11-08">11/8</time><span class="t">髪型<wbr>「オールバック」<wbr>を<wbr>作り<wbr>直し</span></summary><div class="x">・<wbr>オールバックを<wbr>一から<wbr>描き<wbr>直しました。<wbr>額をしっかり<wbr>出し、<wbr>前髪から<wbr>後ろへきれいになでつけた<wbr>形です<wbr>(前に<wbr>垂れる<wbr>一筋はそのまま)
+・<wbr>額の<wbr>生えぎわから<wbr>頭の<wbr>上・<wbr>横へ、<wbr>細い<wbr>毛束が<wbr>後ろへ<wbr>流れます
+・<wbr>横は<wbr>ツーブロック風。<wbr>耳の<wbr>上から<wbr>下はすっきり<wbr>短く、<wbr>もみあげは<wbr>耳の<wbr>上まで。<wbr>耳の<wbr>後ろからえりあしはなめらかな<wbr>カーブです
+・<wbr>男女どちらでも<wbr>選べます。<wbr>すでに<wbr>オールバックの<wbr>キャラもこの<wbr>形になります</div></details></li><li class="more"><details><summary><time datetime="2026-11-07">11/7</time><span class="t">主人公の<wbr>見た<wbr>目を<wbr>描き<wbr>直し<wbr>・<wbr>目の<wbr>形が<wbr>選べるように</span></summary><div class="x">・<wbr>主人公<wbr>(男女)<wbr>の<wbr>絵をすべて<wbr>描き<wbr>直しました。<wbr>小顔ですっきりした<wbr>頭、<wbr>少し<wbr>見える<wbr>首、<wbr>短めの<wbr>胴で、<wbr>全体の<wbr>バランスを<wbr>整えました
+・<wbr>キャラクター作成で<wbr>「目の<wbr>形」<wbr>を<wbr>選べるようになりました<wbr>(丸い<wbr>目・<wbr>たれ<wbr>目・<wbr>つり<wbr>目・<wbr>切れ<wbr>長)。<wbr>瞳の<wbr>色の<wbr>下にあります。<wbr>おまかせでも<wbr>選ばれます
+・<wbr>髪型も<wbr>見直しました。<wbr>ショートは<wbr>小さな<wbr>毛先のつんつん、<wbr>ぼさぼさはくせ<wbr>毛の<wbr>外はね、<wbr>ロングは<wbr>前髪を<wbr>自然に<wbr>横へ<wbr>流す<wbr>形に。<wbr>「ツンツン」<wbr>の<wbr>名前は<wbr>「ボンバー」<wbr>になりました
+・<wbr>これまでの<wbr>キャラは<wbr>丸い<wbr>目になります</div></details></li><li class="more"><details><summary><time datetime="2026-11-07">11/7</time><span class="t">【ルーメ草原】ゴブリンの<wbr>洞窟のまわりを<wbr>丘に</span></summary><div class="x">・<wbr>北東の、<wbr>岩の<wbr>柱で<wbr>囲まれていた<wbr>一角を<wbr>丘にしました<wbr>(城下町ルーメの<wbr>村長の<wbr>館がある<wbr>丘と<wbr>同じ<wbr>作り)。<wbr>南西の<wbr>道の<wbr>坂道から<wbr>上ります
+・<wbr>ゴブリンの<wbr>洞窟の<wbr>入口は、<wbr>丘のさらに<wbr>上の<wbr>段の<wbr>崖に<wbr>掘られた<wbr>坑口になりました<wbr>(丸太の<wbr>枠・<wbr>松明・<wbr>ゴブリンのぼろ<wbr>旗)。<wbr>上の<wbr>段は<wbr>森です
+・<wbr>洞窟の<wbr>入口のまわりは<wbr>荒れた<wbr>土の<wbr>地面に。<wbr>崖ぎわは<wbr>岩肌、<wbr>枯れ<wbr>木・<wbr>小石・<wbr>がれき<wbr>・<wbr>枯れ<wbr>草・<wbr>骨と、<wbr>ゴブリンが<wbr>散らかした<wbr>薪・<wbr>木箱・<wbr>樽</div></details></li><li class="more"><details><summary><time datetime="2026-11-07">11/7</time><span class="t">ポータルまわりの<wbr>見直しと、<wbr>地下聖堂の<wbr>入口</span></summary><div class="x">・<wbr>すべての<wbr>ポータル・<wbr>入口を<wbr>調べ<wbr>直しました。<wbr>門や<wbr>階段の<wbr>手前にある<wbr>壁・<wbr>木・<wbr>岩は、<wbr>低い<wbr>壁にするか<wbr>透かして、<wbr>入口がかくれないようにしました
+・<wbr>壁ぎわや<wbr>行き<wbr>止まりに<wbr>埋もれていた<wbr>ポータル<wbr>(ダンジョンの<wbr>入口・<wbr>守護者の<wbr>間への<wbr>門・<wbr>地下迷宮の<wbr>上り<wbr>階段など 15 か<wbr>所)<wbr>を、<wbr>少し<wbr>広い<wbr>所へ<wbr>移しました
+・<wbr>沈黙の<wbr>地下聖堂の<wbr>入口<wbr>(ルーメの<wbr>墓地の<wbr>南)<wbr>を<wbr>作り<wbr>直しました。<wbr>森のふちの<wbr>草の<wbr>塚に、<wbr>苔むした<wbr>石の<wbr>門口が<wbr>半分うずもれ、<wbr>地下へ<wbr>下りる<wbr>石段が<wbr>口をあけています</div></details></li><li class="more"><details><summary><time datetime="2026-11-07">11/7</time><span class="t">ギルド領地と<wbr>女神の<wbr>夢の<wbr>庭も<wbr>作り<wbr>直し</span></summary><div class="x">・<wbr>ギルド領地:<wbr>四角い<wbr>石垣をやめ、<wbr>角を<wbr>落とした<wbr>城壁に。<wbr>南の<wbr>出入口は<wbr>左右の<wbr>塔と<wbr>アーチの<wbr>門になりました。<wbr>壁の<wbr>外はすぐ<wbr>森です
+・<wbr>【外伝】女神の<wbr>夢の<wbr>庭:<wbr>まっすぐだった<wbr>森のふちを<wbr>自然な<wbr>形にし、<wbr>空き<wbr>地に<wbr>木立を<wbr>足しました<wbr>(魔物の<wbr>出る<wbr>場所はあけてあります)
+・<wbr>王都などの<wbr>門で、<wbr>出口の<wbr>道が<wbr>町の<wbr>反対側の<wbr>森まで<wbr>突き<wbr>抜けていたのを<wbr>直しました</div></details></li><li class="more"><details><summary><time datetime="2026-11-07">11/7</time><span class="t">町の<wbr>作り<wbr>直しと、<wbr>王城の<wbr>中</span></summary><div class="x">・<wbr>王都アルセリア:<wbr>大神殿の<wbr>西と<wbr>東から、<wbr>北の<wbr>王城へ<wbr>続く<wbr>道と<wbr>前庭ができました。<wbr>正門から<wbr>王城の<wbr>中に<wbr>入れます
+・<wbr>王城の<wbr>中:<wbr>入口の<wbr>広間・<wbr>大広間・<wbr>玉座の<wbr>間<wbr>(国王・<wbr>王女・<wbr>宰相)、<wbr>書庫、<wbr>大階段の<wbr>間、<wbr>大食堂、<wbr>厨房、<wbr>近衛の<wbr>兵舎、<wbr>宝物庫があります。<wbr>曲は<wbr>「キャッスル」
+・<wbr>王都・<wbr>霜鉄の<wbr>城塞都市・<wbr>最果ての<wbr>野営地:<wbr>四角い<wbr>城壁をやめ、<wbr>角を<wbr>落とした<wbr>形に。<wbr>門は<wbr>道が<wbr>通る<wbr>所に、<wbr>左右の<wbr>塔と<wbr>アーチ付きで。<wbr>壁の<wbr>外は<wbr>草の<wbr>帯と<wbr>森です<wbr>(野営地は<wbr>丸太の<wbr>柵)
+・<wbr>霜鉄の<wbr>城塞都市:<wbr>北の<wbr>城館のまわりを<wbr>高台にし、<wbr>大通りの<wbr>坂道で<wbr>上るようにしました
+・<wbr>花戸の<wbr>町:<wbr>まっすぐだった<wbr>森のふちを<wbr>自然な<wbr>形にし、<wbr>北の<wbr>西と<wbr>東を<wbr>丘に。<wbr>大通りから<wbr>坂道で<wbr>上ると、<wbr>石灯籠と<wbr>ベンチがあります
+・<wbr>あちこちに<wbr>置いてあった<wbr>飾りのかかし<wbr>(訓練用ではないもの)<wbr>を<wbr>消しました
+・<wbr>部屋を<wbr>分ける<wbr>壁のうしろに<wbr>入ると、<wbr>手前の<wbr>壁が<wbr>透けて<wbr>自分が<wbr>見えるようにしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-07">11/7</time><span class="t">音量を 1% ずつ</span></summary><div class="x">・<wbr>設定の<wbr>サウンド<wbr>(BGM<wbr>・<wbr>効果音・<wbr>環境音・<wbr>操作の<wbr>音)<wbr>を、<wbr>1% ずつ<wbr>変えられるようにしました
+・<wbr>つまみを<wbr>左右に<wbr>動かすか、<wbr>－/＋ボタンで 1% ずつ<wbr>変えられます</div></details></li><li class="more"><details><summary><time datetime="2026-11-07">11/7</time><span class="t">曲の<wbr>大きさをそろえました</span></summary><div class="x">・<wbr>城下町ルーメの<wbr>曲<wbr>(Peaceful Village)<wbr>が<wbr>大きく<wbr>聞こえていたのを<wbr>直しました。<wbr>曲そのものが<wbr>前の<wbr>曲より<wbr>大きかったので、<wbr>ほかの<wbr>町や<wbr>フィールドの<wbr>曲と<wbr>同じくらいの<wbr>大きさにそろえました
+・<wbr>風見の<wbr>丘・<wbr>霜鉄の<wbr>城塞都市の<wbr>曲も、<wbr>同じようにそろえました</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【風見の<wbr>丘】ベンチの<wbr>座面</span></summary><div class="x">・<wbr>頂の<wbr>ベンチの<wbr>座る<wbr>面の<wbr>奥行きを<wbr>短くしました。<wbr>背もたれは<wbr>高いままで、<wbr>座った<wbr>人の<wbr>手前に<wbr>見えます<wbr>(うしろから、<wbr>背もたれごしに<wbr>二人の<wbr>頭と<wbr>横顔が<wbr>見えます)</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">ベンチに<wbr>座った<wbr>姿を<wbr>作り<wbr>直しました</span></summary><div class="x">・<wbr>ベンチに<wbr>座ると、<wbr>ちゃんと<wbr>腰かけた<wbr>姿になります<wbr>(腰を<wbr>座面の<wbr>高さにして、<wbr>脚をひざを<wbr>曲げたように<wbr>短く<wbr>描きます)
+・<wbr>風見の<wbr>丘の<wbr>ベンチでは、<wbr>うしろ<wbr>姿ではなく、<wbr>眺めのほうを<wbr>見る<wbr>横顔で<wbr>座ります</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【風見の<wbr>丘】ベンチに<wbr>座った<wbr>姿</span></summary><div class="x">・<wbr>頂の<wbr>ベンチの<wbr>背もたれを<wbr>低くしました。<wbr>うしろから<wbr>見ても、<wbr>座った<wbr>背中が<wbr>見えます<wbr>(前は<wbr>背もたれにかくれて、<wbr>頭しか<wbr>見えませんでした)</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【風見の<wbr>丘】坂道から<wbr>遠景が<wbr>見えないように</span></summary><div class="x">・<wbr>丘の<wbr>入口や<wbr>坂道の<wbr>途中から、<wbr>遠くの<wbr>景色の<wbr>絵が<wbr>見えてしまっていたのを<wbr>直しました。<wbr>丘のまわり<wbr>(左下と<wbr>右下)<wbr>は、<wbr>ずっと<wbr>森が<wbr>続きます
+・<wbr>遠くの<wbr>景色が<wbr>見えるのは、<wbr>頂の<wbr>崖の<wbr>向こうだけです
+・<wbr>崖のふちのもやを、<wbr>少しうすくしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【ルーメ】湖の<wbr>小島の<wbr>ベンチと、<wbr>水面を<wbr>軽く</span></summary><div class="x">・<wbr>湖の<wbr>小島の<wbr>ベンチを、<wbr>島の<wbr>右下に<wbr>移し、<wbr>右下の<wbr>広い<wbr>湖を<wbr>向くようにしました
+・<wbr>湖や<wbr>川のある<wbr>所が<wbr>重くなっていたのを<wbr>直しました。<wbr>水面の<wbr>光は、<wbr>ゆっくり<wbr>現れては<wbr>消える、<wbr>やわらかな<wbr>光の<wbr>帯にしました
+・<wbr>魚影の<wbr>数を<wbr>減らしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【風見の<wbr>丘】苔むした<wbr>門と、<wbr>遠くの<wbr>森</span></summary><div class="x">・<wbr>宝石の<wbr>門を、<wbr>苔むした<wbr>古い<wbr>石材にしました。<wbr>石のすき<wbr>間や<wbr>上に<wbr>苔がつき、<wbr>少し<wbr>垂れ<wbr>下がっています
+・<wbr>門を<wbr>坂道の<wbr>少し<wbr>下へ、<wbr>ベンチを<wbr>少し<wbr>左下へ<wbr>動かしました
+・<wbr>座ったときの<wbr>画面の<wbr>右下に、<wbr>遠くの<wbr>森が<wbr>少しだけ、<wbr>かすんで<wbr>見えます</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【風見の<wbr>丘】もやは<wbr>谷へ</span></summary><div class="x">・<wbr>崖の<wbr>向こうのもやが、<wbr>空のほうへは<wbr>広がらず、<wbr>横と<wbr>下の<wbr>谷のほうへ<wbr>広がるようにしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【風見の<wbr>丘】崖の<wbr>向こうに<wbr>広がるもや</span></summary><div class="x">・<wbr>崖の<wbr>地面はふちまで<wbr>見えるようにし、<wbr>ふちの<wbr>外から<wbr>遠くの<wbr>景色のほうへ、<wbr>大きくなめらかにもやが<wbr>広がるようにしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【風見の<wbr>丘】崖のふちの<wbr>白いもや</span></summary><div class="x">・<wbr>崖のふちの<wbr>白いもやを<wbr>濃くしました。<wbr>ふちの<wbr>線がもやにとけて、<wbr>丘が<wbr>雲の<wbr>上に<wbr>浮かんでいるように<wbr>見えます</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【風見の<wbr>丘】大きな<wbr>ベンチと<wbr>門、<wbr>森の<wbr>広がり</span></summary><div class="x">・<wbr>頂の<wbr>ベンチを<wbr>少し<wbr>左へ<wbr>動かし、<wbr>二人でゆったり<wbr>座れる<wbr>大きさにしました
+・<wbr>宝石の<wbr>門を<wbr>太く、<wbr>1.5<wbr>倍の<wbr>大きさにして、<wbr>坂道の<wbr>少し<wbr>下に<wbr>置き<wbr>直しました
+・<wbr>森が<wbr>丘の<wbr>左から<wbr>画面の<wbr>下へ、<wbr>這うように<wbr>広がります。<wbr>開けているのは<wbr>ベンチのまわりだけです</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【風見の<wbr>丘】丘は<wbr>左、<wbr>眺めは<wbr>右に</span></summary><div class="x">・<wbr>頂を<wbr>画面の<wbr>左に<wbr>寄せ、<wbr>右に<wbr>遠くの<wbr>景色が<wbr>大きく<wbr>広がるようにしました
+・<wbr>ベンチは、<wbr>右の<wbr>眺めのほうを<wbr>向けて<wbr>置き<wbr>直しました<wbr>(座ると、<wbr>右の<wbr>景色を<wbr>見ます)
+・<wbr>崖のふちが、<wbr>ぎざぎざではなく、<wbr>なめらかな<wbr>曲線になりました。<wbr>ふちは<wbr>岩肌で、<wbr>もやがただよいます
+・<wbr>丘の<wbr>左側は、<wbr>崖のふちまで<wbr>森が<wbr>広がります<wbr>(小さな<wbr>飾りは<wbr>置きません)
+・<wbr>映画の<wbr>帯の<wbr>下に<wbr>出ていた、<wbr>暗い<wbr>グラデーションをなくしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【風見の<wbr>丘】頂の<wbr>崖と、<wbr>手前の<wbr>景色</span></summary><div class="x">・<wbr>頂の<wbr>先を、<wbr>とがった<wbr>角ではなく、<wbr>ゆるい<wbr>弧を<wbr>描く<wbr>崖にしました。<wbr>崖の<wbr>向こうは<wbr>何もなく、<wbr>遠くの<wbr>景色が<wbr>見えます
+・<wbr>崖のふちに、<wbr>もやがゆっくりただよいます
+・<wbr>頂のまわりに、<wbr>苔むした<wbr>岩、<wbr>緑・<wbr>黄・<wbr>赤の<wbr>茂み、<wbr>白い<wbr>野の<wbr>花、<wbr>すらりとした<wbr>針葉樹を<wbr>置きました
+・<wbr>坂道が<wbr>頂に<wbr>着く<wbr>所に、<wbr>青緑の<wbr>宝石がはまった<wbr>古い<wbr>石の<wbr>アーチと、<wbr>崩れた<wbr>石垣があります
+・<wbr>映画の<wbr>帯の<wbr>上下はそのままで、<wbr>遠くの<wbr>景色を<wbr>下げて、<wbr>青空がよく<wbr>見えるようにしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【風見の<wbr>丘】頂からの<wbr>眺めを、<wbr>描きおろしの<wbr>イラストに</span></summary><div class="x">・<wbr>風見の<wbr>丘の<wbr>頂から<wbr>見える<wbr>世界を、<wbr>描きおろしの<wbr>イラストにしました<wbr>(世界樹・<wbr>浮遊学術都市・<wbr>雪の<wbr>山なみと<wbr>霜鉄の<wbr>城塞・<wbr>王都・<wbr>秋津の<wbr>国の<wbr>白い<wbr>崖の<wbr>城)
+・<wbr>眺めの<wbr>上に、<wbr>幻想的な<wbr>動きを<wbr>重ねました:<wbr>右上から<wbr>差しこむ<wbr>光の<wbr>筋、<wbr>流れる<wbr>雲、<wbr>谷にただようもや、<wbr>野から<wbr>昇る<wbr>金と<wbr>水色の<wbr>光の<wbr>粒、<wbr>空の<wbr>城のほのかな<wbr>光、<wbr>舞う<wbr>世界樹の<wbr>葉、<wbr>海のきらめき、<wbr>ときどき<wbr>流れる<wbr>流れ<wbr>星
+・<wbr>頂で<wbr>眺めているあいだ、<wbr>カメラがゆっくりゆれて、<wbr>手前の<wbr>丘と<wbr>遠くの<wbr>景色に<wbr>奥行きが<wbr>出ます
+・<wbr>頂で<wbr>立ち<wbr>止まる<wbr>(座る)<wbr>と、<wbr>画面の<wbr>表示・<wbr>名前・<wbr>案内の<wbr>文字がゆっくり<wbr>消え、<wbr>景色だけになります。<wbr>歩き<wbr>出すと<wbr>元に<wbr>戻ります
+・<wbr>丘の<wbr>先は<wbr>草も<wbr>木もない<wbr>灰色の<wbr>岩の<wbr>崖にしました。<wbr>遠くの<wbr>景色には、<wbr>うすいもやがかかります</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【BGM】城下町ルーメと、<wbr>沈黙の<wbr>地下聖堂の<wbr>BOSS<wbr>の<wbr>曲</span></summary><div class="x">・<wbr>城下町ルーメ<wbr>(と<wbr>自分の<wbr>土地)<wbr>の<wbr>曲を<wbr>「Peaceful Village」<wbr>にしました
+・<wbr>沈黙の<wbr>地下聖堂の<wbr>BOSS<wbr>の<wbr>曲を<wbr>「boss1」<wbr>にしました
+・<wbr>風見の<wbr>丘に、<wbr>新しい<wbr>曲<wbr>「丘の<wbr>上」<wbr>を<wbr>流すようにしました
+・<wbr>霜鉄の<wbr>城塞都市ヴァルハイムの<wbr>曲を、<wbr>新しい<wbr>雪の<wbr>町の<wbr>曲にしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【風見の<wbr>丘】眺めの<wbr>世界樹と<wbr>霜鉄の<wbr>城塞</span></summary><div class="x">・<wbr>左の<wbr>千年樹の<wbr>大森林を、<wbr>太くねじれた<wbr>幹と<wbr>大きく<wbr>広がる<wbr>枝・<wbr>樹冠の<wbr>「世界樹」<wbr>にしました
+・<wbr>北の<wbr>雪国の<wbr>霜鉄の<wbr>城塞は、<wbr>とがった<wbr>頂の<wbr>上ではなく、<wbr>主峰の<wbr>肩の<wbr>平らな<wbr>所に、<wbr>斜面に<wbr>沿った<wbr>石垣の<wbr>上に<wbr>建つようにしました
+・<wbr>手前の<wbr>森や<wbr>木々のふちが、<wbr>ぼやけずにくっきり<wbr>見えるようになりました</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【町】湖の<wbr>小島と、<wbr>生きものの<wbr>気配</span></summary><div class="x">・<wbr>湖の<wbr>小島の<wbr>夕焼けの<wbr>眺めはやめ、<wbr>湖の<wbr>西は<wbr>森に<wbr>戻しました。<wbr>小島は<wbr>広くなり、<wbr>まわりを<wbr>木の<wbr>手すりで<wbr>囲みました<wbr>(二人がけの<wbr>ベンチはそのまま<wbr>座れます)
+・<wbr>湖・<wbr>池・<wbr>川の<wbr>水が、<wbr>岸の<wbr>近くは<wbr>明るく<wbr>浅く、<wbr>まん<wbr>中は<wbr>深い<wbr>青に<wbr>見えるようになりました
+・<wbr>水面がゆっくりゆらぎ、<wbr>ときどきぱっときらめきます
+・<wbr>水の<wbr>中を、<wbr>小さな<wbr>魚影がゆっくりあちこちへ<wbr>泳ぎます。<wbr>止まったときに<wbr>水面に<wbr>小さな<wbr>輪ができることも
+・<wbr>まれに<wbr>魚が<wbr>水面をはねます。<wbr>ベンチのそばにいると、<wbr>目の<wbr>前の<wbr>水でときどきはねます
+・<wbr>岸には<wbr>風にゆれる<wbr>葦、<wbr>湖や<wbr>池の<wbr>岸近くには<wbr>睡蓮の<wbr>葉と<wbr>花
+・<wbr>風見の<wbr>丘の<wbr>眺めの、<wbr>地方の<wbr>名前は<wbr>出さないようにしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【新しい<wbr>場所】風見の<wbr>丘 ─ 女神の<wbr>箱庭をのぞむ</span></summary><div class="x">・<wbr>城下町ルーメの<wbr>村長の<wbr>館の<wbr>裏から、<wbr>森の<wbr>小道が<wbr>北へ<wbr>続くようになりました。<wbr>その<wbr>先は<wbr>新しい<wbr>場所<wbr>「風見の<wbr>丘」<wbr>です
+・<wbr>風見の<wbr>丘は、<wbr>くねくねの<wbr>坂道を<wbr>上っていく<wbr>丘です<wbr>(魔物は<wbr>出ません)。<wbr>上るほど<wbr>カメラが<wbr>引いて、<wbr>丘の<wbr>向こうの<wbr>景色が<wbr>少しずつ<wbr>開けていきます
+・<wbr>頂で<wbr>立ち<wbr>止まる<wbr>(または<wbr>ベンチに<wbr>座る)<wbr>と、<wbr>世界の<wbr>眺めが<wbr>一面に<wbr>広がります。<wbr>見える<wbr>景色は<wbr>世界地図のとおりです:
+  左に<wbr>空まで<wbr>届く<wbr>千年樹の<wbr>大森林、<wbr>空に<wbr>浮かぶ<wbr>学術都市アルカナ、<wbr>正面に<wbr>北の<wbr>雪国の<wbr>山なみと<wbr>霜鉄の<wbr>城塞、<wbr>雲の<wbr>上へ<wbr>続く<wbr>白亜の<wbr>聖都の<wbr>階段、<wbr>右に<wbr>王都アルセリア、<wbr>海の<wbr>向こうに<wbr>秋津の<wbr>国の<wbr>白い<wbr>崖と<wbr>天守
+・<wbr>眺めが<wbr>開けると、<wbr>それぞれの<wbr>地方の<wbr>名前が<wbr>浮かびます
+・<wbr>頂は<wbr>名所<wbr>「風見の<wbr>丘の<wbr>頂」<wbr>です</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【町】丘の<wbr>墓地・<wbr>夕映えの<wbr>湖の<wbr>絶景スポット・<wbr>ベンチに<wbr>座れるように</span></summary><div class="x">・<wbr>名もなき<wbr>墓のまわりを、<wbr>柵と<wbr>墓石の<wbr>並ぶ<wbr>小さな<wbr>墓地にしました。<wbr>名もなき<wbr>墓は、<wbr>入口からの<wbr>小道の<wbr>突き<wbr>当たりにあります
+・<wbr>沈黙の<wbr>地下聖堂への<wbr>入口は、<wbr>墓地から<wbr>少し<wbr>離れた、<wbr>崩れた<wbr>石柱に<wbr>囲まれた<wbr>空き<wbr>地に<wbr>移しました
+・<wbr>湖を<wbr>西のはしまで<wbr>広げ、<wbr>湖に<wbr>浮かぶ<wbr>小島<wbr>「夕映えの<wbr>小島」<wbr>を<wbr>作りました。<wbr>釣り<wbr>小屋から<wbr>湖の<wbr>南の<wbr>岸ぞいの<wbr>小道を<wbr>歩き、<wbr>桟橋で<wbr>渡れます
+・<wbr>小島には<wbr>二人がけの<wbr>ベンチがあります。<wbr>そばで<wbr>ベンチを<wbr>クリックすると<wbr>座れて、<wbr>歩き<wbr>出すと<wbr>立ちます。<wbr>協力プレイでは、<wbr>相手が<wbr>座っている<wbr>姿も<wbr>見えます
+・<wbr>ベンチに<wbr>座ると、<wbr>カメラが<wbr>引いて<wbr>湖の<wbr>向こうを<wbr>向き、<wbr>夕日に<wbr>染まる<wbr>山なみと、<wbr>沈んでいく<wbr>太陽、<wbr>きらめく<wbr>湖面、<wbr>空を<wbr>渡る<wbr>鳥が<wbr>見えます。<wbr>画面に<wbr>映画のような<wbr>帯と<wbr>「夕映えの<wbr>湖」<wbr>の<wbr>文字が<wbr>出ます
+・<wbr>小島に<wbr>近づくだけでも、<wbr>少し<wbr>景色が<wbr>開けます
+・<wbr>協力プレイの<wbr>通信の<wbr>版が<wbr>上がりました<wbr>(両方の PC に<wbr>今回の<wbr>更新を<wbr>当ててください)</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【町】村長の<wbr>丘に<wbr>高さ<wbr>・<wbr>東の<wbr>門を<wbr>作り<wbr>直し</span></summary><div class="x">・<wbr>ルーメの<wbr>北西の<wbr>丘<wbr>(教会・<wbr>村長の<wbr>館・<wbr>墓地)<wbr>が、<wbr>本当に<wbr>一段高くなりました。<wbr>まわりは<wbr>土の<wbr>崖で、<wbr>石畳の<wbr>坂道をのぼって<wbr>上がります。<wbr>丘の<wbr>上にいる<wbr>人や<wbr>建物も<wbr>持ち<wbr>上がって<wbr>見えます
+・<wbr>崖のふちの<wbr>岩の<wbr>壁をやめ、<wbr>地面の<wbr>段差で<wbr>見せるようにしました
+・<wbr>見晴らしの<wbr>丘<wbr>(名所)<wbr>を<wbr>丘の<wbr>南東のふちに<wbr>移しました。<wbr>ベンチから<wbr>町と<wbr>川を<wbr>見下ろせます
+・<wbr>ルーメ草原へ<wbr>出る<wbr>東の<wbr>門を<wbr>作り<wbr>直しました。<wbr>南北に<wbr>続く<wbr>町の<wbr>石壁に、<wbr>塔<wbr>2<wbr>つと<wbr>アーチの<wbr>門。<wbr>扉は<wbr>内側へ<wbr>開いていて、<wbr>道がまっすぐ<wbr>門をくぐります。<wbr>門の<wbr>詰所は<wbr>門の<wbr>内側へ、<wbr>門番も<wbr>門のそばに<wbr>立ちます</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【画面】世界の<wbr>端が<wbr>真っ<wbr>黒に<wbr>見えないように</span></summary><div class="x">・<wbr>町や<wbr>フィールドの<wbr>端まで<wbr>行ったとき、<wbr>マップの<wbr>外が<wbr>真っ<wbr>黒に<wbr>見えていたのを<wbr>直しました。<wbr>端の<wbr>地面や<wbr>森が<wbr>外へ<wbr>続き、<wbr>遠くは<wbr>霧にとけていくように<wbr>見えます<wbr>(森は<wbr>奥ほどまばらに、<wbr>暗く)
+・<wbr>出口の<wbr>道も、<wbr>外へ<wbr>少し<wbr>続いてから<wbr>霧に<wbr>消えます
+・<wbr>ダンジョンや<wbr>家の<wbr>中は、<wbr>端をなだらかに<wbr>暗くするだけにしました
+・<wbr>外の<wbr>景色は、<wbr>画面に<wbr>映っている<wbr>所だけを<wbr>描くので、<wbr>重さはほとんど<wbr>変わりません</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【町】はじまりの<wbr>町ルーメを<wbr>作り<wbr>直し<wbr>・<wbr>名所めぐり</span></summary><div class="x">・<wbr>城下町ルーメを、<wbr>川と<wbr>丘のある<wbr>田舎町として<wbr>1.5<wbr>倍ほどの<wbr>広さに<wbr>作り<wbr>直しました。<wbr>四角い<wbr>町並みをやめ、<wbr>森にふちどられた<wbr>形に、<wbr>くねくねと<wbr>曲がる<wbr>道でつながります
+・<wbr>NPC ごとに、<wbr>その<wbr>人らしい<wbr>建物を<wbr>建てました<wbr>(教会・<wbr>村長の<wbr>屋敷・<wbr>宿屋・<wbr>冒険者ギルド・<wbr>鍛冶場・<wbr>工房・<wbr>薬草小屋・<wbr>本屋・<wbr>人形屋・<wbr>水車小屋・<wbr>農家・<wbr>漁師小屋・<wbr>兵舎・<wbr>見張り<wbr>小屋 など<wbr>21<wbr>種)。<wbr>NPC は<wbr>自分の<wbr>店や<wbr>家の<wbr>戸口の<wbr>前に<wbr>立っています
+・<wbr>町はずれに<wbr>景色のいい<wbr>場所を<wbr>用意しました:<wbr>見晴らしの<wbr>丘・<wbr>森の<wbr>池・<wbr>水車小屋・<wbr>湖の<wbr>桟橋・<wbr>花畑
+・<wbr>【名所めぐり】5<wbr>か<wbr>所の<wbr>名所に<wbr>近づくと<wbr>「名所めぐり 1/5」<wbr>のように<wbr>知らせが<wbr>出ます。<wbr>5<wbr>か<wbr>所すべてめぐると<wbr>称号<wbr>「ルーメ名所めぐり」<wbr>(移動の<wbr>速さ+2%・<wbr>運+2)<wbr>がもらえます
+・<wbr>兵舎の<wbr>前に<wbr>訓練所<wbr>(かかし)、<wbr>東の<wbr>門の<wbr>先が<wbr>フィールドへの<wbr>出口です</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【画面】落とし<wbr>物・<wbr>家具・<wbr>お<wbr>墓などを<wbr>描き<wbr>直し</span></summary><div class="x">・<wbr>地面の<wbr>落とし<wbr>物を、<wbr>中身がわかる<wbr>絵にしました<wbr>(金貨の<wbr>山・<wbr>剣・<wbr>盾・<wbr>鎧・<wbr>宝石箱・<wbr>薬びん<wbr>・<wbr>矢束・<wbr>木箱・<wbr>袋)。<wbr>ときどききらっと<wbr>光ります
+・<wbr>家具<wbr>31<wbr>種を、<wbr>木目や<wbr>布の<wbr>質感のある<wbr>絵に<wbr>描き<wbr>直しました<wbr>(ベッド・<wbr>本棚・<wbr>椅子・<wbr>机・<wbr>ランプ・<wbr>敷物・<wbr>畑・<wbr>大釜・<wbr>旗印 など)。<wbr>女神像の<wbr>置き<wbr>物は<wbr>村の<wbr>女神像の<wbr>姿に、<wbr>スライムのぬいぐるみは<wbr>スライムの<wbr>姿に
+・<wbr>倉庫の<wbr>箱・<wbr>建築の<wbr>立て<wbr>札・<wbr>像の<wbr>銘板・<wbr>名もなき<wbr>墓も<wbr>描き<wbr>直しました
+・<wbr>マップの<wbr>端の<wbr>出口に<wbr>道しるべを<wbr>立て、<wbr>向きを<wbr>示す<wbr>光の<wbr>矢印をやわらかい<wbr>光にしました
+・<wbr>足もとの<wbr>輪<wbr>(選んだ<wbr>相手・<wbr>落とし<wbr>物・<wbr>休み<wbr>場など)<wbr>を<wbr>光のにじむ<wbr>輪に、<wbr>記憶のかけらを<wbr>紫の<wbr>結晶に、<wbr>BOSS の<wbr>部屋の<wbr>鉄格子をさびた<wbr>鉄の<wbr>棒にしました
+・<wbr>NPC の<wbr>頭の<wbr>上の<wbr>クエストの<wbr>印<wbr>(!・?)<wbr>を、<wbr>つやのある<wbr>印にしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【セーブ】自動セーブと、<wbr>セーブの<wbr>控え</span></summary><div class="x">・<wbr>3<wbr>分ごとに<wbr>自動で<wbr>セーブするようにしました<wbr>(ソロ・<wbr>協力プレイの<wbr>ホスト)。<wbr>セーブのときは<wbr>右下に<wbr>小さく<wbr>「自動セーブ中…」<wbr>と<wbr>出ます
+・<wbr>セーブは<wbr>書き<wbr>切ってから<wbr>入れかえるようにし、<wbr>前の<wbr>セーブを<wbr>3<wbr>つまで<wbr>控えておくようにしました。<wbr>万一セーブが<wbr>読めなくなっても、<wbr>控えから<wbr>読みます</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【マップ】出入り<wbr>口のまわりを<wbr>広く<wbr>・<wbr>魔物が<wbr>来ないように</span></summary><div class="x">・<wbr>ポータルや、<wbr>マップの<wbr>端の<wbr>出口のまわりの<wbr>木や<wbr>岩をどけて、<wbr>広く<wbr>空けました
+・<wbr>出入り<wbr>口のまわりには<wbr>魔物が<wbr>入ってこなくなり、<wbr>湧く<wbr>場所も<wbr>遠ざけました。<wbr>着いたとたんに<wbr>囲まれることはありません
+・<wbr>ダンジョンでも、<wbr>階段や<wbr>出口のまわりを<wbr>少し<wbr>広げました</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【マップ】無限の<wbr>塔を<wbr>街道の<wbr>南の<wbr>空き<wbr>地へ</span></summary><div class="x">・<wbr>風鳴りの<wbr>街道を<wbr>南へ<wbr>広げ、<wbr>魔物のいない<wbr>静かな<wbr>空き<wbr>地に<wbr>無限の<wbr>塔を<wbr>移しました
+・<wbr>街道の<wbr>南の<wbr>木立が<wbr>開けていて、<wbr>土の<wbr>道をたどると<wbr>塔に<wbr>着きます<wbr>(池の<wbr>向こうにも<wbr>草地が<wbr>広がっています)</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【画面】ポータルの<wbr>見た<wbr>目を<wbr>行き<wbr>先ごとに</span></summary><div class="x">・<wbr>すべて<wbr>同じ<wbr>光の<wbr>輪だった<wbr>ポータルを、<wbr>行き<wbr>先に<wbr>合わせた<wbr>姿にしました
+・<wbr>建物の<wbr>出入り:<wbr>石の<wbr>敷居に<wbr>金のふち<wbr>取りの<wbr>敷物、<wbr>左右に<wbr>灯籠 / 迷宮の<wbr>階段:<wbr>厚い<wbr>切り<wbr>石のふちの<wbr>下り<wbr>階段・<wbr>手すり<wbr>壁のある<wbr>上り<wbr>階段
+・<wbr>ダンジョンの<wbr>入口:<wbr>松明の<wbr>灯る<wbr>石の<wbr>アーチ / ダンジョンから<wbr>外:<wbr>光の<wbr>差す<wbr>上り<wbr>階段 / 船:<wbr>板張りの<wbr>桟橋と<wbr>灯り
+・<wbr>BOSS の<wbr>間へ:<wbr>赤い<wbr>渦の<wbr>門 / BOSS の<wbr>間から<wbr>出る<wbr>・<wbr>近道:<wbr>青い<wbr>渦の<wbr>門 / 夢の<wbr>庭:<wbr>紫の<wbr>渦の<wbr>門 / BOSS を<wbr>倒したあとの<wbr>帰り<wbr>道:<wbr>金色の<wbr>門
+・<wbr>門や<wbr>アーチ・<wbr>上り<wbr>階段の<wbr>後ろを<wbr>歩くと、<wbr>ちゃんと<wbr>向こう<wbr>側に<wbr>隠れます</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【画面】場所の<wbr>移動はかならず<wbr>暗転してから</span></summary><div class="x">・<wbr>場所を<wbr>移るとき、<wbr>移動先が<wbr>一瞬見えてから<wbr>暗くなることがあったのを<wbr>直しました
+・<wbr>移動の<wbr>直前の<wbr>画面をゆっくり<wbr>暗くし、<wbr>暗いあいだに<wbr>移動先を<wbr>読み<wbr>込んでから、<wbr>ゆっくり<wbr>明るくします
+・<wbr>読み<wbr>込みがすぐ<wbr>終わっても、<wbr>暗転と<wbr>明けの<wbr>時間はかならずとります</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【画面】LOADING の<wbr>文字を<wbr>止め、<wbr>歩く<wbr>魔物を</span></summary><div class="x">・<wbr>LOADING の<wbr>点<wbr>(...)<wbr>が<wbr>増えても、<wbr>LOADING の<wbr>文字が<wbr>動かないようにしました
+・<wbr>LOADING の<wbr>横を、<wbr>小さな<wbr>魔物<wbr>(スライム・<wbr>ゴブリンの<wbr>斥候・<wbr>踊り<wbr>キノコ・<wbr>たぬき など)<wbr>がゆっくり<wbr>歩くようにしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【画面】LOADING の<wbr>前に<wbr>暗転</span></summary><div class="x">・<wbr>LOADING 画面が<wbr>出るときは、<wbr>かならず<wbr>画面をゆっくり<wbr>暗くしてから<wbr>出すようにしました<wbr>(キャラクターを<wbr>選んで<wbr>ゲームに<wbr>入るとき<wbr>・<wbr>読み<wbr>込みの<wbr>多い<wbr>場所へ<wbr>移るとき)
+・<wbr>読み<wbr>込みが<wbr>終わると、<wbr>これまでどおりゆっくり<wbr>明るくなります</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【絵】輪郭のにじみを<wbr>直してくっきりに</span></summary><div class="x">・<wbr>輪郭のぼかしが<wbr>絵の<wbr>外側までにじんでいて、<wbr>絵全体がぼけて<wbr>見えていたのを<wbr>直しました
+・<wbr>形はそのままにして、<wbr>一番外側の<wbr>黒い<wbr>線の<wbr>色だけを<wbr>少しやわらげています。<wbr>鎧や<wbr>服の<wbr>細かい<wbr>模様はくっきり<wbr>見えます</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【絵】輪郭のぼかしを<wbr>一番外側だけに</span></summary><div class="x">・<wbr>人物と<wbr>魔物の<wbr>輪郭のぼかしを、<wbr>一番外側の<wbr>輪郭線だけにしました。<wbr>目・<wbr>顔・<wbr>服の<wbr>模様・<wbr>内側の<wbr>線はくっきりのままです</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【直し】無限の<wbr>塔の<wbr>入口の<wbr>選択肢が<wbr>押せない<wbr>・<wbr>選択肢の<wbr>見切れ</span></summary><div class="x">・<wbr>無限の<wbr>塔の<wbr>入口に<wbr>立っているあいだ、<wbr>選択肢が<wbr>1<wbr>秒に<wbr>20<wbr>回送り<wbr>直されて<wbr>作り<wbr>直され<wbr>続けていたため、<wbr>押せず、<wbr>ホバーの<wbr>音が<wbr>大量に<wbr>鳴っていました。<wbr>入口では<wbr>一度だけ<wbr>聞くようにしました<wbr>(離れてもう<wbr>一度乗ると、<wbr>また<wbr>聞きます)
+・<wbr>会話の<wbr>選択肢が<wbr>多いとき、<wbr>最後の<wbr>ボタンが<wbr>見切れていたのを<wbr>直しました
+・<wbr>LOADING 画面の<wbr>文字を、<wbr>右下に<wbr>小さく<wbr>出すようにしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【直し】移動のなめらかさ<wbr>・<wbr>読み<wbr>込みの<wbr>画面・<wbr>環境の<wbr>演出をいったん<wbr>止める</span></summary><div class="x">・<wbr>移動中に<wbr>キャラクターが<wbr>細かく<wbr>震えて<wbr>見えていたのを<wbr>直しました<wbr>(位置が<wbr>届くたびに<wbr>速く<wbr>動いて<wbr>止まりかける<wbr>動きを、<wbr>等速で<wbr>進む<wbr>動きに)
+・<wbr>ゲームに<wbr>入るときに LOADING 画面を<wbr>出し、<wbr>効果音・<wbr>その<wbr>場所の<wbr>魔物と<wbr>住人の<wbr>絵・<wbr>見えている<wbr>所の<wbr>絵と<wbr>仕上げを<wbr>先に<wbr>読むようにしました<wbr>(攻撃した<wbr>瞬間などの<wbr>引っかかりを<wbr>減らします)
+・<wbr>ホタル・<wbr>霧・<wbr>舞う<wbr>花びら<wbr>・<wbr>雪の<wbr>粒・<wbr>雨などの<wbr>環境の<wbr>演出を、<wbr>いったんすべて<wbr>止めました
+・<wbr>朝昼晩と<wbr>天気の<wbr>移り<wbr>変わりを、<wbr>いったん<wbr>止めました<wbr>(いつも<wbr>昼・<wbr>晴れ)</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【直し】町などでの<wbr>重さ<wbr>(設定の<wbr>読み<wbr>方)</span></summary><div class="x">・<wbr>画面の<wbr>設定<wbr>(明るさ<wbr>・<wbr>画面の<wbr>揺れ<wbr>・<wbr>仲間の<wbr>スキル演出の<wbr>濃さなど)<wbr>を、<wbr>使うたびに<wbr>設定ファイルから<wbr>読み<wbr>直していました。<wbr>毎フレーム読むものがあり、<wbr>1<wbr>フレームに<wbr>何度も<wbr>ファイルを<wbr>開いていたため<wbr>重くなっていました
+・<wbr>一度読んだ<wbr>設定は<wbr>覚えておくようにしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【直し】絵の<wbr>仕上げで<wbr>町が<wbr>重かったのを<wbr>軽く</span></summary><div class="x">・<wbr>絵本風の<wbr>仕上げを、<wbr>読み<wbr>込んだときにその<wbr>場で<wbr>計算していたため、<wbr>町に<wbr>入ると<wbr>引っかかっていました
+・<wbr>はじめは<wbr>元の<wbr>絵で<wbr>出し、<wbr>仕上げは<wbr>裏で<wbr>少しずつ<wbr>作って<wbr>差しかえるようにしました<wbr>(遊んでいる<wbr>間に<wbr>止まりません)
+・<wbr>一度仕上げた<wbr>絵は<wbr>保存して、<wbr>次からは<wbr>読むだけにしました<wbr>(最初の<wbr>1<wbr>回だけ、<wbr>出てすぐの<wbr>絵が<wbr>一瞬元の<wbr>色で<wbr>見えることがあります)
+・<wbr>赤い<wbr>屋根など、<wbr>もともと<wbr>強い<wbr>色は<wbr>少し<wbr>落ち<wbr>着かせました</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【直し】横・<wbr>ななめを<wbr>向いたときの<wbr>目つき</span></summary><div class="x">・<wbr>つり<wbr>目・<wbr>たれ<wbr>目の<wbr>キャラクターが<wbr>横やななめを<wbr>向くと、<wbr>目尻の<wbr>向きが<wbr>逆になって、<wbr>つり<wbr>目がたれ<wbr>目に<wbr>(たれ<wbr>目がつり<wbr>目に)<wbr>見えていたのを<wbr>直しました
+・<wbr>直したのは<wbr>魔物 92 種<wbr>(つり<wbr>目・<wbr>爬虫類の<wbr>目・<wbr>怒った<wbr>光る<wbr>目)<wbr>と、<wbr>町の<wbr>住人 78 種<wbr>(目尻・<wbr>眉・<wbr>切れ<wbr>長の<wbr>目)<wbr>です
+・<wbr>正面の<wbr>顔は<wbr>前と<wbr>同じです</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【絵】絵本風の<wbr>仕上げ<wbr>(背景をやわらかく<wbr>・<wbr>人物を<wbr>落ち<wbr>着いた<wbr>色に)</span></summary><div class="x">・<wbr>背景<wbr>(地面・<wbr>家・<wbr>木・<wbr>置き<wbr>物・<wbr>壁・<wbr>岩)<wbr>の<wbr>黒っぽい<wbr>線を<wbr>周りの<wbr>色になじませ、<wbr>影を<wbr>少し<wbr>明るく、<wbr>白を<wbr>少し<wbr>抑えました。<wbr>人物と<wbr>魔物が<wbr>前に<wbr>浮いて<wbr>見えます
+・<wbr>人物と<wbr>魔物は、<wbr>原色をおさえた<wbr>中間色<wbr>(ほんのり<wbr>パステル)<wbr>にし、<wbr>輪郭線をほんの<wbr>少しやわらかくしました
+・<wbr>暗い<wbr>ダンジョン<wbr>(地下聖堂・<wbr>地下迷宮・<wbr>塔など)<wbr>は<wbr>暗さを<wbr>残すため、<wbr>背景の<wbr>仕上げをしていません
+・<wbr>設定 →<wbr>「画面」<wbr>→<wbr>「絵の<wbr>仕上げ」<wbr>で 絵本風/元のまま を<wbr>切りかえられます<wbr>(次の<wbr>起動から)</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【絵】残りの<wbr>魔物・<wbr>ボス・<wbr>住人・<wbr>第<wbr>6<wbr>章の<wbr>置き<wbr>物</span></summary><div class="x">・<wbr>前回の<wbr>描き<wbr>直しで<wbr>漏れていた<wbr>魔物<wbr>52<wbr>種<wbr>(ゴブリン王・<wbr>リザードマン・<wbr>ハーピー・<wbr>コウモリ・<wbr>スライム・<wbr>魔女モルガなど)<wbr>も、<wbr>新しい<wbr>塗り<wbr>方で<wbr>描き<wbr>直しました
+・<wbr>魔王ノエラ・<wbr>鐘守ベルグラム・<wbr>氷棺の<wbr>魔将の<wbr>形を<wbr>描き<wbr>分けました<wbr>(ノエラ:<wbr>冠と<wbr>広がる<wbr>ドレス・<wbr>紫の<wbr>大剣/ベルグラム:<wbr>片翼が<wbr>折れ、<wbr>背に<wbr>割れた<wbr>鐘/氷棺の<wbr>魔将:<wbr>氷の<wbr>結晶の<wbr>翼・<wbr>重い<wbr>鎧・<wbr>氷の<wbr>大斧)
+・<wbr>町の<wbr>住人<wbr>78<wbr>種の<wbr>塗りを<wbr>新しくしました<wbr>(光の<wbr>段階・<wbr>髪の<wbr>毛筋・<wbr>重なりの<wbr>陰・<wbr>縁の<wbr>光)
+・<wbr>空の<wbr>裂け<wbr>目と<wbr>玉座の<wbr>間に、<wbr>今まで<wbr>見えなかった<wbr>置き<wbr>物を<wbr>置きました<wbr>(駅の<wbr>看板・<wbr>自動販売機・<wbr>止まった<wbr>時計・<wbr>倒れた<wbr>傘・<wbr>魔王の<wbr>黒い<wbr>旗・<wbr>瓶の<wbr>棚・<wbr>玉座の<wbr>大時計)。<wbr>自動販売機と<wbr>大時計は<wbr>通り<wbr>抜けられません</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【見やすさ】敵の<wbr>技と<wbr>味方の<wbr>技を<wbr>見分けやすく</span></summary><div class="x">・<wbr>敵の<wbr>大技の<wbr>予兆の<wbr>縁を、<wbr>黒い<wbr>太い<wbr>縁と<wbr>赤のしま<wbr>模様にしました<wbr>(プレイヤーの<wbr>技にはない<wbr>形なので、<wbr>見ただけで<wbr>敵の<wbr>技とわかります)
+・<wbr>技を<wbr>出している<wbr>敵の<wbr>頭の<wbr>上に、<wbr>赤い<wbr>三角<wbr>(!)<wbr>つきの<wbr>黒い<wbr>札で<wbr>技の<wbr>名前を<wbr>出します。<wbr>予兆のあいだ<wbr>出し<wbr>続け、<wbr>阻止すると<wbr>消えます
+・<wbr>ほかの<wbr>プレイヤーの<wbr>スキルの<wbr>演出<wbr>(光・<wbr>魔法陣・<wbr>弾など)<wbr>を、<wbr>うすめに<wbr>描くようにしました。<wbr>自分の<wbr>技と<wbr>敵の<wbr>技はそのままの<wbr>濃さです
+・<wbr>濃さは 設定 →<wbr>「画面」<wbr>→<wbr>「仲間の<wbr>スキル演出」<wbr>で ふつう/うすめ/かなりうすく から<wbr>選べます<wbr>(はじめは うすめ)</div></details></li><li class="more"><details><summary><time datetime="2026-11-06">11/6</time><span class="t">【絵】モンスターの<wbr>絵を<wbr>全体的に<wbr>描き<wbr>直し</span></summary><div class="x">・<wbr>すべての<wbr>モンスター<wbr>(126<wbr>種)<wbr>の<wbr>絵を、<wbr>新しい<wbr>塗り<wbr>方で<wbr>描き<wbr>直しました
+・<wbr>光の<wbr>当たる<wbr>面の<wbr>明るさの<wbr>段階を<wbr>増やし、<wbr>影の<wbr>側に<wbr>照り<wbr>返し、<wbr>輪郭に<wbr>冷たい<wbr>縁の<wbr>光を<wbr>入れて、<wbr>立体感を<wbr>強めました
+・<wbr>毛皮は<wbr>毛の<wbr>流れ、<wbr>石は<wbr>細かいひび、<wbr>革・<wbr>金属・<wbr>布はそれぞれの<wbr>質感、<wbr>トカゲや<wbr>竜にはうろこ<wbr>模様が<wbr>入ります
+・<wbr>足もとを<wbr>少し<wbr>暗くして、<wbr>地面になじむようにしました
+・<wbr>大きさや<wbr>当たり<wbr>判定は<wbr>変わっていません</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【調整】ふつうの<wbr>魔物の<wbr>一撃で<wbr>倒れないように</span></summary><div class="x">・<wbr>BOSS 以外の<wbr>魔物の<wbr>一撃は、<wbr>最大<wbr>HP<wbr>の<wbr>一定の<wbr>割合までしか<wbr>減らないようにしました<wbr>(ふつうの<wbr>攻撃:<wbr>ふつうの<wbr>魔物 25%・<wbr>★強敵 35%/技の<wbr>1<wbr>発:<wbr>ふつうの<wbr>魔物 35%・<wbr>★強敵 45%)
+・<wbr>HP の<wbr>少ない<wbr>生産職でも、<wbr>森から<wbr>先で<wbr>一撃で<wbr>倒されることはなくなります。<wbr>囲まれたり、<wbr>技を<wbr>何発も<wbr>受けたりすると<wbr>危ないのは<wbr>同じです
+・<wbr>BOSS の<wbr>強さはそのままです</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【直し】仲間の<wbr>HP<wbr>バー・<wbr>チャットの<wbr>日本語入力</span></summary><div class="x">・<wbr>戦闘中、<wbr>左の<wbr>仲間の<wbr>HP<wbr>バーが<wbr>一瞬横に<wbr>伸びることがあったのを<wbr>直しました
+・<wbr>チャットで、<wbr>変換を<wbr>確定せずに<wbr>次の<wbr>文字を<wbr>打つと、<wbr>前の<wbr>文字が<wbr>1<wbr>文字消えていたのを<wbr>直しました</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【軽量化】たくさんの<wbr>技が<wbr>飛び<wbr>交う<wbr>戦いを<wbr>軽く</span></summary><div class="x">・<wbr>影・<wbr>霧・<wbr>技の<wbr>範囲・<wbr>予兆の<wbr>形など、<wbr>丸や<wbr>扇の<wbr>形の<wbr>描き<wbr>方を<wbr>速い<wbr>方法に<wbr>変えました<wbr>(見た<wbr>目は<wbr>同じ)
+・<wbr>地下迷宮の<wbr>暗闇の<wbr>描き<wbr>方を、<wbr>まとめて<wbr>1<wbr>回で<wbr>描くようにしました
+・<wbr>演出があふれるほど<wbr>多いときだけ、<wbr>ほかの<wbr>人の<wbr>小さな<wbr>数字や<wbr>細かい<wbr>火花から<wbr>少し<wbr>間引きます。<wbr>BOSS の<wbr>予兆・<wbr>自分の<wbr>数字・<wbr>大技はいつも<wbr>出ます</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【便利】設計図の<wbr>説明をくわしく</span></summary><div class="x">・<wbr>設計図に<wbr>マウスを<wbr>乗せると、<wbr>できる<wbr>装備の<wbr>種類・<wbr>装備<wbr>Lv<wbr>・<wbr>使える<wbr>職業<wbr>(自分が<wbr>使えるかは<wbr>色で)・<wbr>攻撃力や<wbr>魔力などの<wbr>基本の<wbr>性能・<wbr>要求ステータスが<wbr>出るようにしました
+・<wbr>作れる<wbr>生産職<wbr>(鍛冶師・<wbr>細工師)<wbr>と、<wbr>作れる<wbr>レベルも<wbr>出ます</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【直し】チャット入力中に<wbr>回避してしまう</span></summary><div class="x">・<wbr>チャットに<wbr>日本語を<wbr>入力していて、<wbr>変換の Space を<wbr>押すと<wbr>回避が<wbr>出ていたのを<wbr>直しました。<wbr>入力中は Esc 以外の<wbr>キー操作をしません</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【改善】地下迷宮を<wbr>広く<wbr>・<wbr>地図なしに/地下聖堂の<wbr>壁</span></summary><div class="x">・<wbr>王都の<wbr>地下迷宮の<wbr>通路と<wbr>部屋を、<wbr>およそ<wbr>2<wbr>倍の<wbr>広さにしました<wbr>(通路は<wbr>5<wbr>マス幅)。<wbr>迷宮全体も<wbr>広くなっています
+・<wbr>地下迷宮では<wbr>地図が<wbr>使えなくなりました。<wbr>M の<wbr>地図は<wbr>闇に<wbr>閉ざされ、<wbr>ミニマップも<wbr>近くの<wbr>気配だけ。<wbr>自分の<wbr>目で<wbr>道を<wbr>覚えましょう
+・<wbr>罠や<wbr>隠し<wbr>通路の<wbr>名前が<wbr>地図に<wbr>出ていたのを<wbr>直しました
+・<wbr>床の<wbr>赤い<wbr>光や<wbr>陣の<wbr>光が、<wbr>壁の<wbr>上に<wbr>透けて<wbr>見えていたのを<wbr>直しました<wbr>(地下聖堂・<wbr>地下迷宮・<wbr>無限の<wbr>塔)
+・<wbr>沈黙の<wbr>地下聖堂の<wbr>壁の、<wbr>マスごとのつなぎ<wbr>目の<wbr>線をなくしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【絵】沈黙の<wbr>地下聖堂の<wbr>床と<wbr>壁</span></summary><div class="x">・<wbr>床を<wbr>暗く<wbr>落ち<wbr>着いた<wbr>色にして、<wbr>敷石の<wbr>目地・<wbr>血のしみ<wbr>・<wbr>赤い<wbr>刻印を<wbr>控えめにしました。<wbr>魔物が<wbr>見やすくなります
+・<wbr>壁のつなぎ<wbr>目と、<wbr>マスごとに<wbr>区切れて<wbr>見える<wbr>ブロック感をなくし、<wbr>一続きの<wbr>暗い<wbr>石の<wbr>壁にしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【便利】操り<wbr>人形が<wbr>買えるように</span></summary><div class="x">・<wbr>人形遣いの<wbr>「操り<wbr>人形」<wbr>をお<wbr>店で<wbr>買えるようにしました<wbr>(1<wbr>つ 60G)
+・<wbr>城下町ルーメ:<wbr>からくり<wbr>屋の<wbr>ゼペル<wbr>(だれでも)・<wbr>裏通りの<wbr>ジャッコ<wbr>(裏の<wbr>店)
+・<wbr>王都の<wbr>故買屋ネロ、<wbr>花戸の<wbr>賭場の<wbr>銀次、<wbr>ヴァルハイムの<wbr>密輸屋イルザ、<wbr>野営地の<wbr>脱走兵ブラントの<wbr>裏の<wbr>店でも<wbr>買えます
+・<wbr>これまで<wbr>通り、<wbr>人形繰りを<wbr>覚えれば<wbr>自分で<wbr>作ることもできます</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【調整】王都の<wbr>夜の<wbr>音</span></summary><div class="x">・<wbr>王都の<wbr>夜に<wbr>聞こえる<wbr>カラスの<wbr>鳴き<wbr>声をなくしました<wbr>(飛ぶ<wbr>姿はそのまま)
+・<wbr>大聖堂の<wbr>鐘の<wbr>音を<wbr>小さくしました<wbr>(これまでの 1/4 ほど)</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【調整】BGM<wbr>の<wbr>音量バランス</span></summary><div class="x">・<wbr>町・<wbr>フィールド・<wbr>ダンジョンの<wbr>曲を<wbr>半分の<wbr>音量に
+・<wbr>BOSS<wbr>戦の<wbr>曲は 75% にして、<wbr>ふだんより<wbr>目立つように
+・<wbr>タイトルと<wbr>女神の<wbr>曲はそのままです。<wbr>オプションの BGM 音量は、<wbr>これに<wbr>掛け<wbr>算でかかります</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【調整】環境音をいったんなしに</span></summary><div class="x">・<wbr>雨の<wbr>音などの<wbr>環境音<wbr>(風・<wbr>鳥・<wbr>波・<wbr>町のざわめき)<wbr>を<wbr>止めました。<wbr>オプションの<wbr>「環境音」<wbr>の<wbr>行も、<wbr>いったん<wbr>隠しています
+・<wbr>雨や<wbr>雪の<wbr>見た<wbr>目<wbr>(画面の<wbr>天気)<wbr>はそのままです</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【改善】世界地図の<wbr>文字の<wbr>重なりを<wbr>解消</span></summary><div class="x">・<wbr>町の<wbr>名前が<wbr>地方名の<wbr>帯や<wbr>「Lv ○〜<wbr>○」、<wbr>自分・<wbr>仲間の<wbr>印と<wbr>重ならないよう、<wbr>空いている<wbr>場所を<wbr>探して<wbr>置くようにしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【絵】世界地図を<wbr>描き<wbr>直し</span></summary><div class="x">・<wbr>世界地図<wbr>(M キー →<wbr>「世界」)<wbr>を、<wbr>古い<wbr>羊皮紙の<wbr>地図ふうの<wbr>一枚絵にしました。<wbr>焦げた<wbr>海岸線・<wbr>国境・<wbr>経緯線の<wbr>点線
+・<wbr>地形と<wbr>季節を<wbr>色と<wbr>起伏で:<wbr>ルーメは<wbr>春の<wbr>若草、<wbr>王都は<wbr>夏の<wbr>麦畑、<wbr>北は<wbr>冬の<wbr>雪原、<wbr>鉱山都市は<wbr>秋の<wbr>紅葉、<wbr>秋津は<wbr>桜、<wbr>砂海は<wbr>砂漠。<wbr>山脈はごつごつした<wbr>起伏と<wbr>雪の<wbr>頂
+・<wbr>地方の<wbr>名前は<wbr>リボンの<wbr>帯、<wbr>町の<wbr>名前も<wbr>小さく。<wbr>まだ<wbr>行けない<wbr>地方は<wbr>雲におおわれています</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【新曲】無限の<wbr>塔と<wbr>地下迷宮の<wbr>曲</span></summary><div class="x">・<wbr>無限の<wbr>塔のふつうの<wbr>層:<wbr>新曲<wbr>「無限の<wbr>塔」
+・<wbr>王都の<wbr>地下迷宮<wbr>(宝物庫も):<wbr>新曲<wbr>「The Enemy&#x27;s Room」
+・<wbr>BOSS の<wbr>層・<wbr>守護者の<wbr>間は<wbr>今までどおり<wbr>「死闘」</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【絵】地下迷宮の<wbr>魔物が<wbr>「迷宮の<wbr>瘴気」<wbr>をまとう</span></summary><div class="x">・<wbr>地下迷宮に<wbr>出る、<wbr>地上の<wbr>魔物の<wbr>写し<wbr>(地下の〜)<wbr>と<wbr>守護者・<wbr>番人・<wbr>彷徨う<wbr>処刑人、<wbr>59<wbr>体すべてを<wbr>専用の<wbr>絵にしました
+・<wbr>黒曜の<wbr>角<wbr>(先が<wbr>赤く<wbr>光る)・<wbr>赤く<wbr>光る<wbr>目・<wbr>肩のとげ<wbr>・<wbr>胸の<wbr>紋・<wbr>手首の<wbr>鎖・<wbr>ぼろぼろの<wbr>黒い<wbr>外套・<wbr>背後に<wbr>立ちのぼる<wbr>瘴気の<wbr>結晶・<wbr>足もとの<wbr>赤黒い<wbr>陣
+・<wbr>守護者たちは、<wbr>角の<wbr>冠と<wbr>大きな<wbr>陣でさらに<wbr>禍々しく</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【追加】地下迷宮の<wbr>住人 12<wbr>種</span></summary><div class="x">深さの<wbr>4<wbr>段階ごとに、<wbr>その<wbr>場所に<wbr>住む<wbr>魔物を<wbr>3<wbr>種ずつ<wbr>足しました<wbr>(地上の<wbr>魔物の<wbr>写しより<wbr>多く<wbr>出ます)
+・<wbr>地下道<wbr>(1〜<wbr>5<wbr>層):<wbr>下水の<wbr>大ネズミ<wbr>(群れ<wbr>・<wbr>出血)<wbr>/汚泥ヒル<wbr>(引き<wbr>寄せて<wbr>足を<wbr>止める)<wbr>/下水の<wbr>食屍鬼<wbr>(毒の<wbr>爪・<wbr>とびかかり)
+・<wbr>納骨堂<wbr>(6〜<wbr>10<wbr>層):<wbr>骨の<wbr>猟犬<wbr>(群れの<wbr>突進)<wbr>/灯籠の<wbr>亡霊<wbr>(遠くから<wbr>青い<wbr>鬼火の<wbr>雨・<wbr>沈黙)<wbr>/骨積みの<wbr>巨人<wbr>(倒すと<wbr>骨の<wbr>猟犬<wbr>3<wbr>匹に<wbr>崩れる)
+・<wbr>溶岩<wbr>(11〜<wbr>15<wbr>層):<wbr>溶岩スライム<wbr>(倒すと<wbr>燐火の<wbr>自爆虫<wbr>3<wbr>匹に<wbr>分かれる)<wbr>/火蜥蜴の<wbr>戦士<wbr>(火炎の<wbr>息)<wbr>/燃えがらの<wbr>亡者<wbr>(近づくと<wbr>爆ぜる)
+・<wbr>奈落<wbr>(16〜<wbr>20<wbr>層):<wbr>虚ろの<wbr>眼<wbr>(遠くまで<wbr>届く<wbr>視線・<wbr>石の<wbr>凝視)<wbr>/宝箱もどき<wbr>(近づくまで<wbr>宝箱。<wbr>鍵を<wbr>持っていることも)<wbr>/奈落の<wbr>騎士<wbr>(大なぎ<wbr>・<wbr>引き<wbr>寄せる<wbr>輪)
+・<wbr>魔物ごとに<wbr>硬さを<wbr>変えました<wbr>(群れの<wbr>虫や<wbr>ネズミは<wbr>柔らかく、<wbr>巨人や<wbr>宝箱もどきは<wbr>硬い)</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【変更】塔と<wbr>地下迷宮を<wbr>別物に</span></summary><div class="x">■ 無限の<wbr>塔<wbr>(BOSS 連戦+ローグライト)
+・<wbr>5<wbr>層ごとの BOSS 層で、<wbr>今までの<wbr>ストーリーの BOSS たちが<wbr>立ちはだかる。<wbr>25<wbr>層から<wbr>2<wbr>体、<wbr>55<wbr>層から<wbr>3<wbr>体の<wbr>同時戦闘<wbr>(前に<wbr>越えた BOSS が<wbr>加勢する)
+・<wbr>層の<wbr>呪いと<wbr>祝福、<wbr>3<wbr>層ごとに<wbr>選ぶ<wbr>加護は<wbr>塔のものになりました
+■ 王都の<wbr>地下迷宮<wbr>(探索と<wbr>攻略。<wbr>目当ては<wbr>迷宮だけの<wbr>設計図)
+・<wbr>加護・<wbr>呪い<wbr>・<wbr>祭壇・<wbr>契約の<wbr>碑はなくなり、<wbr>かわりに:
+・<wbr>ダメージ床<wbr>(浅い<wbr>層は<wbr>毒の<wbr>沼、<wbr>6<wbr>層から<wbr>呪いの<wbr>陣、<wbr>11<wbr>層から<wbr>溶岩)
+・<wbr>見えない<wbr>罠<wbr>(毒針・<wbr>鳴子・<wbr>落とし<wbr>穴=下の<wbr>層へ<wbr>落ちる)。<wbr>床のひびが<wbr>目印
+・<wbr>暗闇:<wbr>3<wbr>層から、<wbr>深いほど<wbr>自分のまわりしか<wbr>見えない
+・<wbr>隠し<wbr>通路と<wbr>隠し<wbr>部屋:<wbr>壁ぎわがきらめく<wbr>所を<wbr>踏むと……。<wbr>中の<wbr>古い<wbr>箱には<wbr>「迷宮の<wbr>鍵」
+・<wbr>徘徊する<wbr>強敵<wbr>「彷徨う<wbr>処刑人」<wbr>(4<wbr>層から):<wbr>層をうろつく。<wbr>鍵を<wbr>持っていることが<wbr>多い
+・<wbr>宝物庫<wbr>(3<wbr>・<wbr>5<wbr>・<wbr>7…<wbr>19<wbr>層):<wbr>迷宮の<wbr>鍵で<wbr>開く。<wbr>迷宮だけの<wbr>ユニーク装備の<wbr>設計図が<wbr>出ることがある
+・<wbr>大宝物庫<wbr>(8<wbr>・<wbr>14<wbr>・<wbr>20<wbr>層):<wbr>扉の<wbr>前に、<wbr>仲間とやっと<wbr>倒せる<wbr>番人。<wbr>倒すと<wbr>20<wbr>分入れて、<wbr>設計図が<wbr>必ず<wbr>出る<wbr>(残っていれば)
+・<wbr>迷宮だけの<wbr>ユニーク装備 11<wbr>種<wbr>(礎の<wbr>大剣・<wbr>深淵を<wbr>覗く<wbr>杖・<wbr>黒泥の<wbr>牙・<wbr>鐘鳴りの<wbr>弓・<wbr>巣母の<wbr>鉤爪・<wbr>宝物庫の<wbr>禁書・<wbr>地底王の<wbr>冠・<wbr>燐火の<wbr>腕輪・<wbr>迷宮踏破者の<wbr>靴・<wbr>礎石の<wbr>指輪・<wbr>奈落の<wbr>首飾り)。<wbr>作るには<wbr>「迷宮の<wbr>遺物片」<wbr>も</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【大型追加】地下迷宮と<wbr>無限の<wbr>塔が<wbr>「潜る<wbr>遊び」<wbr>に</span></summary><div class="x">■ 地下迷宮は<wbr>エンドコンテンツに:<wbr>魔物がかなり<wbr>強くなりました<wbr>(深いほど)
+■ 一筋縄ではいかない<wbr>雑魚
+・<wbr>腐肉羽虫:<wbr>群れで<wbr>来る。<wbr>仲間が<wbr>近いほど<wbr>攻撃が<wbr>上がる
+・<wbr>黒泥の<wbr>スライム:<wbr>倒すと<wbr>2<wbr>つに<wbr>分かれる。<wbr>分かれるたびに<wbr>速く、<wbr>毒の<wbr>吐息・<wbr>とびかかりと<wbr>技が<wbr>増える
+・<wbr>燐火の<wbr>自爆虫:<wbr>走ってきて<wbr>自爆する<wbr>(足元の<wbr>予兆から<wbr>逃げる)
+・<wbr>鎧甲虫:<wbr>硬く、<wbr>角で<wbr>突進してくる/巣母:<wbr>戦っているあいだ<wbr>幼虫を<wbr>産み<wbr>続ける
+■ 層の<wbr>呪いと<wbr>祝福:<wbr>層ごとに<wbr>決まった<wbr>「狂奔」<wbr>「血の<wbr>月」<wbr>「瘴気」<wbr>「黄金の<wbr>層」<wbr>など。<wbr>画面右上に<wbr>表示
+■ 潜りの<wbr>加護:<wbr>加護の<wbr>祭壇で<wbr>3<wbr>つから<wbr>1<wbr>つ<wbr>選ぶ。<wbr>潜っているあいだだけ<wbr>効き、<wbr>外へ<wbr>出る<wbr>・<wbr>倒れると<wbr>消える<wbr>(塔は<wbr>3<wbr>層ごとに<wbr>1<wbr>つ)
+■ 部屋の<wbr>イベント:<wbr>癒やしの<wbr>泉/呪われた<wbr>宝箱<wbr>(群れを<wbr>倒すと<wbr>宝と<wbr>加護)<wbr>/血の<wbr>契約の<wbr>碑<wbr>(HP<wbr>を<wbr>捧げて<wbr>力を<wbr>得る)<wbr>/迷宮の<wbr>行商人<wbr>(4<wbr>・<wbr>9<wbr>・<wbr>14<wbr>・<wbr>19<wbr>層)
+■ 記録の<wbr>石碑:<wbr>地下迷宮の<wbr>最深・<wbr>最速踏破・<wbr>塔の<wbr>最高層の<wbr>順位表<wbr>(伝説の<wbr>冒険者たちの<wbr>記録も)。<wbr>地下<wbr>1<wbr>層の<wbr>入口と、<wbr>塔の<wbr>入口のそば</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【直し】顔アイコンを<wbr>自分の<wbr>見た<wbr>目に</span></summary><div class="x">・<wbr>左上の<wbr>丸い<wbr>顔アイコンと、<wbr>会話に<wbr>出る<wbr>主人公の<wbr>顔を、<wbr>選んだ<wbr>髪型・<wbr>髪の<wbr>色・<wbr>肌・<wbr>瞳・<wbr>鎧の<wbr>ゲームの<wbr>絵から<wbr>作るようにしました
+・<wbr>装備や<wbr>見た<wbr>目を<wbr>変えると、<wbr>顔もいっしょに<wbr>変わります</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【直し】火炎の<wbr>息を<wbr>扇状に</span></summary><div class="x">・<wbr>ヴァルグの<wbr>「火炎の<wbr>息」<wbr>を、<wbr>当たる<wbr>範囲<wbr>(扇)<wbr>と<wbr>同じ<wbr>形の<wbr>演出にしました。<wbr>口から<wbr>炎が<wbr>0.8<wbr>秒ほど<wbr>吹き<wbr>続け、<wbr>進むほど<wbr>大きく<wbr>広がって<wbr>扇いっぱいに<wbr>届きます
+・<wbr>火の<wbr>粉は<wbr>扇より<wbr>少し<wbr>先まで<wbr>散り、<wbr>炎が<wbr>届いた<wbr>地面からは<wbr>手前から<wbr>順に<wbr>火が<wbr>立ちます
+・<wbr>絵の<wbr>炎の<wbr>息も、<wbr>少し<wbr>末広がりにしました</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【直し】ヴァルグの<wbr>炎の<wbr>息</span></summary><div class="x">・<wbr>ヴァルグの<wbr>炎の<wbr>息が<wbr>火の<wbr>玉の<wbr>連なりに<wbr>見えていたのを、<wbr>口から<wbr>細く<wbr>吹き<wbr>出して<wbr>広がる<wbr>炎の<wbr>流れに<wbr>描き<wbr>直しました
+・<wbr>芯は<wbr>白っぽい<wbr>黄色、<wbr>外へ<wbr>向かってだいだい→赤、<wbr>ふちはゆらいで、<wbr>先は<wbr>少し<wbr>持ち<wbr>上がって<wbr>熱の<wbr>光がにじみます</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【絵】魔龍の<wbr>幼体ヴァルグを<wbr>描き<wbr>直し</span></summary><div class="x">・<wbr>ドラゴンの<wbr>ボス<wbr>(魔龍の<wbr>幼体ヴァルグ。<wbr>無限の<wbr>塔の<wbr>幻影も)<wbr>の<wbr>絵を<wbr>一から<wbr>描き<wbr>直しました
+・<wbr>S<wbr>字に<wbr>持ち<wbr>上がる<wbr>長い<wbr>首、<wbr>くさび<wbr>形の<wbr>頭と<wbr>牙、<wbr>後ろへ<wbr>反る<wbr>大角、<wbr>小さく<wbr>鋭い<wbr>光る<wbr>目
+・<wbr>太い<wbr>前脚とかかとの<wbr>浮いた<wbr>後ろ<wbr>脚、<wbr>かぎ<wbr>爪、<wbr>背骨のとげ、<wbr>胸の<wbr>溶岩のひび、<wbr>刃のような<wbr>尾の<wbr>先
+・<wbr>攻撃は、<wbr>首を<wbr>引いて<wbr>喉が<wbr>赤く<wbr>光る → 炎の<wbr>息
+・<wbr>前より<wbr>細かく<wbr>描いています<wbr>(画面で<wbr>引きのばさない<wbr>大きさ)</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【追加】オプションを<wbr>タブに<wbr>・<wbr>グラフィックの<wbr>設定</span></summary><div class="x">・<wbr>オプション<wbr>(タイトル・<wbr>ゲーム中の Esc メニュー)<wbr>を<wbr>「サウンド/画面/グラフィック/操作」<wbr>(タイトルは＋フレンド)<wbr>の<wbr>タブに<wbr>分けました。<wbr>画面の<wbr>幅からはみ<wbr>出しません
+・<wbr>グラフィック:<wbr>画面モード<wbr>(ウィンドウ/ボーダレス/フルスクリーン)、<wbr>解像度<wbr>(16:<wbr>9<wbr>・<wbr>16:<wbr>10<wbr>・<wbr>21:<wbr>9<wbr>・<wbr>4:<wbr>3 のよくある<wbr>大きさ)、<wbr>縦横比<wbr>(自動/16:<wbr>9/16:<wbr>10/21:<wbr>9/4:<wbr>3)、<wbr>モニターの<wbr>選択<wbr>(2<wbr>枚以上のとき)、<wbr>垂直同期<wbr>(オン/オフ/アダプティブ)、<wbr>フレームレート上限<wbr>(30〜<wbr>240<wbr>・<wbr>なし)
+・<wbr>画面:<wbr>明るさ、<wbr>画面の<wbr>揺れ<wbr>(ふつう/弱め/なし)<wbr>を<wbr>追加
+・<wbr>足音をなくしました<wbr>(土ぼこり<wbr>・<wbr>水しぶきはそのまま)
+・<wbr>タイトルのお<wbr>知らせに<wbr>「詳細」<wbr>ボタン</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【直し】ダメージの<wbr>数字が<wbr>重ならないように</span></summary><div class="x">・<wbr>ダメージの<wbr>数字は、<wbr>ぽんと<wbr>出たあと、<wbr>ゆっくり<wbr>上へ<wbr>昇りながら<wbr>消えます
+・<wbr>同じ<wbr>相手に<wbr>続けて<wbr>当たると、<wbr>数字が<wbr>段になって<wbr>積み<wbr>上がります<wbr>(新しい<wbr>数字が<wbr>下、<wbr>古い<wbr>数字は<wbr>上へ<wbr>押し<wbr>上げられて<wbr>先に<wbr>消える)。<wbr>重なって<wbr>読めなくなりません
+・<wbr>自分の<wbr>攻撃が<wbr>同じ<wbr>相手に<wbr>続けて<wbr>当たると、<wbr>相手の<wbr>右上に<wbr>「5 HIT」<wbr>と<wbr>合計ダメージが<wbr>出ます<wbr>(つながっているあいだは<wbr>金色、<wbr>切れると<wbr>白くなって<wbr>消える)
+・<wbr>ほかの<wbr>人の<wbr>攻撃の<wbr>数字は<wbr>小さく、<wbr>うすく<wbr>(自分の<wbr>数字が<wbr>見やすいように)</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【作り<wbr>込み】ダメージの<wbr>数字・<wbr>環境音・<wbr>天気と<wbr>時間 ほか</span></summary><div class="x">ゲーム全体の<wbr>手ざわりを<wbr>作り<wbr>込みました。
+
+◆ ダメージの<wbr>数字
+・<wbr>角ばった<wbr>力強い<wbr>書体<wbr>(Bungee)<wbr>に、<wbr>金属のような<wbr>光と<wbr>二重の<wbr>縁取り
+・<wbr>ふつう=白銀/致命打=金と<wbr>橙<wbr>(後ろで<wbr>光がはじけて、<wbr>数字がふるえる)<wbr>/決定打=紫/自分が<wbr>受けた=赤/回復=緑/MP=青
+
+◆ 音
+・<wbr>場所ごとの<wbr>環境音<wbr>(草原の<wbr>風と<wbr>小鳥、<wbr>森の<wbr>葉ずれ、<wbr>浜の<wbr>波とかもめ、<wbr>雪国の<wbr>風、<wbr>町のざわめき、<wbr>洞窟の<wbr>水滴、<wbr>迷宮や<wbr>聖堂の<wbr>低い<wbr>唸り など)
+・<wbr>地面ごとの<wbr>足音<wbr>(草・<wbr>石・<wbr>土・<wbr>雪・<wbr>水・<wbr>木)
+・<wbr>オプションに<wbr>「環境音」<wbr>の<wbr>音量
+
+◆ 景色
+・<wbr>フィールドと<wbr>町の<wbr>地面に、<wbr>草むら<wbr>・<wbr>花・<wbr>小石・<wbr>落ち<wbr>葉・<wbr>きのこ<wbr>・<wbr>しだ<wbr>・<wbr>雪だまり<wbr>・<wbr>貝がら<wbr>・<wbr>桜の<wbr>花びら
+・<wbr>水面の<wbr>光のゆらぎと、<wbr>岸に<wbr>寄せる<wbr>白い<wbr>泡
+・<wbr>歩くと<wbr>土ぼこり<wbr>・<wbr>雪けむり<wbr>・<wbr>水しぶき
+・<wbr>外の<wbr>場所は<wbr>20<wbr>分で 昼 → 夕方 → 夜 → 明け<wbr>方。<wbr>ときどき<wbr>雨・<wbr>霧<wbr>(雪国は<wbr>吹雪)。<wbr>夜の<wbr>森と<wbr>野には<wbr>蛍
+・<wbr>洞窟・<wbr>ダンジョン・<wbr>夜は、<wbr>自分のまわりがほんのり<wbr>明るい
+・<wbr>オプションの<wbr>「時間と<wbr>天気」<wbr>で、<wbr>いつも<wbr>昼・<wbr>晴れにもできます
+
+◆ 戦い
+・<wbr>当たった<wbr>瞬間に<wbr>一瞬だけ<wbr>止まり、<wbr>相手が<wbr>少し<wbr>押し<wbr>戻されます
+・<wbr>BOSS に<wbr>近づくと、<wbr>名前の<wbr>札・<wbr>カメラ・<wbr>低い<wbr>太鼓の<wbr>音で<wbr>登場
+・<wbr>レア・<wbr>ユニークが<wbr>落ちると、<wbr>光の<wbr>柱がはじけて、<wbr>きらきらの<wbr>音
+・<wbr>+10 の<wbr>武器を<wbr>持つと、<wbr>足もとに<wbr>金の<wbr>光の<wbr>輪
+
+◆ 町の<wbr>人
+・<wbr>近くに<wbr>来るとこちらを<wbr>向き、<wbr>ときどきひとこと<wbr>話します
+
+◆ そのほか
+・<wbr>オプションを<wbr>2<wbr>列に<wbr>(左=音と<wbr>画面、<wbr>右=フレンド)</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【演出】はじまりの<wbr>音・<wbr>訓練用かかしの<wbr>絵</span></summary><div class="x">◆ はじまりの<wbr>音
+・<wbr>キャラクターを<wbr>新しく<wbr>作ると、<wbr>暗転とともに<wbr>低い<wbr>「どぅん」<wbr>という<wbr>音。<wbr>タイトルの<wbr>曲は<wbr>消えます
+・<wbr>夜の<wbr>帰り<wbr>道では<wbr>曲を<wbr>流さず、<wbr>夜の<wbr>町のざわめきが<wbr>薄く<wbr>聞こえます<wbr>(遠い<wbr>車の<wbr>流れ、<wbr>人のざわざわ、<wbr>歩行者信号、<wbr>遠くの<wbr>踏切と<wbr>電車)
+・<wbr>「キキィィィッ!!」<wbr>で<wbr>ブレーキのきしみと<wbr>衝撃の<wbr>音。<wbr>町の<wbr>音はそこで<wbr>途切れます
+・<wbr>白い<wbr>部屋は<wbr>静かなまま、<wbr>女神が<wbr>現れたところで<wbr>曲が<wbr>始まります
+
+◆ 訓練用かかしに<wbr>専用の<wbr>絵
+・<wbr>木の<wbr>台と<wbr>杭、<wbr>縄で<wbr>縛ったわら<wbr>束に<wbr>麻布の<wbr>胴着、<wbr>胸に<wbr>赤と<wbr>白の<wbr>的、<wbr>へこんだ<wbr>鉄の<wbr>バケツの<wbr>兜と<wbr>縫い<wbr>目の<wbr>顔、<wbr>打ち<wbr>傷だらけの<wbr>木の<wbr>盾、<wbr>腕に<wbr>縛った<wbr>木刀、<wbr>刺さったままの<wbr>矢
+・<wbr>叩かれると<wbr>後ろへしなります</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【新しい<wbr>絵】第<wbr>5<wbr>章からの<wbr>魔物・<wbr>沈黙の<wbr>地下聖堂・<wbr>塔と<wbr>迷宮の<wbr>魔物</span></summary><div class="x">絵の<wbr>無かった<wbr>(丸い<wbr>形で<wbr>描かれていた)<wbr>魔物、<wbr>37<wbr>体に<wbr>専用の<wbr>絵をつけました。
+
+◆ 北の<wbr>雪国
+・<wbr>氷晶の<wbr>狼<wbr>(背に<wbr>青い<wbr>氷の<wbr>結晶)<wbr>/吹雪の<wbr>雪狼/白夜の<wbr>狼王<wbr>(氷の<wbr>冠と<wbr>背の<wbr>氷の<wbr>鎧、<wbr>足もとの<wbr>光の<wbr>陣)
+・<wbr>氷翼の<wbr>ガーゴイル/凍てた<wbr>古木<wbr>(雪と<wbr>氷柱、<wbr>胸の<wbr>氷の<wbr>核)<wbr>/霧氷の<wbr>巨人/氷に<wbr>眠る<wbr>北方騎士/氷棺の<wbr>侍女/凍城の<wbr>番兵
+・<wbr>氷棺の<wbr>魔将<wbr>(氷の<wbr>翼と<wbr>氷柱の<wbr>冠、<wbr>胸の<wbr>氷の<wbr>棺)<wbr>/裂け<wbr>目の<wbr>影<wbr>(胸の<wbr>紅い<wbr>裂け<wbr>目)<wbr>/オーロラの<wbr>影<wbr>(背から<wbr>流れる<wbr>オーロラ)
+
+◆ 潮風の<wbr>浜・<wbr>収穫祭・<wbr>夜市
+・<wbr>海スライム<wbr>(巻き<wbr>貝と<wbr>ヒトデ)<wbr>/かぼちゃ<wbr>スライム/浜の<wbr>トカゲ人<wbr>(貝の<wbr>盾)<wbr>/潮風の<wbr>海賊・<wbr>海賊頭<wbr>(三角帽と<wbr>眼帯、<wbr>かぎ<wbr>爪)<wbr>/夜市のひったくり/祭り<wbr>囃子の<wbr>化け<wbr>狸<wbr>(はっぴと<wbr>太鼓)
+
+◆ 第<wbr>6<wbr>章
+・<wbr>23<wbr>時<wbr>47<wbr>分の<wbr>残響<wbr>(背に<wbr>止まった<wbr>時計)<wbr>/願いの<wbr>抜け<wbr>殻<wbr>(舞う<wbr>短冊)<wbr>/箱庭の<wbr>縁の<wbr>獣<wbr>(体から<wbr>欠けて<wbr>浮く<wbr>四角いかけら)<wbr>/砂時計の<wbr>番人/名を<wbr>失った<wbr>騎士/瓶守り/玉座の<wbr>侍女
+・<wbr>契約者の<wbr>影たち<wbr>(黒い<wbr>炎と<wbr>胸の<wbr>紋)<wbr>/終電の<wbr>亡霊<wbr>(車掌の<wbr>帽子と<wbr>赤い<wbr>角灯)<wbr>/フードの<wbr>旅人シグレ/魔王ノエラ<wbr>(二対の<wbr>黒い<wbr>翼、<wbr>背に<wbr>輪を<wbr>描く<wbr>六本の<wbr>剣)
+
+◆ 沈黙の<wbr>地下聖堂を<wbr>禍々しく<wbr>描き<wbr>直し
+・<wbr>骸骨騎士:<wbr>胸で<wbr>燃える<wbr>赤い<wbr>魂、<wbr>角の<wbr>兜、<wbr>とげの<wbr>肩当て、<wbr>巻きつく<wbr>鎖
+・<wbr>修道霊:<wbr>首から<wbr>下げた<wbr>割れた<wbr>鐘、<wbr>背の<wbr>折れた<wbr>十字、<wbr>赤い<wbr>目
+・<wbr>鐘守ベルグラム:<wbr>背に<wbr>割れた<wbr>大鐘、<wbr>折れた<wbr>翼の<wbr>骨、<wbr>ひびの<wbr>入った<wbr>赤い<wbr>光輪
+
+◆ 塔と<wbr>地下迷宮の<wbr>魔物
+・<wbr>元の<wbr>魔物の<wbr>絵で<wbr>現れるようになりました<wbr>(塔は<wbr>紫がかった<wbr>色、<wbr>塔の BOSS の<wbr>幻影は<wbr>紫に<wbr>染まった<wbr>姿、<wbr>地下迷宮はくすんだ<wbr>色、<wbr>守護者は<wbr>赤黒く)</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【見た<wbr>目】地下迷宮が<wbr>深さで<wbr>変わる<wbr>・<wbr>床の<wbr>描き<wbr>込み</span></summary><div class="x">ダンジョンの<wbr>絵をさらに<wbr>描き<wbr>込みました。
+
+◆ 王都の<wbr>地下迷宮は<wbr>5<wbr>層ごとに<wbr>姿が<wbr>変わります
+・<wbr>地下<wbr>1〜<wbr>5<wbr>層 濡れた<wbr>地下道:<wbr>苔むした<wbr>石畳、<wbr>緑の<wbr>汚水、<wbr>かがり<wbr>火
+・<wbr>地下<wbr>6〜<wbr>10<wbr>層 骨と<wbr>根の<wbr>納骨堂:<wbr>頭蓋骨を<wbr>積んだ<wbr>壁、<wbr>壁を<wbr>突き<wbr>破る<wbr>根、<wbr>青く<wbr>光る<wbr>茸と<wbr>胞子、<wbr>石棺、<wbr>頭蓋骨の<wbr>柱
+・<wbr>地下<wbr>11〜<wbr>15<wbr>層 溶岩の<wbr>深層:<wbr>溶岩の<wbr>割れ<wbr>目と<wbr>噴き<wbr>出し<wbr>口、<wbr>角のある<wbr>偶像
+・<wbr>地下<wbr>16〜<wbr>20<wbr>層 奈落:<wbr>黒い<wbr>ガラスの<wbr>岩に<wbr>紅い<wbr>血管のような<wbr>筋、<wbr>紅水晶、<wbr>宙に<wbr>浮かぶ<wbr>空間の<wbr>裂け<wbr>目と<wbr>岩、<wbr>奈落の<wbr>祭壇。<wbr>ときどき<wbr>光がふっと<wbr>弱まります
+・<wbr>深くなるほど<wbr>暗く、<wbr>霧が<wbr>濃く、<wbr>床が<wbr>荒れていきます
+
+◆ 無限の<wbr>塔は<wbr>25<wbr>層ごとに<wbr>色が<wbr>変わります
+・<wbr>1〜<wbr>25 紫 → 26〜<wbr>50 冷たい<wbr>青 → 51〜<wbr>75 血の<wbr>紅 → 76〜<wbr>100 黒と<wbr>金
+
+◆ 床の<wbr>描き<wbr>込み
+・<wbr>血だまりと<wbr>血の<wbr>跡、<wbr>ひび、<wbr>瓦礫、<wbr>散らばる<wbr>骨、<wbr>水たまり、<wbr>光る<wbr>茸、<wbr>根、<wbr>溶岩だまり、<wbr>紅い<wbr>筋 などを<wbr>床いっぱいに
+・<wbr>壁の<wbr>種類を<wbr>増やしました<wbr>(鎖と<wbr>枷、<wbr>錆びた<wbr>排水管、<wbr>埋まった<wbr>巨獣の<wbr>肋骨、<wbr>破れた<wbr>赤い<wbr>布 など)
+
+◆ 沈黙の<wbr>地下聖堂・<wbr>鐘楼の<wbr>間
+・<wbr>闘技場の<wbr>床一面に、<wbr>赤く<wbr>光る<wbr>儀式の<wbr>陣<wbr>(七芒星)
+・<wbr>鐘楼の<wbr>間では、<wbr>鼓動の<wbr>明滅が<wbr>速く、<wbr>画面のふちの<wbr>赤が<wbr>強くなります</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【見た<wbr>目】塔・<wbr>迷宮・<wbr>地下聖堂/敵の<wbr>技の<wbr>演出/ログの<wbr>タブ</span></summary><div class="x">ダンジョンの<wbr>見た<wbr>目と、<wbr>戦いの<wbr>手ざわりを<wbr>大きく<wbr>変えました。
+
+◆ まがまがしい<wbr>ダンジョン
+・<wbr>無限の<wbr>塔:<wbr>黒曜の<wbr>床と<wbr>紫に<wbr>光る<wbr>継ぎ<wbr>目、<wbr>見開いた<wbr>紫の<wbr>眼の<wbr>壁、<wbr>浮かぶ<wbr>石碑・<wbr>紫の<wbr>炎の<wbr>燭台・<wbr>封印の<wbr>陣。<wbr>紫の<wbr>霧と<wbr>光の<wbr>粒
+・<wbr>王都の<wbr>地下迷宮<wbr>(地下<wbr>1〜<wbr>10<wbr>層):<wbr>濡れた<wbr>古い<wbr>石畳と<wbr>苔、<wbr>錆びた<wbr>鉄格子から<wbr>緑の<wbr>汚水、<wbr>首のない<wbr>王の<wbr>像・<wbr>かがり<wbr>火。<wbr>水滴の<wbr>音が<wbr>聞こえそうな<wbr>暗さ
+・<wbr>地下迷宮の<wbr>深層<wbr>(地下<wbr>11〜<wbr>20<wbr>層):<wbr>赤く<wbr>脈打つ<wbr>溶岩の<wbr>割れ<wbr>目、<wbr>角のある<wbr>偶像・<wbr>吊るされた<wbr>檻・<wbr>溶岩の<wbr>噴き<wbr>出し<wbr>口。<wbr>舞い<wbr>上がる<wbr>火の<wbr>粉
+・<wbr>沈黙の<wbr>地下聖堂<wbr>(4<wbr>人の<wbr>大部屋):<wbr>血のしみた<wbr>敷石、<wbr>骨の<wbr>壁龕と<wbr>赤い<wbr>蝋燭、<wbr>棺・<wbr>串刺しの<wbr>杭・<wbr>顔のない<wbr>聖者の<wbr>像・<wbr>血の<wbr>祭壇。<wbr>鐘楼の<wbr>間には<wbr>割れた<wbr>巨大な<wbr>鐘。<wbr>赤い<wbr>霧と<wbr>灰、<wbr>心臓の<wbr>鼓動のように<wbr>脈打つ<wbr>光
+
+◆ 敵の<wbr>大技の<wbr>演出
+・<wbr>技の<wbr>種類<wbr>(炎・<wbr>氷・<wbr>雷・<wbr>闇・<wbr>毒・<wbr>光・<wbr>大地・<wbr>血・<wbr>鐘・<wbr>風・<wbr>水・<wbr>時)<wbr>ごとに、<wbr>予兆の<wbr>色と<wbr>発動の<wbr>演出が<wbr>変わります
+・<wbr>予兆のあいだは<wbr>本体に<wbr>力が<wbr>集まり、<wbr>範囲の<wbr>中にその<wbr>技らしい<wbr>粒がわきます。<wbr>発動の<wbr>直前は<wbr>縁が<wbr>白く<wbr>点滅します
+・<wbr>発動は<wbr>範囲の<wbr>形<wbr>(円・<wbr>帯・<wbr>扇・<wbr>ドーナツ)<wbr>にそって:<wbr>炎の<wbr>柱・<wbr>氷の<wbr>棘・<wbr>落雷・<wbr>闇の<wbr>柱・<wbr>岩の<wbr>噴き<wbr>上げ<wbr>・<wbr>鐘の<wbr>音の<wbr>輪 など
+
+◆ 左下の<wbr>ログに<wbr>タブ
+・<wbr>全部/会話/PT/ギルド/システム/お<wbr>知らせ に<wbr>分けて<wbr>見られます。<wbr>見ていない<wbr>タブに<wbr>新しい<wbr>行が<wbr>来ると<wbr>光ります
+・<wbr>PT タブ・<wbr>ギルドタブで Enter → そのまま<wbr>パーティ・<wbr>ギルドに<wbr>話せます<wbr>(/p /g /a でも<wbr>選べます)
+
+◆ 直し
+・<wbr>パーティの<wbr>欄の<wbr>職業が、<wbr>転職しても<wbr>最初の<wbr>職業のままだったのを<wbr>直しました
+・<wbr>パーティの<wbr>欄を<wbr>少し<wbr>下げました<wbr>(振れる<wbr>ポイントの<wbr>表示に<wbr>重なっていた)</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【新ダンジョン】無限の<wbr>塔・<wbr>王都の<wbr>地下迷宮</span></summary><div class="x">ふたつの<wbr>高難度ダンジョンが<wbr>現れました。
+
+◆ 無限の<wbr>塔<wbr>(ひとりで<wbr>挑む<wbr>力試し)
+・<wbr>風鳴りの<wbr>街道のはずれに、<wbr>ある<wbr>夜とつぜん<wbr>黒い<wbr>塔が<wbr>立ちました
+・<wbr>1<wbr>層ごとに<wbr>魔物をすべて<wbr>倒すと<wbr>上へ。<wbr>5<wbr>層ごとに BOSS<wbr>(見覚えのある<wbr>顔の<wbr>幻影)。<wbr>全<wbr>100<wbr>層
+・<wbr>5<wbr>層ごとに<wbr>「到達の<wbr>報酬」<wbr>(一度だけ)。<wbr>25<wbr>・<wbr>50<wbr>・<wbr>75<wbr>・<wbr>100<wbr>層で<wbr>称号
+・<wbr>倒れても<wbr>失うものはありません<wbr>(塔の<wbr>外に<wbr>戻されるだけ)
+・<wbr>一度越えた BOSS の<wbr>次の<wbr>層<wbr>(6<wbr>・<wbr>11<wbr>・<wbr>16…)<wbr>から<wbr>挑み<wbr>直せます
+
+◆ 王都の<wbr>地下迷宮<wbr>(仲間と<wbr>潜れます)
+・<wbr>王都の<wbr>裏路地の<wbr>古い<wbr>地下室から。<wbr>全<wbr>20<wbr>層、<wbr>下へ<wbr>行くほど<wbr>広く、<wbr>魔物も<wbr>強くなります<wbr>(地下<wbr>1<wbr>層 Lv35 → 地下<wbr>20<wbr>層 Lv80 以上)
+・<wbr>5<wbr>層ごとに<wbr>守護者。<wbr>倒すと<wbr>奥へ<wbr>進めます。<wbr>地下<wbr>20<wbr>層の<wbr>守護者を<wbr>倒すと<wbr>地上へ
+・<wbr>魔物はふつうより<wbr>多くの<wbr>素材と<wbr>レア素材を<wbr>落とします。<wbr>守護者は BOSS の<wbr>魂などの<wbr>豪華な<wbr>報酬
+・<wbr>一度たどり<wbr>着いた<wbr>地下<wbr>6<wbr>・<wbr>11<wbr>・<wbr>16<wbr>層へは、<wbr>入口の<wbr>部屋から<wbr>近道できます
+
+◆ そのほか
+・<wbr>ルーメの<wbr>北の<wbr>「迷宮区の<wbr>塔」<wbr>の<wbr>門は<wbr>閉じました。<wbr>門番レオンの<wbr>依頼は【無限の<wbr>塔のうわさ】に<wbr>変わりました</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【新曲】BGM<wbr>を<wbr>7<wbr>曲追加</span></summary><div class="x">新しい<wbr>曲が<wbr>7<wbr>曲入りました。
+
+・<wbr>囁きの<wbr>森 …<wbr>「精霊の<wbr>森」
+・<wbr>女神の<wbr>夢の<wbr>庭<wbr>(外伝)…<wbr>「森エリア」
+・<wbr>無限の<wbr>塔/見張り<wbr>塔跡 …<wbr>「無限の<wbr>塔」
+・<wbr>ルーメ砦・<wbr>魔女の<wbr>庭・<wbr>影隠れの<wbr>里・<wbr>無明寺・<wbr>沈黙の<wbr>地下聖堂<wbr>(BOSS)・<wbr>無限の<wbr>塔の<wbr>5<wbr>層ごと<wbr>・<wbr>地下迷宮の<wbr>守護者の<wbr>間…<wbr>「死闘」
+・<wbr>玉座の<wbr>城<wbr>(第<wbr>6<wbr>章)…<wbr>「戦争」
+・<wbr>凍てつく<wbr>城・<wbr>氷棺の<wbr>間/玉座の<wbr>扉<wbr>(BOSS)…<wbr>「決戦」
+・<wbr>玉座の<wbr>間<wbr>(最後の<wbr>戦い)…<wbr>「最終決戦」</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【UI】新しい<wbr>枠の<wbr>絵と、<wbr>操作の<wbr>音</span></summary><div class="x">画面の<wbr>見た<wbr>目と<wbr>操作の<wbr>手ざわりを<wbr>新しくしました。
+
+◆ UI<wbr>の<wbr>絵<wbr>「星の<wbr>祭壇」
+・<wbr>窓の<wbr>角に、<wbr>八芒の<wbr>星の<wbr>台座と<wbr>群青の<wbr>結晶。<wbr>選んでいる<wbr>窓は<wbr>琥珀色に<wbr>光ります
+・<wbr>枠の<wbr>全体は<wbr>細い<wbr>深い<wbr>金に。<wbr>ボタン・<wbr>マス・<wbr>見出し<wbr>・<wbr>丸い<wbr>枠もそろえました
+
+◆ 操作の<wbr>音<wbr>(さりげなく<wbr>小さめ)
+・<wbr>タイトルで<wbr>押したとき:<wbr>神秘的な<wbr>ピアノの<wbr>和音
+・<wbr>ボタンに<wbr>乗せる<wbr>「ぽ」<wbr>/押す<wbr>「こっ」<wbr>(押すと<wbr>一瞬だけ<wbr>沈みます)
+・<wbr>窓を<wbr>開く<wbr>「ふわっ」<wbr>/閉じる<wbr>「ふっ」
+・<wbr>できないとき<wbr>(お<wbr>金が<wbr>足りない<wbr>・<wbr>持ち<wbr>物がいっぱい など)<wbr>の<wbr>低い<wbr>「ぶぶ」
+
+◆ オプションに<wbr>追加
+・<wbr>操作の<wbr>音の<wbr>音量<wbr>(戦いの<wbr>効果音とは<wbr>別)
+・<wbr>説明<wbr>(ツールチップ)<wbr>が<wbr>出るまでの<wbr>時間
+・<wbr>ほかの<wbr>ウィンドウをさわっているあいだ BGM を<wbr>小さくする
+
+◆ そのほか
+・<wbr>Esc メニューを<wbr>2<wbr>列に<wbr>(左=メニュー、<wbr>右=音と<wbr>画面の<wbr>設定)
+・<wbr>左上の<wbr>名前のまわりに<wbr>少し<wbr>余白</div></details></li><li class="more"><details><summary><time datetime="2026-11-05">11/5</time><span class="t">【新しい<wbr>絵】主人公の<wbr>鎧・<wbr>髪・<wbr>マント</span></summary><div class="x">主人公の<wbr>絵を<wbr>新しくしました。
+
+・<wbr>鎧の<wbr>見た<wbr>目を<wbr>全部作り<wbr>直し、<wbr>レベルが<wbr>上がるほど<wbr>飾りが<wbr>増えてかっこよくなります<wbr>(旅人の<wbr>服 → 布の<wbr>ローブ → 革の<wbr>鎧 → 鎖かたびら → 賢者の<wbr>ローブ → 樹皮の<wbr>鎧 → 森の<wbr>精の<wbr>ローブ → 竜鱗の<wbr>鎧 → 呪術師の<wbr>法衣)
+・<wbr>生産職の<wbr>服は<wbr>3<wbr>段階ぜんぶ<wbr>別の<wbr>見た<wbr>目に
+・<wbr>髪型<wbr>10<wbr>種を<wbr>作り<wbr>直しました
+・<wbr>マントを<wbr>装備すると<wbr>背中に<wbr>見えるようになりました<wbr>(走るとなびきます)
+
+◆ メインクエストの<wbr>案内
+・<wbr>次の<wbr>メインが<wbr>レベル不足のときは<wbr>「レベルを○○まで<wbr>上げて○○に<wbr>会いに<wbr>行こう」<wbr>と<wbr>案内し、<wbr>右の<wbr>クエスト表示にも<wbr>出します</div></details></li><li class="more"><details><summary><time datetime="2026-11-04">11/4</time><span class="t">【直し】北門・<wbr>ギルド領地・<wbr>ドロップ など</span></summary><div class="x">・<wbr>王都の<wbr>北門に<wbr>近衛騎士。<wbr>依頼【北の<wbr>門】を<wbr>終えるまでは<wbr>通してくれません<wbr>(理由を<wbr>教えてくれます)
+・<wbr>ギルド領地の<wbr>見えない<wbr>壁を<wbr>直しました<wbr>(置き<wbr>物が<wbr>見えていなかった)
+・<wbr>魔物が<wbr>落とす<wbr>装備は、<wbr>生産職の<wbr>武器・<wbr>鎧だけに<wbr>(ほかは BOSS の<wbr>設計図から)
+・<wbr>落ちる<wbr>矢を<wbr>半分に。<wbr>矢は<wbr>1<wbr>つの<wbr>山に<wbr>999<wbr>本まで
+・<wbr>人形遣いの<wbr>操り<wbr>人形の<wbr>レシピは<wbr>「人形繰り」<wbr>を<wbr>覚えると<wbr>作れます
+・<wbr>町の<wbr>イベントは、<wbr>いったんお<wbr>休み
+・<wbr>Esc メニューに<wbr>「脱出する<wbr>(最後にいた<wbr>町へ)」<wbr>(地形にはまったとき<wbr>用)</div></details></li><li class="more"><details><summary><time datetime="2026-11-04">11/4</time><span class="t">【新章】第<wbr>6<wbr>章<wbr>「玉座」<wbr>(最終章)</span></summary><div class="x">物語の<wbr>最終章です。
+
+・<wbr>空の<wbr>裂け<wbr>目、<wbr>玉座の<wbr>城、<wbr>そして<wbr>玉座へ
+・<wbr>選んだ<wbr>道と、<wbr>これまでの<wbr>行いで<wbr>結末が<wbr>変わります<wbr>(三つの<wbr>結末)
+・<wbr>第<wbr>2<wbr>章<wbr>「精霊の<wbr>森」<wbr>の<wbr>人助けが<wbr>本筋に。<wbr>北へ<wbr>向かう<wbr>ムービーも<wbr>追加しました
+
+<wbr>(第<wbr>5<wbr>章までを<wbr>終えると<wbr>進めます)</div></details></li><li class="more"><details><summary><time datetime="2026-11-03">11/3</time><span class="t">【これまで】森と<wbr>峡谷・<wbr>取引所・<wbr>ギルド など</span></summary><div class="x">・<wbr>囁きの<wbr>森・<wbr>竜骨の<wbr>峡谷が<wbr>開放
+・<wbr>取引所・<wbr>ギルド・<wbr>領地戦・<wbr>家
+・<wbr>女神の<wbr>加護ルーレット・<wbr>個性・<wbr>称号
+・<wbr>全職業の<wbr>立ち<wbr>絵を<wbr>新しくしました</div></details></li></ul></div><div class="hist-btn"><button type="button" id="hist-more" data-label="もっと見る(全 121 件)">もっと<wbr>見る<wbr>(全 121 件)</button></div>
+  </div>
+</section>
+
+<section class="sec" id="update">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="latin">AI Auto Update System</div>
+      <h2 class="h2">一度入れたら、<wbr>あとは<wbr>開くだけ</h2>
+      <p class="lead">世界は<wbr>毎日よくなっています。<wbr>新しい<wbr>バージョンは、<wbr>起動したときに<wbr>自動で<wbr>入ります。</p>
+      <div class="orn" aria-hidden="true"><i></i><b></b><i></i></div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-n">1</div><h3>最初に 1 回だけ<wbr>ダウンロード</h3><p>zip を<wbr>好きな<wbr>場所に<wbr>展開して、<wbr>中の PonkotsuMegami.exe を<wbr>開きます。<wbr>インストールはいりません。</p></div>
+      <div class="step"><div class="step-n">2</div><h3>EXE を<wbr>開く</h3><p>起動すると<wbr>最新か<wbr>確かめて、<wbr>変わった<wbr>分だけ<wbr>数秒で<wbr>更新します。</p></div>
+      <div class="step"><div class="step-n">3</div><h3>ログインして<wbr>冒険へ</h3><p>いつも<wbr>最新の<wbr>世界に。<wbr>直ったところや<wbr>新しい<wbr>場所が、<wbr>すぐに<wbr>遊べます。</p></div>
+    </div>
+    <p class="note">全員がいつも<wbr>同じ<wbr>バージョンで<wbr>遊べるので、<wbr>仲間とのずれも<wbr>起きません。</p>
+  </div>
+</section>
+
+<section class="sec dl" id="download">
+  <div class="wrap">
+    <div class="dl-card">
+      <div class="dl-main">
+        <div class="latin">Download</div>
+        <h3>ポンコツ女神と<wbr>転生者</h3>
+        <dl class="dl-specs">
+          <dt>ジャンル</dt><dd>オンライン MMORPG</dd>
+          <dt>対応</dt><dd>Windows 10 / 11<wbr>(64bit)・<wbr>インターネット接続</dd>
+          <dt>大きさ</dt><dd>約 75 MB<wbr>(zip)。<wbr>はじめての<wbr>起動で、<wbr>絵と<wbr>音<wbr>(約 230 MB)<wbr>を<wbr>自動で<wbr>ダウンロード</dd>
+          <dt>更新</dt><dd>起動するたびに<wbr>自動</dd>
+        </dl>
+        <div><a class="btn btn-gold" href="dl/windows/PonkotsuMegami_setup.zip">zip を<wbr>ダウンロード</a></div>
+      </div>
+      <div class="dl-help">
+        <h4>はじめて<wbr>開くとき</h4>
+        <p style="margin: 0; font-size: 13px; color: #a99c86">Windows が<wbr>「PC が<wbr>保護されました」<wbr>と<wbr>青い<wbr>画面を<wbr>出すことがあります。<wbr>個人で<wbr>作っている<wbr>ゲームなので、<wbr>まだ Windows に<wbr>覚えられていないためです。</p>
+        <ol>
+          <li>青い<wbr>画面の <kbd>詳細情報</kbd> を<wbr>押す</li>
+          <li>下に<wbr>出る <kbd>実行</kbd> を<wbr>押す</li>
+          <li>次からは<wbr>出ません。<wbr>更新のときも<wbr>出ません</li>
+        </ol>
+        <div class="megami">
+          <img src="img/goddess_confused.png" alt="少し困った顔の女神" />
+          <div class="bubble">あ、<wbr>あやしいものじゃないですよ……! ちゃんと、<wbr>わたしが<wbr>見守ってますから!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="sec" style="padding-top: 24px" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="latin">Q &amp; A</div>
+      <h2 class="h2">よくある<wbr>質問</h2>
+      <div class="orn" aria-hidden="true"><i></i><b></b><i></i></div>
+    </div>
+    <div class="faq">
+      <details><summary>アップデートで<wbr>データが<wbr>消えませんか?</summary><p>消えません。<wbr>アップデートは<wbr>ゲームの<wbr>ファイルだけを<wbr>入れかえます。</p></details>
+      <details><summary>サーバーの<wbr>更新中は<wbr>遊べませんか?</summary><p>サーバーの<wbr>更新は 3 時間より<wbr>短い<wbr>間隔では<wbr>行いません。<wbr>始まる 5 分前から<wbr>画面でお<wbr>知らせし、<wbr>そのあいだに<wbr>セーブされます。<wbr>終わると<wbr>自動でつなぎ<wbr>直すので、<wbr>そのまま<wbr>続きから<wbr>遊べます。</p></details>
+      <details><summary>更新にどれくらい<wbr>時間がかかりますか?</summary><p>ふだんは<wbr>変わった<wbr>分だけ<wbr>(数 MB)<wbr>なので、<wbr>数秒です。<wbr>大きな<wbr>更新のときだけ、<wbr>少し<wbr>長くかかります。</p></details>
+      <details><summary>ひとりでも<wbr>遊べますか?</summary><p>はい。<wbr>MMORPG ですが、<wbr>物語は<wbr>最後までひとりで<wbr>進められます。<wbr>仲間がほしくなったら、<wbr>町で<wbr>声をかけてみてください。</p></details>
+      <details><summary>セーブデータはどこにありますか?</summary><p>サーバーに<wbr>保存されるので、<wbr>どの<wbr>パソコンからでも<wbr>続きを<wbr>遊べます。</p></details>
+      <details><summary>パソコンを<wbr>買いかえたら、<wbr>キャラクターはどうなりますか?</summary><p>そのまま<wbr>続きから<wbr>遊べます。<wbr>会員登録はいりません。<wbr>いまの<wbr>パソコンで<wbr>タイトル画面の<wbr>左上<wbr>「引き<wbr>継ぎ<wbr>コード」<wbr>を<wbr>開いて<wbr>コードを<wbr>コピーしておき、<wbr>新しい<wbr>パソコンの<wbr>同じ<wbr>画面でその<wbr>コードを<wbr>入れて<wbr>「切りかえる」<wbr>を<wbr>押してください。<wbr>コードは<wbr>合言葉と<wbr>同じなので、<wbr>ほかの<wbr>人には<wbr>見せないでください。</p></details>
+      <details><summary>ウイルス対策ソフトに<wbr>止められました</summary><p>個人の<wbr>ゲームは、<wbr>名前が<wbr>知られるまで<wbr>止められることがあります。<wbr>公式の<wbr>ダウンロードはこの<wbr>ページだけです。<wbr>ほかの<wbr>場所で<wbr>配られている<wbr>物は<wbr>開かないでください。</p></details>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <img class="foot-logo" src="img/logo_title.png" alt="ポンコツ女神と転生者" />
+  <div class="foot-sub">PONKOTSU GODDESS &amp; THE REINCARNATED</div>
+  <div>© ポンコツ女神と<wbr>転生者 ― wwwnd</div>
+  <div style="margin-top: 6px">フォント:<wbr>Zen Kaku Gothic New<wbr>・<wbr>Zen Antique<wbr>・<wbr>Cinzel<wbr>(SIL Open Font License)</div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement; root.classList.add("js");
+  var calm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var $=function(q,el){return Array.prototype.slice.call((el||document).querySelectorAll(q));};
+  // ① ふわっと出る:見出し・文・カード・写真。並んでいる物は少しずつずらす
+  var groups=[".sec-head",".mmo-tag",".mmo-h",".mmo-lead",".pillars .pillar",".ai-grid > *",".story > *",".feats .feat",".gallery > *",".steps .step",".dl-card",".faq details",".news",".nb-card",".nb-vs",".nb-stats > div",".ch-main > *",".job",".person",".dev-box",".rules li",".hist",".evo-screen",".cmp"];
+  var items=[];
+  groups.forEach(function(q){$(q).forEach(function(el,i){
+    if(el.classList.contains("news")&&innerWidth>=1680)return;
+    el.classList.add("rv"); if(i)el.style.transitionDelay=Math.min(i,5)*90+"ms"; items.push(el);});});
+  if(calm||!("IntersectionObserver" in window)){items.forEach(function(el){el.classList.add("in");});}
+  else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{rootMargin:"0px 0px -8% 0px"});
+    items.forEach(function(el){io.observe(el);});}
+  // ② 今いる場所:ヘッダーのリンクに金の下線
+  var links=$(".nav-links a");
+  function mark(){var y=scrollY+innerHeight*0.35,cur=null;
+    links.forEach(function(a){var t=document.querySelector(a.getAttribute("href"));if(t&&t.getBoundingClientRect().top+scrollY<=y)cur=a;});
+    links.forEach(function(a){a.classList.toggle("on",a===cur);});}
+  // ③ トップ絵の奥行き と 右のお知らせを出す時
+  var hero=document.querySelector(".hero"),kv=document.querySelector(".hero-kv"),news=document.getElementById("news"),tick=false;
+  function frame(){tick=false;var y=scrollY,h=hero.offsetHeight;
+    if(!calm&&y<h+200){kv.style.setProperty("--py",(y*0.28).toFixed(1));}
+    if(news)news.classList.toggle("show",y>h*0.7);
+    mark();}
+  addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(frame);}},{passive:true});
+  addEventListener("resize",frame); frame();
+  // ④ 光の粒と羽
+  var fx=document.querySelector(".hero-fx");
+  if(fx&&!calm){var r=function(a,b){return a+Math.random()*(b-a);};
+    for(var i=0;i<16;i++){var m=document.createElement("i"),z=r(6,13);
+      m.style.cssText="left:"+r(2,98)+"%;width:"+z+"px;height:"+z+"px;--dx:"+r(-60,60)+"px;animation-duration:"+r(10,18)+"s;animation-delay:"+(-r(0,18))+"s";fx.appendChild(m);}
+    for(var j=0;j<4;j++){var f=document.createElement("b"),k=r(.6,1.1);
+      f.style.cssText="left:"+r(5,90)+"%;width:"+(18*k)+"px;height:"+(30*k)+"px;--dx:"+r(-90,90)+"px;animation-duration:"+r(16,26)+"s;animation-delay:"+(-r(0,26))+"s";fx.appendChild(f);}}
+  // 女神の表情
+  $(".ch-btns button").forEach(function(b){b.addEventListener("click",function(){
+    $(".ch-btns button").forEach(function(x){x.classList.toggle("on",x===b);});
+    var f=document.getElementById("ch-face"),t=document.getElementById("ch-bubble");
+    f.style.opacity=0;setTimeout(function(){f.src=b.getAttribute("data-face");f.style.opacity=1;},150);t.textContent=b.getAttribute("data-say");});});
+  // 更新履歴:もっと見る
+  var hb=document.getElementById("hist-more");
+  if(hb)hb.addEventListener("click",function(){var h=document.querySelector(".hist");var all=h.classList.toggle("all");hb.textContent=all?"閉じる":hb.getAttribute("data-label");
+    if(!all)document.getElementById("history").scrollIntoView();});
+  // 写真を大きく見る
+  var pics=$(".feat img,.gallery img,.story-shot img,.ai-shot img");
+  if(pics.length){var lb=document.createElement("div");lb.className="lb";lb.setAttribute("role","dialog");lb.setAttribute("aria-label","写真を大きく見る");
+    lb.innerHTML='<figure><img alt=""><figcaption></figcaption></figure><button class="lb-x" type="button" aria-label="閉じる">×</button><button class="lb-p" type="button" aria-label="前の写真">‹</button><button class="lb-n" type="button" aria-label="次の写真">›</button>';
+    document.body.appendChild(lb);var li=lb.querySelector("img"),lc=lb.querySelector("figcaption"),cur=0;
+    function show(i){cur=(i+pics.length)%pics.length;var p=pics[cur];li.src=p.src;li.alt=p.alt;var fc=p.closest("figure");lc.textContent=(fc&&fc.querySelector("figcaption")?fc.querySelector("figcaption").textContent+" ― ":"")+p.alt;}
+    pics.forEach(function(p,i){p.classList.add("zoomable");p.setAttribute("tabindex","0");
+      var open=function(){show(i);lb.classList.add("open");lb.querySelector(".lb-x").focus();};
+      p.addEventListener("click",open);p.addEventListener("keydown",function(e){if(e.key==="Enter")open();});});
+    var close=function(){lb.classList.remove("open");};
+    lb.addEventListener("click",function(e){if(e.target===lb||e.target.tagName==="FIGURE")close();});
+    lb.querySelector(".lb-x").onclick=close;lb.querySelector(".lb-p").onclick=function(){show(cur-1);};lb.querySelector(".lb-n").onclick=function(){show(cur+1);};
+    addEventListener("keydown",function(e){if(!lb.classList.contains("open"))return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1);});}
+  // 数字を数えあげる
+  var counts=$(".nb-stats [data-to]");
+  function countUp(el){var to=+el.getAttribute("data-to"),t0=null;if(calm){el.firstChild.nodeValue=to;return;}
+    (function step(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/1400);el.firstChild.nodeValue=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(step);})(performance.now());}
+  if("IntersectionObserver" in window){var co=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){countUp(e.target);co.unobserve(e.target);}});});counts.forEach(function(c){co.observe(c);});}
+  else counts.forEach(countUp);
+  // 世界のうつりかわり:自動で切りかわる
+  var evo=document.getElementById("evo");
+  if(evo){var fs=$(".evo-screen figure",evo),bs=$(".evo-line button",evo),bar=evo.querySelector(".evo-bar"),pb=document.getElementById("evo-play"),ei=0,timer=null,playing=!calm;
+    var et=document.getElementById("evo-txt");
+    function go(i){ei=(i+fs.length)%fs.length;fs.forEach(function(f,k){f.classList.toggle("on",k===ei);});
+      if(et){var sp=fs[ei].querySelector(".evo-cap span");et.innerHTML=sp?sp.innerHTML:"";}
+      bs.forEach(function(b,k){b.classList.toggle("on",k===ei);b.classList.toggle("done",k<ei);});
+      bar.style.width="calc("+(ei/(fs.length-1)*100)+"% - "+(ei/(fs.length-1)*16)+"px)";}
+    function arm(){clearInterval(timer);if(playing)timer=setInterval(function(){go(ei+1);},ei===fs.length-1?4200:2800);}
+    function setPlay(p){playing=p;pb.textContent=p?"一時停止":"再生";pb.setAttribute("aria-pressed",p);arm();}
+    bs.forEach(function(b,k){b.addEventListener("click",function(){go(k);setPlay(false);});});
+    pb.addEventListener("click",function(){setPlay(!playing);});
+    // 画面に入ってから動かす。最後の「いま」だけ少し長く見せる
+    var seen=false;if("IntersectionObserver" in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!seen){seen=true;go(0);arm();}});},{threshold:.4}).observe(evo.querySelector(".evo-screen"));}else{go(0);arm();}
+    var _go=go;go=function(i){_go(i);arm();};
+    if(calm)setPlay(false);}
+  var cmp=document.getElementById("cmp");
+  if(cmp){var rg=cmp.querySelector("input");rg.addEventListener("input",function(){cmp.style.setProperty("--x",rg.value+"%");});}
+  // 右のお知らせ:いま配っている版(置き場所の manifest)
+  var ver=document.getElementById("news-ver");
+  if(ver&&window.fetch){fetch("dl/windows/manifest.json",{cache:"no-cache"}).then(function(r){return r.ok?r.json():null;}).then(function(m){
+    if(!m||!m.version)return; var esc=function(t){var d=document.createElement("div");d.textContent=t;return d.innerHTML;};
+    var d=(m.date||"").replace(/^\d+-0?(\d+)-0?(\d+)$/,"$1/$2"),t=m.time?new Date(m.time):null;
+    if(t&&!isNaN(t))d=(t.getMonth()+1)+"/"+t.getDate()+" "+("0"+t.getHours()).slice(-2)+":"+("0"+t.getMinutes()).slice(-2);
+    ver.innerHTML='<div class="v">いまの版 Ver '+esc(m.version)+'<span class="d">'+esc(d)+'</span></div>'+
+      ((m.notes||[]).length?"<ul>"+m.notes.slice(0,4).map(function(n){return"<li>"+esc(n)+"</li>";}).join("")+"</ul>":"");
+    ver.classList.add("ok");
+    $("[data-ver]").forEach(function(e){e.textContent=m.version;});}).catch(function(){});}
+})();
+</script>
+</div>
+</body>
+</html>

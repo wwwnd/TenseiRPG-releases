@@ -1,0 +1,1561 @@
+{
+ "version": "0.5.26",
+ "date": "2026-11-28",
+ "time": "2026-11-28T08:52:04+00:00",
+ "code": "775e4ab",
+ "platform": "windows",
+ "notes": [
+  "開発中の「3D テスト場」を追加(どの町のポラリスからでも無料で行けます)",
+  "テスト場に、骨で動く新しい 3D の狼が出ます(歩く・振りかぶる・かみつく・倒れる。倒してもごほうびはありません)"
+ ],
+ "files": [
+  {
+   "path": "PonkotsuMegami.exe",
+   "size": 109480448,
+   "sha256": "0ba9685b5ebbb0b1e0d4611ee8fa7710fe40d20e8dfaa6042ffe4a4642d2b510",
+   "parts": [
+    "f/0ba9685b5ebbb0b1e0d4611e.0",
+    "f/0ba9685b5ebbb0b1e0d4611e.1",
+    "f/0ba9685b5ebbb0b1e0d4611e.2"
+   ]
+  },
+  {
+   "path": "PonkotsuMegami.pck",
+   "size": 238774584,
+   "sha256": "af5722efe183693dbfe5ea9e0b6060025cbe35e3937082569f7ad167234193a0",
+   "parts": [
+    "f/af5722efe183693dbfe5ea9e.0",
+    "f/af5722efe183693dbfe5ea9e.1",
+    "f/af5722efe183693dbfe5ea9e.2",
+    "f/af5722efe183693dbfe5ea9e.3",
+    "f/af5722efe183693dbfe5ea9e.4",
+    "f/af5722efe183693dbfe5ea9e.5"
+   ]
+  },
+  {
+   "path": "patch.pck",
+   "size": 38354440,
+   "sha256": "55961ec6f6a66722599c5fb8b3f03605809631c92595a41b52ed694e448c14bd",
+   "parts": [
+    "f/55961ec6f6a66722599c5fb8.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/Game.Core.dll",
+   "size": 816640,
+   "sha256": "071e5dca1470fddd89a62fcb18015717599cc062f18e62f0abb2df5d83bfac6e",
+   "parts": [
+    "f/071e5dca1470fddd89a62fcb.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/Game.Core.pdb",
+   "size": 331688,
+   "sha256": "68605f81990855e48b61365370b5e65371965c88cb95cfa1f4539694b7c778e9",
+   "parts": [
+    "f/68605f81990855e48b613653.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/GodotSharp.dll",
+   "size": 5928960,
+   "sha256": "2afe2686aacfefac36da6601b59aeb05e560f06e4970cd5036100acd2ca4249d",
+   "parts": [
+    "f/2afe2686aacfefac36da6601.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/Microsoft.CSharp.dll",
+   "size": 1005392,
+   "sha256": "6447482369dd392e2dcd615422c058ef3e82561c4f9027b84af3b530f492be4f",
+   "parts": [
+    "f/6447482369dd392e2dcd6154.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/Microsoft.DiaSymReader.Native.amd64.dll",
+   "size": 2387256,
+   "sha256": "ad3e85687b8d2d2eb09d1f097fdf7095372dbb044db5b64179f2d4b8024fed2b",
+   "parts": [
+    "f/ad3e85687b8d2d2eb09d1f09.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/Microsoft.VisualBasic.Core.dll",
+   "size": 1247016,
+   "sha256": "e1378c0391f255f1e7c18b8053deeb71f2e3833f2469a1975e073f58d24d2d56",
+   "parts": [
+    "f/e1378c0391f255f1e7c18b80.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/Microsoft.VisualBasic.dll",
+   "size": 17192,
+   "sha256": "cf0a4cf681b0bcf35918f14e953eba684b8aa703646e972567f33c2d86160911",
+   "parts": [
+    "f/cf0a4cf681b0bcf35918f14e.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/Microsoft.Win32.Primitives.dll",
+   "size": 15184,
+   "sha256": "f8ec168c83d14b6fb14c93ef51bae5911a555ce08412bb39cfb3a6322fbd1a54",
+   "parts": [
+    "f/f8ec168c83d14b6fb14c93ef.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/Microsoft.Win32.Registry.dll",
+   "size": 120656,
+   "sha256": "eb1ec668afae517eb7a91effa2a8f0fb3a5a0ac38d4921d1d2a8d86f38074ecf",
+   "parts": [
+    "f/eb1ec668afae517eb7a91eff.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.AppContext.dll",
+   "size": 15184,
+   "sha256": "653d7260a32a23ce4f3da78e28afd58c89b97d5191c6db9db2d795cea2bef032",
+   "parts": [
+    "f/653d7260a32a23ce4f3da78e.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Buffers.dll",
+   "size": 15144,
+   "sha256": "ab44ba0bc077af06c374b86a0930f788d5955302cb826cffb6e25a045d0366d7",
+   "parts": [
+    "f/ab44ba0bc077af06c374b86a.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Collections.Concurrent.dll",
+   "size": 276264,
+   "sha256": "107870ca3728b126ba0809bc68336c5bbf5d2fbff807364866ad2cf059c7e229",
+   "parts": [
+    "f/107870ca3728b126ba0809bc.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Collections.Immutable.dll",
+   "size": 837416,
+   "sha256": "73a5be68c008f4c345e6b631ca90f6e7795e367d08e7967d9ce9efe138f37520",
+   "parts": [
+    "f/73a5be68c008f4c345e6b631.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Collections.NonGeneric.dll",
+   "size": 104232,
+   "sha256": "56cdb71f325a034e657e8c5f0bd5bcf69ab5b7e3e24906066e5a79b55bc76abb",
+   "parts": [
+    "f/56cdb71f325a034e657e8c5f.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Collections.Specialized.dll",
+   "size": 104232,
+   "sha256": "5c9c80874365366b5c41bccf48d6a104d247a3e09f485d4d7cc72d91e501be52",
+   "parts": [
+    "f/5c9c80874365366b5c41bccf.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Collections.dll",
+   "size": 259880,
+   "sha256": "5ac6e09327228595e3598de046a34ec482ec0446525c4c9f1dd24af28c04ec18",
+   "parts": [
+    "f/5ac6e09327228595e3598de0.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.ComponentModel.Annotations.dll",
+   "size": 198440,
+   "sha256": "0107ea77d363423b4b092b232b1f2b8f049940508a1f38527414fcdef43eb1ef",
+   "parts": [
+    "f/0107ea77d363423b4b092b23.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.ComponentModel.DataAnnotations.dll",
+   "size": 16720,
+   "sha256": "c8a059fbdd023e83ea0980dc22c4245c5834e2c99a1c24d4f652134e7caa0714",
+   "parts": [
+    "f/c8a059fbdd023e83ea0980dc.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.ComponentModel.EventBasedAsync.dll",
+   "size": 46888,
+   "sha256": "4626a6fe0ee7299d395a1c7e7856778affb530bc10064f0da7f69b7197466baf",
+   "parts": [
+    "f/4626a6fe0ee7299d395a1c7e.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.ComponentModel.Primitives.dll",
+   "size": 79656,
+   "sha256": "c52c1daa2823af310585cc255a6ec88358506b469e74f9dcf6ea208b9848ada5",
+   "parts": [
+    "f/c52c1daa2823af310585cc25.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.ComponentModel.TypeConverter.dll",
+   "size": 747344,
+   "sha256": "ddbfe029efcb63abcd390ed570ce3c38449c4d445c4acbf37478f7a47f266830",
+   "parts": [
+    "f/ddbfe029efcb63abcd390ed5.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.ComponentModel.dll",
+   "size": 30544,
+   "sha256": "cb8774d737bb17399454d7c7f5c85c3d480f6135276e3d311ac07681cd1171e0",
+   "parts": [
+    "f/cb8774d737bb17399454d7c7.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Configuration.dll",
+   "size": 19280,
+   "sha256": "4fef5887f46089f5576fccb4cecc11eb999a59628b6b5bbd65d93fb0a8367a00",
+   "parts": [
+    "f/4fef5887f46089f5576fccb4.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Console.dll",
+   "size": 173864,
+   "sha256": "56456be641dd91003719e4e5e1fdcf0107258dcd1768afa7d5649750535cbb4d",
+   "parts": [
+    "f/56456be641dd91003719e4e5.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Core.dll",
+   "size": 23376,
+   "sha256": "0df556f1ab14cf37c45d933b64259986d083af89cc4a10adad96e78acb350b97",
+   "parts": [
+    "f/0df556f1ab14cf37c45d933b.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Data.Common.dll",
+   "size": 2860840,
+   "sha256": "dd0f12ff770e58f79a4175549a73cde74f8cd0d52d9a58230577e01fb8c01641",
+   "parts": [
+    "f/dd0f12ff770e58f79a417554.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Data.DataSetExtensions.dll",
+   "size": 15656,
+   "sha256": "5ff2b4b1a6073d9effe0be357e2e129cb69a23a31c5bde0938f475055ebc6431",
+   "parts": [
+    "f/5ff2b4b1a6073d9effe0be35.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Data.dll",
+   "size": 24872,
+   "sha256": "ebe75301ada510bd90164487b2122a1a2bd1438c1ad37c218b267037d38be38f",
+   "parts": [
+    "f/ebe75301ada510bd90164487.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Diagnostics.Contracts.dll",
+   "size": 16208,
+   "sha256": "14eeac76801d0b9288c5175c768056639e274ee767cf7a6cdc8992073580e0b6",
+   "parts": [
+    "f/14eeac76801d0b9288c5175c.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Diagnostics.Debug.dll",
+   "size": 15656,
+   "sha256": "420371db3d1693e6fe8e6ab68ac29a0801c9eda9d86291e7809a48497fe427ee",
+   "parts": [
+    "f/420371db3d1693e6fe8e6ab6.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Diagnostics.DiagnosticSource.dll",
+   "size": 415528,
+   "sha256": "13b1cc1889a1fe9f00710647cf64b995768b1b5b4d1be18225bade28141330f9",
+   "parts": [
+    "f/13b1cc1889a1fe9f00710647.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Diagnostics.FileVersionInfo.dll",
+   "size": 46928,
+   "sha256": "e770a8c7c37edcbdd5b2c4a6e84664a4e28213fc77b8e88f3fd2455c5515470b",
+   "parts": [
+    "f/e770a8c7c37edcbdd5b2c4a6.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Diagnostics.Process.dll",
+   "size": 337704,
+   "sha256": "502551208152e97cc356861ee4c1a7093584613936da079fbd753b02715a7efc",
+   "parts": [
+    "f/502551208152e97cc356861e.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Diagnostics.StackTrace.dll",
+   "size": 46888,
+   "sha256": "6a4abf7c1def94e83d6639947ebe9127a12ac37ce729adf0730c3b007bfd0119",
+   "parts": [
+    "f/6a4abf7c1def94e83d663994.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Diagnostics.TextWriterTraceListener.dll",
+   "size": 67408,
+   "sha256": "8fde35602499613645fb2481b0c2d8f533bce0ab324f96ecf059d84fad7af941",
+   "parts": [
+    "f/8fde35602499613645fb2481.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Diagnostics.Tools.dll",
+   "size": 15144,
+   "sha256": "25c189a9e8530512862a8fd48fc4735de493edf32e4493bb30e9c8fc23910a35",
+   "parts": [
+    "f/25c189a9e8530512862a8fd4.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Diagnostics.TraceSource.dll",
+   "size": 145192,
+   "sha256": "6f5559ac6374bdabc4108e5e98dbc19db015ca9c7aca0185e476b41013986cd3",
+   "parts": [
+    "f/6f5559ac6374bdabc4108e5e.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Diagnostics.Tracing.dll",
+   "size": 16208,
+   "sha256": "67dcf0e030a51187303b9728ddd4c1bc20c258b4ee08e459b7e4ccc848a4d99f",
+   "parts": [
+    "f/67dcf0e030a51187303b9728.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Drawing.Primitives.dll",
+   "size": 132904,
+   "sha256": "4a0663188138eb16b874e6c7231373586ac7024cc1bdff0bcf66d6678675668c",
+   "parts": [
+    "f/4a0663188138eb16b874e6c7.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Drawing.dll",
+   "size": 20264,
+   "sha256": "2b6e637a260e80cef27d9f6f884f3c28fd8243d0b6f60b6c8e499cdda2234358",
+   "parts": [
+    "f/2b6e637a260e80cef27d9f6f.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Dynamic.Runtime.dll",
+   "size": 16168,
+   "sha256": "9d001586f521f9092a53629c28a9b0167e9029ca6e312244af15536920252318",
+   "parts": [
+    "f/9d001586f521f9092a53629c.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Formats.Asn1.dll",
+   "size": 243536,
+   "sha256": "c174ba05aaede43555dfcc9b9113883d8e731e3adb38e2d2ad281bd654f1af88",
+   "parts": [
+    "f/c174ba05aaede43555dfcc9b.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Formats.Tar.dll",
+   "size": 292648,
+   "sha256": "8e4debb63bf4a71ab84fb0129dfa9cb8a626f89d82ee0f97635b490d3fb34a20",
+   "parts": [
+    "f/8e4debb63bf4a71ab84fb012.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Globalization.Calendars.dll",
+   "size": 15696,
+   "sha256": "309601921d40708a0f6a909bb3e1b5c278112233f3ddd84f5103bbf24d96a10b",
+   "parts": [
+    "f/309601921d40708a0f6a909b.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Globalization.Extensions.dll",
+   "size": 15144,
+   "sha256": "03edce24632575fbff75d3a4b80fd530d0520838b2d0460822e7810554efe86a",
+   "parts": [
+    "f/03edce24632575fbff75d3a4.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Globalization.dll",
+   "size": 15656,
+   "sha256": "11cac0cbf223baae0dde7d4bd3ca3e9c7de81f440fdd2f6847fa7870659285bd",
+   "parts": [
+    "f/11cac0cbf223baae0dde7d4b.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.IO.Compression.Brotli.dll",
+   "size": 83752,
+   "sha256": "5fc6d55e292c93c09c05fddf04d64027a4d5e350ce9a58e1cc37e1e7e20009d3",
+   "parts": [
+    "f/5fc6d55e292c93c09c05fddf.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.IO.Compression.FileSystem.dll",
+   "size": 15144,
+   "sha256": "d02e2de8262913f8752a7d1cbf0af1824fca3795fe7f1ee542dbd55a7b1538b1",
+   "parts": [
+    "f/d02e2de8262913f8752a7d1c.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.IO.Compression.Native.dll",
+   "size": 828200,
+   "sha256": "49c9bd82f0712336134fd1583e99fa4e3f7a0ae72ed2feb09f006868b27bdff6",
+   "parts": [
+    "f/49c9bd82f0712336134fd158.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.IO.Compression.ZipFile.dll",
+   "size": 55120,
+   "sha256": "202dcb6ef7f5e99d09912a009ace4f879e7396f4683854d37e293fe374e1915d",
+   "parts": [
+    "f/202dcb6ef7f5e99d09912a00.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.IO.Compression.dll",
+   "size": 264016,
+   "sha256": "172f0861c0e8dd80b5978ded65e61fe074f186a8e0398fbbbe31d2a858709877",
+   "parts": [
+    "f/172f0861c0e8dd80b5978ded.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.IO.FileSystem.AccessControl.dll",
+   "size": 104232,
+   "sha256": "5bbca7e9496003f80b0e723433f8e3dfa59e9daa5158163f9bd2ca41bd1e2dbc",
+   "parts": [
+    "f/5bbca7e9496003f80b0e7234.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.IO.FileSystem.DriveInfo.dll",
+   "size": 55080,
+   "sha256": "6359677954ad1e2b3579e32bd67584ccb5d8c1a3b27529b55a5a1c909c2ac61c",
+   "parts": [
+    "f/6359677954ad1e2b3579e32b.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.IO.FileSystem.Primitives.dll",
+   "size": 15184,
+   "sha256": "5fc745b41e624742cec43b136b52ab8813dc1e21dd0453d067a483cbad8be87a",
+   "parts": [
+    "f/5fc745b41e624742cec43b13.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.IO.FileSystem.Watcher.dll",
+   "size": 87888,
+   "sha256": "f3d8e7cbd4683d142b161420e059688e07366c1328841a32aaf72609d2f37bac",
+   "parts": [
+    "f/f3d8e7cbd4683d142b161420.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.IO.FileSystem.dll",
+   "size": 15656,
+   "sha256": "412e8a01ead54f97a7f6be8739466b649b301c5f6b6189ebb46fb6e929726985",
+   "parts": [
+    "f/412e8a01ead54f97a7f6be87.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.IO.IsolatedStorage.dll",
+   "size": 91984,
+   "sha256": "2221499d1bb22ac4e3053e9af2a7c9b255af5b4dd2f7d8ef014fe86c4b70b21e",
+   "parts": [
+    "f/2221499d1bb22ac4e3053e9a.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.IO.MemoryMappedFiles.dll",
+   "size": 83752,
+   "sha256": "ec5f59bf370164ee27d0972b9e35f6daced96d5abce1e06d96f1eef61bc28387",
+   "parts": [
+    "f/ec5f59bf370164ee27d0972b.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.IO.Pipes.AccessControl.dll",
+   "size": 16168,
+   "sha256": "1df429651d9aec78ee287efa1ebeaab16617a69463909dae4ffea23f386fda29",
+   "parts": [
+    "f/1df429651d9aec78ee287efa.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.IO.Pipes.dll",
+   "size": 165672,
+   "sha256": "12002e9bc716f0a133ca2713186fe4f25f8e86574e50c619bcedaff8e9d8f09a",
+   "parts": [
+    "f/12002e9bc716f0a133ca2713.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.IO.UnmanagedMemoryStream.dll",
+   "size": 15144,
+   "sha256": "d41e7c5072bf1e2a7f466656c6830ebef5ba14b01d0e10232d1e4f0566ec9cb1",
+   "parts": [
+    "f/d41e7c5072bf1e2a7f466656.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.IO.dll",
+   "size": 15656,
+   "sha256": "e3d8fc2f1247a25277ad55eea76b3cb716f0fd22bd91e6f171506dc39ecb47f5",
+   "parts": [
+    "f/e3d8fc2f1247a25277ad55ee.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Linq.Expressions.dll",
+   "size": 3675944,
+   "sha256": "f7e56e569afd44ae435a326908c4bd2f6d12462979cbff50e2eaea4ce53feccd",
+   "parts": [
+    "f/f7e56e569afd44ae435a3269.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Linq.Parallel.dll",
+   "size": 804648,
+   "sha256": "dbc610b9bc6b33c5323e0b8b8ee28da6f48b8d21e322f331df4209ea3e670a51",
+   "parts": [
+    "f/dbc610b9bc6b33c5323e0b8b.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Linq.Queryable.dll",
+   "size": 173864,
+   "sha256": "38ff8f209aa3a6f8f3bb280aec6e4f30fd81fe44f7088c3f808dd86e900d3ad1",
+   "parts": [
+    "f/38ff8f209aa3a6f8f3bb280a.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Linq.dll",
+   "size": 542504,
+   "sha256": "4bd64ed212fec6636ca91cf3f86caa955c3af26e3d0454dbde8b844737c98bd2",
+   "parts": [
+    "f/4bd64ed212fec6636ca91cf3.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Memory.dll",
+   "size": 157520,
+   "sha256": "3abf749525f74a3538d697cf5fcc53f9ca8c69d3050b7b180ab579ebf53ed723",
+   "parts": [
+    "f/3abf749525f74a3538d697cf.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.Http.Json.dll",
+   "size": 128808,
+   "sha256": "d7542a679339bd668241e401169e6b7994175e0125bbf578af0870c1b8829449",
+   "parts": [
+    "f/d7542a679339bd668241e401.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.Http.dll",
+   "size": 1734440,
+   "sha256": "2536c365f489d52db067f44c2267442be83d437ec23d371ac2290ae1f25aabaa",
+   "parts": [
+    "f/2536c365f489d52db067f44c.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.HttpListener.dll",
+   "size": 550696,
+   "sha256": "70e57a15fdb11ed3334539a4380105d42b2d3571119ae53b6d61252f6ba38b99",
+   "parts": [
+    "f/70e57a15fdb11ed3334539a4.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.Mail.dll",
+   "size": 431952,
+   "sha256": "40caa418bd6ec62c5da04040e0f5d32621429284a857e9a4affc2a638263cd38",
+   "parts": [
+    "f/40caa418bd6ec62c5da04040.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.NameResolution.dll",
+   "size": 112464,
+   "sha256": "aa663befdd453bdca9c04e064a72520ba670d0daacd9a59fd2b7533605e159fc",
+   "parts": [
+    "f/aa663befdd453bdca9c04e06.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.NetworkInformation.dll",
+   "size": 157480,
+   "sha256": "3c993ce2632e86e47219cf4cbc43ae2809fac2c46ccfe58b52b0e01941650a1c",
+   "parts": [
+    "f/3c993ce2632e86e47219cf4c.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.Ping.dll",
+   "size": 96040,
+   "sha256": "be5b59df6c8cf2ad6814116150588c54c1d36c92a68762b3d142d637014296dd",
+   "parts": [
+    "f/be5b59df6c8cf2ad68141161.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.Primitives.dll",
+   "size": 231208,
+   "sha256": "b508776c9890874e7b86f78487162a882d9a9f0d6b80ec07e981d18d5b6fe682",
+   "parts": [
+    "f/b508776c9890874e7b86f784.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.Quic.dll",
+   "size": 288592,
+   "sha256": "d745b4493adc50afed69c97ab6c73aca462bea873862a73b89f67a8287a275cb",
+   "parts": [
+    "f/d745b4493adc50afed69c97a.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.Requests.dll",
+   "size": 345896,
+   "sha256": "441b07904aaea7817c240d12a26d5775006d7565614103b10ece92754753226e",
+   "parts": [
+    "f/441b07904aaea7817c240d12.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.Security.dll",
+   "size": 669520,
+   "sha256": "bf782db98ae5622edda309cf381368cb724439da6ed9ba6bb9f7e634a76f5518",
+   "parts": [
+    "f/bf782db98ae5622edda309cf.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.ServicePoint.dll",
+   "size": 46888,
+   "sha256": "37fdefcea223b216967547f96e6d6333c580e9b7da40e4cafffb16776d0e6757",
+   "parts": [
+    "f/37fdefcea223b216967547f9.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.Sockets.dll",
+   "size": 546640,
+   "sha256": "8c519dcf15f16530b03daa074d92e25140db2ddae7e6c6e9939086c5791b961f",
+   "parts": [
+    "f/8c519dcf15f16530b03daa07.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.WebClient.dll",
+   "size": 169768,
+   "sha256": "e21899b31cb3c482b3e869d2e34ad3e433785b590a1beac8d3d2f9aafbd99d2b",
+   "parts": [
+    "f/e21899b31cb3c482b3e869d2.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.WebHeaderCollection.dll",
+   "size": 67368,
+   "sha256": "41638cb879918184e7e564bc700c4671408219d1fe4c9b4febd33769730a5e01",
+   "parts": [
+    "f/41638cb879918184e7e564bc.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.WebProxy.dll",
+   "size": 42792,
+   "sha256": "2c5d866985adf64170715dbdbec635184482cedbbace169ed47f8a623bf0b5b0",
+   "parts": [
+    "f/2c5d866985adf64170715dbd.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.WebSockets.Client.dll",
+   "size": 100136,
+   "sha256": "51791f674d58514ed62772fca726ceb8ad9366eaf7a2d5f0c78e4a3c354cefae",
+   "parts": [
+    "f/51791f674d58514ed62772fc.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.WebSockets.dll",
+   "size": 190248,
+   "sha256": "5e5e6040b16195d017ddcff729118dd6d7656ae82cc34050cab4d980589604d6",
+   "parts": [
+    "f/5e5e6040b16195d017ddcff7.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Net.dll",
+   "size": 17192,
+   "sha256": "78559f94d7d189f34ff4c29dc593e3ca22ac5511da31efdc66f57e9cbc4c3969",
+   "parts": [
+    "f/78559f94d7d189f34ff4c29d.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Numerics.Vectors.dll",
+   "size": 15656,
+   "sha256": "9d88ad8ac33094f2c83f5eddd9a4eabb9866b336296a5f95220f75376a5cb4a6",
+   "parts": [
+    "f/9d88ad8ac33094f2c83f5edd.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Numerics.dll",
+   "size": 15184,
+   "sha256": "b3b841ae76e30067bc75bc2142db4eb5e4cc248cf3011ec9de4f4ad73d569c33",
+   "parts": [
+    "f/b3b841ae76e30067bc75bc21.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.ObjectModel.dll",
+   "size": 79656,
+   "sha256": "7a1e18cc2dbaa4508f0566acec774dafa4c221b134f22de5a77a3662cceb128c",
+   "parts": [
+    "f/7a1e18cc2dbaa4508f0566ac.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Private.CoreLib.dll",
+   "size": 13174568,
+   "sha256": "fcadcc41a95cd1dfc9116b336ef83ca4e9545850a42860b32e010f360ee490ce",
+   "parts": [
+    "f/fcadcc41a95cd1dfc9116b33.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Private.DataContractSerialization.dll",
+   "size": 2082640,
+   "sha256": "c108330dc1708c8c5bd2d144aca84e18778c67d447107caa429630666dc7a8e7",
+   "parts": [
+    "f/c108330dc1708c8c5bd2d144.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Private.Uri.dll",
+   "size": 259880,
+   "sha256": "d9a22fe94a24e1b2bba7d39fadf9221b05c8d1ab8fa522c9fe2b4f5fb817a1e5",
+   "parts": [
+    "f/d9a22fe94a24e1b2bba7d39f.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Private.Xml.Linq.dll",
+   "size": 403280,
+   "sha256": "3674fbb237b05bd130a89c667d72d3f2c4b974b0321053d315186b41d4c287db",
+   "parts": [
+    "f/3674fbb237b05bd130a89c66.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Private.Xml.dll",
+   "size": 7997264,
+   "sha256": "af5c5bc7c3b68ba3c2e222b78e6d592abfe4754c8caa94e962ea31f8a5ee91dc",
+   "parts": [
+    "f/af5c5bc7c3b68ba3c2e222b7.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Reflection.DispatchProxy.dll",
+   "size": 75560,
+   "sha256": "4d6b71015ca7fb0db24f377eb72699a4181a2e0452d6447b238e16f6d9527375",
+   "parts": [
+    "f/4d6b71015ca7fb0db24f377e.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Reflection.Emit.ILGeneration.dll",
+   "size": 15696,
+   "sha256": "66bb6635e70a0e1dc10bfb15c21c8b1af601a4c6bd1a21f5a556fe070d5344d7",
+   "parts": [
+    "f/66bb6635e70a0e1dc10bfb15.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Reflection.Emit.Lightweight.dll",
+   "size": 15696,
+   "sha256": "66c212eb3cc3e1a50eb0020aa51dab1f6c284ea0b13ee133c3e49fe32e905ab9",
+   "parts": [
+    "f/66c212eb3cc3e1a50eb0020a.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Reflection.Emit.dll",
+   "size": 128848,
+   "sha256": "e43163f8b84f8da225cf3a64decf5f397df2275c4261d89c9db861af7ccc03dc",
+   "parts": [
+    "f/e43163f8b84f8da225cf3a64.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Reflection.Extensions.dll",
+   "size": 15184,
+   "sha256": "6e936c3abddfe0262b836bc13e938ae0f90021253a4e1d4fbeb2a65127bb62dd",
+   "parts": [
+    "f/6e936c3abddfe0262b836bc1.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Reflection.Metadata.dll",
+   "size": 1115944,
+   "sha256": "e1378581c87f37fdac6dc85fbd8e80b847f666f3cc03525811bcfda21a580b13",
+   "parts": [
+    "f/e1378581c87f37fdac6dc85f.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Reflection.Primitives.dll",
+   "size": 15696,
+   "sha256": "2ab607aef34fa1e07f1e37b80d1ec57fc3d005679b695e417603866d2b8dfed0",
+   "parts": [
+    "f/2ab607aef34fa1e07f1e37b8.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Reflection.TypeExtensions.dll",
+   "size": 42792,
+   "sha256": "7f349e16cd9305e098d83937b01ae617c11001921301420b644f21ebaf4348bb",
+   "parts": [
+    "f/7f349e16cd9305e098d83937.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Reflection.dll",
+   "size": 16208,
+   "sha256": "434727aec8738537b63669375493dd91cd2e8df4c6b8a5dc76231de0e7c381f0",
+   "parts": [
+    "f/434727aec8738537b6366937.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Resources.Reader.dll",
+   "size": 15184,
+   "sha256": "199b84bfdc8e46c76f377582270e72985576604671696444b0382598d395ba35",
+   "parts": [
+    "f/199b84bfdc8e46c76f377582.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Resources.ResourceManager.dll",
+   "size": 15656,
+   "sha256": "abd731176693842b5f63d61afd4aa6dc53056d1ca274d23ff361a24b3dba221f",
+   "parts": [
+    "f/abd731176693842b5f63d61a.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Resources.Writer.dll",
+   "size": 50984,
+   "sha256": "02953480146c3b84d8abbe13db20d9f41754660290dd13ff873c841712efe3cc",
+   "parts": [
+    "f/02953480146c3b84d8abbe13.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Runtime.CompilerServices.Unsafe.dll",
+   "size": 15144,
+   "sha256": "bbeb3a69b1b68afae23b64ab9315b866709ffe20d62139156a94fee7e47279a1",
+   "parts": [
+    "f/bbeb3a69b1b68afae23b64ab.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Runtime.CompilerServices.VisualC.dll",
+   "size": 30504,
+   "sha256": "920a23217cacbd2a99c1733db8f535e33e6c67f1ed64010818c927be000be5e6",
+   "parts": [
+    "f/920a23217cacbd2a99c1733d.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Runtime.Extensions.dll",
+   "size": 17704,
+   "sha256": "5d38d0b028215adb6e26931a2d0d5d96fd48a2e3dfe3bf28f768a2dfd9970296",
+   "parts": [
+    "f/5d38d0b028215adb6e26931a.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Runtime.Handles.dll",
+   "size": 15144,
+   "sha256": "3fac02be30bb1d443188601f8ea9d45ae0ebde4ca51b1e5ff9fcd724823db56f",
+   "parts": [
+    "f/3fac02be30bb1d443188601f.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Runtime.InteropServices.JavaScript.dll",
+   "size": 50984,
+   "sha256": "fa4d3fde521cda360003332f431b8585e695397728fcbb48c3a7d265fe15b239",
+   "parts": [
+    "f/fa4d3fde521cda360003332f.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Runtime.InteropServices.RuntimeInformation.dll",
+   "size": 15144,
+   "sha256": "2923230377831f959dd141271dedd289b682fa61afac03fd407b81b2973ed928",
+   "parts": [
+    "f/2923230377831f959dd14127.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Runtime.InteropServices.dll",
+   "size": 96040,
+   "sha256": "41a02b1b65c887e856142adda6b347525a59a30b997c7dfe4e9fbdfd8319a57c",
+   "parts": [
+    "f/41a02b1b65c887e856142add.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Runtime.Intrinsics.dll",
+   "size": 16680,
+   "sha256": "f42160b0b28622341b1302f572f1ff6186b42bd658144901af91ea5eda07a1ff",
+   "parts": [
+    "f/f42160b0b28622341b1302f5.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Runtime.Loader.dll",
+   "size": 15656,
+   "sha256": "35955339df254b489043154e770fb569e644682a6f44bb3a230bcd0d661e95c2",
+   "parts": [
+    "f/35955339df254b489043154e.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Runtime.Numerics.dll",
+   "size": 329552,
+   "sha256": "13670c46b8704c1edeb1430cc801aa559f351752baba8ca834e4d45729b9b659",
+   "parts": [
+    "f/13670c46b8704c1edeb1430c.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Runtime.Serialization.Formatters.dll",
+   "size": 309032,
+   "sha256": "00e997360ea0cc7771bae88fc19cae09b5f08c514a64a91b0207f7b44e085b4c",
+   "parts": [
+    "f/00e997360ea0cc7771bae88f.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Runtime.Serialization.Json.dll",
+   "size": 15656,
+   "sha256": "ead43ea322547b7ad4e9c65235074afa400e768eeaf575589eae55663e086dd0",
+   "parts": [
+    "f/ead43ea322547b7ad4e9c652.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Runtime.Serialization.Primitives.dll",
+   "size": 38736,
+   "sha256": "ceeb41f7a47a510af97db1a75a1944342581145bb734589dc8511f73e45cf52e",
+   "parts": [
+    "f/ceeb41f7a47a510af97db1a7.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Runtime.Serialization.Xml.dll",
+   "size": 16680,
+   "sha256": "29b60216dad92592e6aa0b79737aa792a009cda8176dfbb56f685143b91f692a",
+   "parts": [
+    "f/29b60216dad92592e6aa0b79.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Runtime.Serialization.dll",
+   "size": 16680,
+   "sha256": "0ed92f377b1594dcf04b08b6eefb975508a5c2e53c0825e3ab1ae07fc6465ef0",
+   "parts": [
+    "f/0ed92f377b1594dcf04b08b6.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Runtime.dll",
+   "size": 43304,
+   "sha256": "fab058931fb44828eb40cf55d9c582492dd4e89254304aafb9b84451a5e9f20f",
+   "parts": [
+    "f/fab058931fb44828eb40cf55.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Security.AccessControl.dll",
+   "size": 231248,
+   "sha256": "1102fa55836e26234207cb1b2bc265daba2225df08f2755ae73cb25429e4973a",
+   "parts": [
+    "f/1102fa55836e26234207cb1b.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Security.Claims.dll",
+   "size": 100136,
+   "sha256": "7e2400b5ae1c853ac037e449a9a7bf9f14c9b0954228694212c232fe03574b5d",
+   "parts": [
+    "f/7e2400b5ae1c853ac037e449.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Security.Cryptography.Algorithms.dll",
+   "size": 17192,
+   "sha256": "6e4987f4e42375e6aa2973554cf75f7b17507e5809247bb950d3beb683e315cc",
+   "parts": [
+    "f/6e4987f4e42375e6aa297355.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Security.Cryptography.Cng.dll",
+   "size": 16208,
+   "sha256": "5b5459d06e93c9356123de04e4f58ca614927869f54a21ab8c91aeef4d410af7",
+   "parts": [
+    "f/5b5459d06e93c9356123de04.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Security.Cryptography.Csp.dll",
+   "size": 15656,
+   "sha256": "78587e1c01f69d3128c6a767dddfbd67ed1de58e0a856d1c3f49c2d692a0de6c",
+   "parts": [
+    "f/78587e1c01f69d3128c6a767.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Security.Cryptography.Encoding.dll",
+   "size": 15656,
+   "sha256": "59c4e312a991e2c6a5b0563fbad3d35e44c0a1a539925b41b1f6c2093388e0a3",
+   "parts": [
+    "f/59c4e312a991e2c6a5b0563f.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Security.Cryptography.OpenSsl.dll",
+   "size": 15144,
+   "sha256": "f3b2455cccb12da070bad73d685f6bc3efd097ed62cafaae600d901484964439",
+   "parts": [
+    "f/f3b2455cccb12da070bad73d.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Security.Cryptography.Primitives.dll",
+   "size": 15696,
+   "sha256": "01dbcc9ff1bf3669a8432bcb681b51f810b4bdf9294f4a6719f4b8a4bc5a330b",
+   "parts": [
+    "f/01dbcc9ff1bf3669a8432bcb.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Security.Cryptography.X509Certificates.dll",
+   "size": 16680,
+   "sha256": "69f09579c1acfce5a2d78dcede8133af532f0bfb667405541bc112a559561202",
+   "parts": [
+    "f/69f09579c1acfce5a2d78dce.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Security.Cryptography.dll",
+   "size": 2049832,
+   "sha256": "334cb41e22474c6b29749e1ad8b6b5e9cdc839c6210f1af12619af9fb9cc3420",
+   "parts": [
+    "f/334cb41e22474c6b29749e1a.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Security.Principal.Windows.dll",
+   "size": 186152,
+   "sha256": "f9aa1a8d40de706bbfa7920cb243f431b45a33e55ec3d4ae9148fbffb5887a42",
+   "parts": [
+    "f/f9aa1a8d40de706bbfa7920c.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Security.Principal.dll",
+   "size": 15144,
+   "sha256": "759d6da994535591c08a4fce4c1e3bbfb4a46e7fd37ecfc8cbbdeea4ad49706c",
+   "parts": [
+    "f/759d6da994535591c08a4fce.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Security.SecureString.dll",
+   "size": 15144,
+   "sha256": "dc5cd813d55beb01f4c68d011d7b910c2b4800d94feb7f42a5f3493b9043b2bf",
+   "parts": [
+    "f/dc5cd813d55beb01f4c68d01.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Security.dll",
+   "size": 18216,
+   "sha256": "f5757ffe106ecdc52df555738a6cc9209f0141ce218837811c9c223784827ec1",
+   "parts": [
+    "f/f5757ffe106ecdc52df55573.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.ServiceModel.Web.dll",
+   "size": 16680,
+   "sha256": "4137b4ee75ad1809a22e2f9b4a4a3e35c9cdd6198071f8a7579d4659887a688e",
+   "parts": [
+    "f/4137b4ee75ad1809a22e2f9b.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.ServiceProcess.dll",
+   "size": 15656,
+   "sha256": "b47c5afeb15010f333e0ecb655f99feac27da235e0eecc11d070e1bf7f534eba",
+   "parts": [
+    "f/b47c5afeb15010f333e0ecb6.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Text.Encoding.CodePages.dll",
+   "size": 861992,
+   "sha256": "3b02d69231c817db6eda008bcc42d53aed022dfbf4bf2f399fee42933f704cb7",
+   "parts": [
+    "f/3b02d69231c817db6eda008b.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Text.Encoding.Extensions.dll",
+   "size": 15696,
+   "sha256": "d75fc1015cebf2bad93bacdd3b93bd402c9fff7805b026332555a01a3b95260a",
+   "parts": [
+    "f/d75fc1015cebf2bad93bacdd.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Text.Encoding.dll",
+   "size": 15656,
+   "sha256": "d1fc5808ee1addc1bdc1e323945e0834eb50058135005e01575d7cff05ba09e8",
+   "parts": [
+    "f/d1fc5808ee1addc1bdc1e323.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Text.Encodings.Web.dll",
+   "size": 132904,
+   "sha256": "668c0ec9237bb0a34c3621d67dcd5901ac9462d51e533968831c9c043648c5a5",
+   "parts": [
+    "f/668c0ec9237bb0a34c3621d6.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Text.Json.dll",
+   "size": 1500968,
+   "sha256": "405f403e83e4d335d5659ae916f2107d624b10c4c647f01cb74dd7364c1a07b5",
+   "parts": [
+    "f/405f403e83e4d335d5659ae9.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Text.RegularExpressions.dll",
+   "size": 1021736,
+   "sha256": "9eed8a6967b8b883e2ed7a6e78b7b4ec33fbafde60ab12320c17b641422d1093",
+   "parts": [
+    "f/9eed8a6967b8b883e2ed7a6e.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Threading.Channels.dll",
+   "size": 132904,
+   "sha256": "1445b57b3cdb45001783e98e11f750727bed4b99eec3c6f8f964ee20edac7f01",
+   "parts": [
+    "f/1445b57b3cdb45001783e98e.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Threading.Overlapped.dll",
+   "size": 15656,
+   "sha256": "f6aad4de2cb7733aa85fd0195330bdf3a0a9bdf5e8633051de4973b937b77732",
+   "parts": [
+    "f/f6aad4de2cb7733aa85fd019.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Threading.Tasks.Dataflow.dll",
+   "size": 489296,
+   "sha256": "58823d1daad516f174d9a030d79ac0a5e387eaf3085bef42e1a71f903810dadf",
+   "parts": [
+    "f/58823d1daad516f174d9a030.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Threading.Tasks.Extensions.dll",
+   "size": 15656,
+   "sha256": "e0c404955c0d4c235deec9daf4869c63ea3945b346511bd9b94ffc6cc487fa79",
+   "parts": [
+    "f/e0c404955c0d4c235deec9da.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Threading.Tasks.Parallel.dll",
+   "size": 132944,
+   "sha256": "16d5cc9db1e300f16f0647e2110fcf1977ae689aa0e12c0b79bdecb5ff22e7dd",
+   "parts": [
+    "f/16d5cc9db1e300f16f0647e2.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Threading.Tasks.dll",
+   "size": 16680,
+   "sha256": "96cc77cb6f41671c4be2012bab96ff3865ea61dec7072daf6c9f7317d1f50620",
+   "parts": [
+    "f/96cc77cb6f41671c4be2012b.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Threading.Thread.dll",
+   "size": 15696,
+   "sha256": "b2c63e74d1fe1fe204b430dd6696143ea1585c8167354d80803531b6718cb405",
+   "parts": [
+    "f/b2c63e74d1fe1fe204b430dd.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Threading.ThreadPool.dll",
+   "size": 15696,
+   "sha256": "4cf060dbd690174eeed7bb2b50dfdce098156b952ac48e4e4322d8d4bc3edc08",
+   "parts": [
+    "f/4cf060dbd690174eeed7bb2b.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Threading.Timer.dll",
+   "size": 15144,
+   "sha256": "8df4c88cce6c1fba88fa3f6bb85faeb545b523dd29f7d2b79bbc76c1b3b44a69",
+   "parts": [
+    "f/8df4c88cce6c1fba88fa3f6b.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Threading.dll",
+   "size": 83752,
+   "sha256": "5088d88980d3437f8f3967520c2340409b48e3cfbc22085e0000547935a00ea1",
+   "parts": [
+    "f/5088d88980d3437f8f396752.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Transactions.Local.dll",
+   "size": 661288,
+   "sha256": "22195e5e45e3abcfc858311e88a5b63ec1478db215441d2bd83792627589f85d",
+   "parts": [
+    "f/22195e5e45e3abcfc858311e.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Transactions.dll",
+   "size": 16168,
+   "sha256": "14b05d4511995358f9782ef5ff95fb02fa9dd3cad96849c616ce6fc5301751ac",
+   "parts": [
+    "f/14b05d4511995358f9782ef5.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.ValueTuple.dll",
+   "size": 15144,
+   "sha256": "f820c29ce57048616f822ee7e85761817223445511c07710ff179c8b1bf2209a",
+   "parts": [
+    "f/f820c29ce57048616f822ee7.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Web.HttpUtility.dll",
+   "size": 59216,
+   "sha256": "4b1773b5e6b7ef76479a045324f77ed3d2d84352783290fd3326077d0a515a53",
+   "parts": [
+    "f/4b1773b5e6b7ef76479a0453.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Web.dll",
+   "size": 15144,
+   "sha256": "af79aac3dab75e9d951cecdb1d35be96dfda49d85f21bd6d043eb6d0f2052e35",
+   "parts": [
+    "f/af79aac3dab75e9d951cecdb.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Windows.dll",
+   "size": 15656,
+   "sha256": "126322f5f7c4a0cfeeb25245e76c6cff40cb99638398b0447b4a433ab70e8024",
+   "parts": [
+    "f/126322f5f7c4a0cfeeb25245.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Xml.Linq.dll",
+   "size": 15656,
+   "sha256": "17486462e25473d884f62c7de10e61bef755ca55fbcd67ad85cc64fb7b0c042c",
+   "parts": [
+    "f/17486462e25473d884f62c7d.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Xml.ReaderWriter.dll",
+   "size": 21800,
+   "sha256": "e36eeffe651ba1f1ca796b42f8afbcd9fd249ab2293a9b8bcd6acf6ebf1f8008",
+   "parts": [
+    "f/e36eeffe651ba1f1ca796b42.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Xml.Serialization.dll",
+   "size": 16208,
+   "sha256": "7c0d7d525fe9c2fc5b2e540952d49eb311d683957e49808e771d7af09eeb994e",
+   "parts": [
+    "f/7c0d7d525fe9c2fc5b2e5409.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Xml.XDocument.dll",
+   "size": 15656,
+   "sha256": "8c807477d6d855b8e803b05f24b8448a520981d95155fff96abb2c5ca4942e08",
+   "parts": [
+    "f/8c807477d6d855b8e803b05f.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Xml.XPath.XDocument.dll",
+   "size": 30504,
+   "sha256": "6036de44b6b52b959ed3aded60eeca909117e10ed54370c8aef7c98ac494206f",
+   "parts": [
+    "f/6036de44b6b52b959ed3aded.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Xml.XPath.dll",
+   "size": 15656,
+   "sha256": "2678a6910aad1845187b3e95430aa5dc98a2e0e0910d51d3f8513b5bd25bf187",
+   "parts": [
+    "f/2678a6910aad1845187b3e95.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Xml.XmlDocument.dll",
+   "size": 15656,
+   "sha256": "14e5d2920407843519e74423f3de4cf2841b163172fc6d5e20309978996203f7",
+   "parts": [
+    "f/14e5d2920407843519e74423.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Xml.XmlSerializer.dll",
+   "size": 17704,
+   "sha256": "8e8e54010427a03b64c2626f9ef7f06538f0f5efa4ae184ccb6fc6b18c96e003",
+   "parts": [
+    "f/8e8e54010427a03b64c2626f.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.Xml.dll",
+   "size": 23336,
+   "sha256": "bf102c2232ee93fbe6f7d13001b53dff3fd8b633bc68765d69ac2ca0ba82cdd4",
+   "parts": [
+    "f/bf102c2232ee93fbe6f7d130.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/System.dll",
+   "size": 49960,
+   "sha256": "917861e4bb498c6601dd1592b7c0e2bae7504b3da2a3f9639cf4d035a2e895d8",
+   "parts": [
+    "f/917861e4bb498c6601dd1592.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/TenseiRPG.deps.json",
+   "size": 27384,
+   "sha256": "84e778a90a8bffcf0a32435e87cf7ee22c13ef21c2a283aebeabec224733b244",
+   "parts": [
+    "f/84e778a90a8bffcf0a32435e.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/TenseiRPG.dll",
+   "size": 2501632,
+   "sha256": "d6e593bb85cf9c581be20be274690394d95e920fb041f3ebfddbdc75f0d776b1",
+   "parts": [
+    "f/d6e593bb85cf9c581be20be2.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/TenseiRPG.pdb",
+   "size": 1013648,
+   "sha256": "ff8207b4471fa282371b781ee4ae9cb810baf85a11182abc8a7ba5eda5f93ca4",
+   "parts": [
+    "f/ff8207b4471fa282371b781e.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/TenseiRPG.runtimeconfig.json",
+   "size": 358,
+   "sha256": "c00b42e04642331c2a6a6b11c293ee9d39f669163e8dc13b6a4dc68216c9b1b6",
+   "parts": [
+    "f/c00b42e04642331c2a6a6b11.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/WindowsBase.dll",
+   "size": 16208,
+   "sha256": "4ac923397cee958ca7f89043c9b4e1114ac92684a02563900936bf2945983c96",
+   "parts": [
+    "f/4ac923397cee958ca7f89043.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/clretwrc.dll",
+   "size": 310568,
+   "sha256": "ecda3e4ea900ce80631a25f7833df92ac603cceb41993c5c11a5a3705234a77a",
+   "parts": [
+    "f/ecda3e4ea900ce80631a25f7.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/clrgc.dll",
+   "size": 667944,
+   "sha256": "36997e297d704f48de0dcf321c72e319f07200bbed31906771a6f01016276b09",
+   "parts": [
+    "f/36997e297d704f48de0dcf32.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/clrjit.dll",
+   "size": 1777960,
+   "sha256": "96c827b2bb8181742a877706239d041b1b9f2938351ca328063052181b302fbc",
+   "parts": [
+    "f/96c827b2bb8181742a877706.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/coreclr.dll",
+   "size": 4995880,
+   "sha256": "f7e9ec0f5143e125b50b4d1f9b94be2314bcf35b85ff6d4faeffef3587c700ee",
+   "parts": [
+    "f/f7e9ec0f5143e125b50b4d1f.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/createdump.exe",
+   "size": 71512,
+   "sha256": "6f8b3dd4fd2dedd60868f948297f20318480331590a673986ca116bbfafe9c06",
+   "parts": [
+    "f/6f8b3dd4fd2dedd60868f948.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/hostfxr.dll",
+   "size": 366376,
+   "sha256": "ebeab9f4bbd35a009d3850752cb1373d01b848cfcbde6ae91d6dc4f95020e8d0",
+   "parts": [
+    "f/ebeab9f4bbd35a009d385075.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/hostpolicy.dll",
+   "size": 406824,
+   "sha256": "ba2db74a7c484f3a4e389f690d9f264c8746578845daa789e100b397b063b7f0",
+   "parts": [
+    "f/ba2db74a7c484f3a4e389f69.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/mscordaccore.dll",
+   "size": 1348992,
+   "sha256": "325f2075997cb7126b3fa3e66fee1c597421b8bd50350d48702fbf9dbc82c04f",
+   "parts": [
+    "f/325f2075997cb7126b3fa3e6.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/mscordaccore_amd64_amd64_8.0.3426.52217.dll",
+   "size": 1348992,
+   "sha256": "325f2075997cb7126b3fa3e66fee1c597421b8bd50350d48702fbf9dbc82c04f",
+   "parts": [
+    "f/325f2075997cb7126b3fa3e6.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/mscordbi.dll",
+   "size": 1233792,
+   "sha256": "da6211db76faadeb73957d9513752007fc935ae1d4ddc9182c5fc275ba052585",
+   "parts": [
+    "f/da6211db76faadeb73957d95.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/mscorlib.dll",
+   "size": 59216,
+   "sha256": "b12f96539acba26ca514bfbc01a9202cf7f23ae3efeff09e3cde14f78efeac17",
+   "parts": [
+    "f/b12f96539acba26ca514bfbc.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/mscorrc.dll",
+   "size": 136488,
+   "sha256": "7f93f5e3aef5f5c94e05158d21cae12dca6164176de113776d926de55ad3cceb",
+   "parts": [
+    "f/7f93f5e3aef5f5c94e05158d.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/msquic.dll",
+   "size": 540480,
+   "sha256": "d363de7b6b08b3c68f0bc87ae74843cb152067a9ea589a265631895f41a0ca45",
+   "parts": [
+    "f/d363de7b6b08b3c68f0bc87a.0"
+   ]
+  },
+  {
+   "path": "data_TenseiRPG_windows_x86_64/netstandard.dll",
+   "size": 100648,
+   "sha256": "66ef0365ad96ebfd481ef4ae0dee23c1bc6114fe5d30556cd408b8f557181fc2",
+   "parts": [
+    "f/66ef0365ad96ebfd481ef4ae.0"
+   ]
+  }
+ ],
+ "setup": {
+  "file": "dl/windows/PonkotsuMegami_setup.zip",
+  "size": 74505482,
+  "code": "91c0278"
+ }
+}
